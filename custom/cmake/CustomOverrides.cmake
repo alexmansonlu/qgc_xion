@@ -1,7 +1,8 @@
 # ACULA GCS custom build overrides
 # This file is auto-detected by QGC's root CMakeLists.txt when the custom/ directory exists.
 
-set(QGC_APP_NAME        "ACULA GCS"                         CACHE STRING "" FORCE)
+# Note: QGC_APP_NAME is also used as CMake project/target name — no spaces allowed.
+set(QGC_APP_NAME        "AculaGCS"                          CACHE STRING "" FORCE)
 set(QGC_APP_DESCRIPTION "ACULA Ground Control Station"      CACHE STRING "" FORCE)
 set(QGC_APP_COPYRIGHT   "Copyright 2025 XixiongIntelligentControl. All rights reserved." CACHE STRING "" FORCE)
 set(QGC_ORG_NAME        "XixiongIntelligentControl"         CACHE STRING "" FORCE)
