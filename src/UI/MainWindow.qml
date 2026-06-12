@@ -347,13 +347,13 @@ ApplicationWindow {
                             height:             toolSelectDialog._toolButtonHeight
                             Layout.fillWidth:   true
                             text:               qsTr("Autonomous Flight")
-                            imageResource:      "/qmlimages/Waypoint.svg"
+                            imageResource:      "/res/AculaIconAI.png"
                             onClicked: {
                                 if (mainWindow.allowViewSwitch()) {
                                     mainWindow.closeIndicatorDrawer()
                                     mainWindow.showTool(qsTr("Autonomous Flight"),
                                         "qrc:/qml/QGroundControl/Controls/AutonomousFlightPlaceholder.qml",
-                                        "/qmlimages/Waypoint.svg")
+                                        "/res/AculaIconAI.png")
                                 }
                             }
                         }
@@ -363,7 +363,7 @@ ApplicationWindow {
                             height:             toolSelectDialog._toolButtonHeight
                             Layout.fillWidth:   true
                             text:               qsTr("Vehicle Configuration")
-                            imageResource:      "/qmlimages/Gears.svg"
+                            imageResource:      "/res/AculaIconDrone.png"
                             onClicked: {
                                 if (mainWindow.allowViewSwitch()) {
                                     mainWindow.closeIndicatorDrawer()
@@ -377,8 +377,7 @@ ApplicationWindow {
                             height:             toolSelectDialog._toolButtonHeight
                             Layout.fillWidth:   true
                             text:               qsTr("Application Settings")
-                            imageResource:      "/res/QGCLogoFull.svg"
-                            imageColor:         "transparent"
+                            imageResource:      "/res/AculaIconSetting.png"
                             visible:            !QGroundControl.corePlugin.options.combineSettingsAndSetup
                             onClicked: {
                                 if (mainWindow.allowViewSwitch()) {

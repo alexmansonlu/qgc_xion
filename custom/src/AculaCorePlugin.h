@@ -53,6 +53,8 @@ public:
     static QGCCorePlugin *instance();
 
     QGCOptions *options() final;
+    QString brandImageIndoor()  const final { return QStringLiteral("/res/AculaLogo.png"); }
+    QString brandImageOutdoor() const final { return QStringLiteral("/res/AculaLogo.png"); }
 
 private:
     AculaOptions *_options = nullptr;

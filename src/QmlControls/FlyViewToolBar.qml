@@ -63,12 +63,19 @@ Rectangle {
         anchors.bottom:         parent.bottom
         spacing:                ScreenTools.defaultFontPixelWidth / 2
 
-        QGCToolBarButton {
+        // [ACULA GCS] Replaced QGC logo with ACULA logo
+        Image {
             id:                     currentButton
-            Layout.preferredHeight: viewButtonRow.height
-            icon.source:            "/res/QGCLogoFull.svg"
-            logo:                   true
-            onClicked:              mainWindow.showToolSelectDialog()
+            Layout.preferredHeight: viewButtonRow.height * 0.7
+            Layout.preferredWidth:  Layout.preferredHeight * (646 / 144)
+            source:                 "/res/AculaLogo.png"
+            fillMode:               Image.PreserveAspectFit
+            smooth:                 true
+            MouseArea {
+                anchors.fill:   parent
+                cursorShape:    Qt.PointingHandCursor
+                onClicked:      mainWindow.showToolSelectDialog()
+            }
         }
 
         MainStatusIndicator {
