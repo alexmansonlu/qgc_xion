@@ -336,30 +336,24 @@ ApplicationWindow {
                         Layout.margins: toolSelectDialog._margins
                         spacing:        ScreenTools.defaultFontPixelWidth
 
-                        SubMenuButton {
-                            height:             toolSelectDialog._toolButtonHeight
-                            Layout.fillWidth:   true
-                            text:               qsTr("Plan Flight")
-                            imageResource:      "/qmlimages/Plan.svg"
-                            onClicked: {
-                                if (mainWindow.allowViewSwitch()) {
-                                    mainWindow.closeIndicatorDrawer()
-                                    mainWindow.showPlanView()
-                                }
-                            }
-                        }
+                        // [ACULA GCS] Plan Flight hidden — client does not use mission planning
+                        // SubMenuButton { text: qsTr("Plan Flight") ... }
+
+                        // [ACULA GCS] Analyze Tools hidden — not in client spec
+                        // SubMenuButton { text: qsTr("Analyze Tools") ... }
 
                         SubMenuButton {
-                            id:                 analyzeButton
+                            id:                 autonomousButton
                             height:             toolSelectDialog._toolButtonHeight
                             Layout.fillWidth:   true
-                            text:               qsTr("Analyze Tools")
-                            imageResource:      "/qmlimages/Analyze.svg"
-                            visible:            QGroundControl.corePlugin.showAdvancedUI
+                            text:               qsTr("Autonomous Flight")
+                            imageResource:      "/qmlimages/Waypoint.svg"
                             onClicked: {
                                 if (mainWindow.allowViewSwitch()) {
                                     mainWindow.closeIndicatorDrawer()
-                                    mainWindow.showAnalyzeTool()
+                                    mainWindow.showTool(qsTr("Autonomous Flight"),
+                                        "qrc:/qml/QGroundControl/Controls/AutonomousFlightPlaceholder.qml",
+                                        "/qmlimages/Waypoint.svg")
                                 }
                             }
                         }
