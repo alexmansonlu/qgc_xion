@@ -63,18 +63,19 @@ Rectangle {
         anchors.bottom:         parent.bottom
         spacing:                ScreenTools.defaultFontPixelWidth / 2
 
-        // [ACULA GCS] Compact menu trigger — chevron-down indicates tappable menu
+        // [ACULA GCS] Simple downward triangle — tap to open navigation menu
         Item {
-            id:                     menuTrigger
-            Layout.preferredHeight: viewButtonRow.height * 0.55
-            Layout.preferredWidth:  Layout.preferredHeight
+            id:                     currentButton
+            Layout.leftMargin:      ScreenTools.defaultFontPixelWidth * 2.5
+            Layout.preferredHeight: viewButtonRow.height
+            Layout.preferredWidth:  ScreenTools.defaultFontPixelWidth * 3
 
-            QGCColoredImage {
-                anchors.fill:   parent
-                source:         "/res/chevron-down.svg"
-                color:          "#FFFFFF"
-                fillMode:       Image.PreserveAspectFit
-                mipmap:         true
+            Text {
+                anchors.centerIn:   parent
+                text:               "▼"
+                color:              "#FFFFFF"
+                font.pixelSize:     ScreenTools.defaultFontPixelSize * 0.85
+                opacity:            0.9
             }
 
             MouseArea {
@@ -85,12 +86,14 @@ Rectangle {
         }
 
         MainStatusIndicator {
-            id: mainStatusIndicator
+            id:                     mainStatusIndicator
             Layout.preferredHeight: viewButtonRow.height
+            Layout.leftMargin:      ScreenTools.defaultFontPixelWidth
         }
 
         QGCButton {
             id:                 disconnectButton
+            Layout.leftMargin:  ScreenTools.defaultFontPixelWidth * 1.5
             text:               qsTr("Disconnect")
             onClicked:          _activeVehicle.closeVehicle()
             visible:            _activeVehicle && _communicationLost
