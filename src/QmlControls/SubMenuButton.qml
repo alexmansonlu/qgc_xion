@@ -19,8 +19,9 @@ Button {
     property string imageResource:  "/qmlimages/subMenuButtonImage.png"     ///< Button image
     property bool   largeSize:      false
     property bool   showHighlight:  control.pressed | control.checked
+    property real   imageSize:      ScreenTools.defaultFontPixelHeight * 2  ///< Icon size override
 
-    property size   sourceSize:     Qt.size(ScreenTools.defaultFontPixelHeight * 2, ScreenTools.defaultFontPixelHeight * 2)
+    property size   sourceSize:     Qt.size(imageSize, imageSize)
 
     property ButtonGroup buttonGroup:    null
     onButtonGroupChanged: {
@@ -53,8 +54,8 @@ Button {
             anchors.leftMargin:     ScreenTools.defaultFontPixelWidth
             anchors.left:           parent.left
             anchors.verticalCenter: parent.verticalCenter
-            width:                  ScreenTools.defaultFontPixelHeight * 2
-            height:                 ScreenTools.defaultFontPixelHeight * 2
+            width:                  control.imageSize
+            height:                 control.imageSize
             fillMode:               Image.PreserveAspectFit
             mipmap:                 true
             color:                  imageColor ? imageColor : (control.setupComplete ? titleBar.color : "red")

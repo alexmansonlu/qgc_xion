@@ -63,14 +63,20 @@ Rectangle {
         anchors.bottom:         parent.bottom
         spacing:                ScreenTools.defaultFontPixelWidth / 2
 
-        // [ACULA GCS] Replaced QGC logo with ACULA logo
-        Image {
-            id:                     currentButton
-            Layout.preferredHeight: viewButtonRow.height * 0.7
-            Layout.preferredWidth:  Layout.preferredHeight * (646 / 144)
-            source:                 "/res/AculaLogo.png"
-            fillMode:               Image.PreserveAspectFit
-            smooth:                 true
+        // [ACULA GCS] Compact menu trigger — chevron-down indicates tappable menu
+        Item {
+            id:                     menuTrigger
+            Layout.preferredHeight: viewButtonRow.height * 0.55
+            Layout.preferredWidth:  Layout.preferredHeight
+
+            QGCColoredImage {
+                anchors.fill:   parent
+                source:         "/res/chevron-down.svg"
+                color:          "#FFFFFF"
+                fillMode:       Image.PreserveAspectFit
+                mipmap:         true
+            }
+
             MouseArea {
                 anchors.fill:   parent
                 cursorShape:    Qt.PointingHandCursor
@@ -113,7 +119,8 @@ Rectangle {
         anchors.top:            parent.top
         anchors.bottom:         parent.bottom
         anchors.margins:        ScreenTools.defaultFontPixelHeight * 0.66
-        visible:                _activeVehicle && !_communicationLost && x > (toolsFlickable.x + toolsFlickable.contentWidth + ScreenTools.defaultFontPixelWidth)
+        // [ACULA GCS] Always show branding logo; hide only if telemetry indicators would overlap it
+        visible:                x > (toolsFlickable.x + toolsFlickable.contentWidth + ScreenTools.defaultFontPixelWidth)
         fillMode:               Image.PreserveAspectFit
         source:                 _outdoorPalette ? _brandImageOutdoor : _brandImageIndoor
         mipmap:                 true

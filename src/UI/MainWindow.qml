@@ -348,6 +348,7 @@ ApplicationWindow {
                             Layout.fillWidth:   true
                             text:               qsTr("Autonomous Flight")
                             imageResource:      "/res/AculaIconAI.png"
+                            imageSize:          ScreenTools.defaultFontPixelHeight * 1.2
                             onClicked: {
                                 if (mainWindow.allowViewSwitch()) {
                                     mainWindow.closeIndicatorDrawer()
@@ -364,6 +365,7 @@ ApplicationWindow {
                             Layout.fillWidth:   true
                             text:               qsTr("Vehicle Configuration")
                             imageResource:      "/res/AculaIconDrone.png"
+                            imageSize:          ScreenTools.defaultFontPixelHeight * 1.2
                             onClicked: {
                                 if (mainWindow.allowViewSwitch()) {
                                     mainWindow.closeIndicatorDrawer()
@@ -378,6 +380,7 @@ ApplicationWindow {
                             Layout.fillWidth:   true
                             text:               qsTr("Application Settings")
                             imageResource:      "/res/AculaIconSetting.png"
+                            imageSize:          ScreenTools.defaultFontPixelHeight * 1.2
                             visible:            !QGroundControl.corePlugin.options.combineSettingsAndSetup
                             onClicked: {
                                 if (mainWindow.allowViewSwitch()) {
