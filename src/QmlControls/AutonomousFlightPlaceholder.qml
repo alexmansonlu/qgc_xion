@@ -14,8 +14,10 @@ Rectangle {
     QGCPalette { id: qgcPal; colorGroupEnabled: true }
 
     ColumnLayout {
-        anchors.centerIn: parent
-        spacing:          ScreenTools.defaultFontPixelHeight * 2
+        anchors.horizontalCenter:   parent.horizontalCenter
+        anchors.verticalCenter:     parent.verticalCenter
+        anchors.verticalCenterOffset: -ScreenTools.defaultFontPixelHeight * 4
+        spacing:                    ScreenTools.defaultFontPixelHeight * 2
 
         Image {
             Layout.alignment:   Qt.AlignHCenter

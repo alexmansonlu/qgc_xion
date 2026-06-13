@@ -488,31 +488,33 @@ ApplicationWindow {
             height:         ScreenTools.toolbarHeight
             color:          qgcPal.toolbarBackground
 
-            RowLayout {
-                id:                 toolDrawerToolbarLayout
-                anchors.leftMargin: ScreenTools.defaultFontPixelWidth
-                anchors.left:       parent.left
-                anchors.top:        parent.top
-                anchors.bottom:     parent.bottom
-                spacing:            ScreenTools.defaultFontPixelWidth
+            // [ACULA GCS] Exit shown as a rounded red button with white text
+            Rectangle {
+                id:                     exitButton
+                anchors.left:           parent.left
+                anchors.leftMargin:     ScreenTools.defaultFontPixelWidth
+                anchors.verticalCenter: parent.verticalCenter
+                height:                 ScreenTools.defaultFontPixelHeight * 1.8
+                width:                  exitLabel.implicitWidth + ScreenTools.defaultFontPixelWidth * 3
+                radius:                 height / 2
+                color:                  exitMouse.pressed ? Qt.darker("#CC2200", 1.2) : "#CC2200"
 
                 QGCLabel {
-                    font.pointSize: ScreenTools.largeFontPointSize
-                    text:           "<"
+                    id:                 exitLabel
+                    anchors.centerIn:   parent
+                    text:               qsTr("Exit")
+                    color:              "#FFFFFF"
+                    font.bold:          true
+                    font.pointSize:     ScreenTools.defaultFontPointSize
                 }
 
-                QGCLabel {
-                    id:             toolbarDrawerText
-                    text:           qsTr("Exit") + " " + toolDrawer.toolTitle
-                    font.pointSize: ScreenTools.largeFontPointSize
-                }
-            }
-
-            QGCMouseArea {
-                anchors.fill: toolDrawerToolbarLayout
-                onClicked: {
-                    if (mainWindow.allowViewSwitch()) {
-                        toolDrawer.visible = false
+                QGCMouseArea {
+                    id:             exitMouse
+                    anchors.fill:   parent
+                    onClicked: {
+                        if (mainWindow.allowViewSwitch()) {
+                            toolDrawer.visible = false
+                        }
                     }
                 }
             }
