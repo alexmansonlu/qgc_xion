@@ -127,7 +127,7 @@ Rectangle {
         }
 
         // Divider
-        Rectangle { Layout.fillWidth: true; height: 1; color: qgcPal.windowShadeDark; topPadding: _margin * 0.4 }
+        Rectangle { Layout.fillWidth: true; Layout.topMargin: _margin * 0.4; height: 1; color: qgcPal.windowShadeDark }
 
         // ── Apply button ─────────────────────────────────────────────
         Rectangle {
