@@ -218,6 +218,11 @@ void QGCApplication::setLanguage()
     if (possibleLocale != QLocale::AnyLanguage) {
         _locale = QLocale(possibleLocale);
     }
+    // [ACULA GCS] Force Traditional Chinese (Taiwan). QLocale(QLocale::Chinese)
+    // defaults to Simplified (zh_CN); we ship only Traditional zh_TW translations.
+    if (_locale.language() == QLocale::Chinese) {
+        _locale = QLocale(QLocale::Chinese, QLocale::Taiwan);
+    }
     //-- We have specific fonts for Korean
     if (_locale == QLocale::Korean) {
         qCDebug(QGCApplicationLog) << "Loading Korean fonts" << _locale.name();
@@ -329,8 +334,9 @@ void QGCApplication::init()
 
 void QGCApplication::_initVideo()
 {
-#ifdef QGC_GST_STREAMING
-    // Gstreamer video playback requires OpenGL
+#if defined(QGC_GST_STREAMING) && !defined(Q_OS_ANDROID)
+    // GStreamer video playback requires OpenGL on desktop platforms.
+    // On Android we keep Vulkan (set in main.cc) to avoid gfxstream GLES bugs.
     QQuickWindow::setGraphicsApi(QSGRendererInterface::OpenGL);
 #endif
 
@@ -726,16 +732,18 @@ bool QGCApplication::event(QEvent *e)
         // On OSX if the user selects Quit from the menu (or Command-Q) the ApplicationWindow does not signal closing. Instead you get a Quit event here only.
         // This in turn causes the standard QGC shutdown sequence to not run. So in this case we close the window ourselves such that the
         // signal is sent and the normal shutdown sequence runs.
-        const bool forceClose = _mainRootWindow->property("_forceClose").toBool();
-        qCDebug(QGCApplicationLog) << "Quit event" << forceClose;
-        // forceClose
-        //  true:   Standard QGC shutdown sequence is complete. Let the app quit normally by falling through to the base class processing.
-        //  false:  QGC shutdown sequence has not been run yet. Don't let this event close the app yet. Close the main window to kick off the normal shutdown.
-        if (!forceClose) {
-            //
-            _mainRootWindow->close();
-            e->ignore();
-            return true;
+        // Guard against Quit arriving before the window is constructed (e.g. OpenGL init failure on Android emulator).
+        if (_mainRootWindow) {
+            const bool forceClose = _mainRootWindow->property("_forceClose").toBool();
+            qCDebug(QGCApplicationLog) << "Quit event" << forceClose;
+            // forceClose
+            //  true:   Standard QGC shutdown sequence is complete. Let the app quit normally by falling through to the base class processing.
+            //  false:  QGC shutdown sequence has not been run yet. Don't let this event close the app yet. Close the main window to kick off the normal shutdown.
+            if (!forceClose) {
+                _mainRootWindow->close();
+                e->ignore();
+                return true;
+            }
         }
     }
 

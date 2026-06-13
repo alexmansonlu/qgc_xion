@@ -23,9 +23,11 @@
 #include <QtCore/QSettings>
 
 // [ACULA GCS] Language list trimmed to English + Traditional Chinese only.
-// Qt loads qgc_zh_TW.ts when locale is Chinese/Taiwan (Traditional script).
-// To edit translations: open translations/qgc_zh_TW.ts in Qt Linguist:
-//   ~/Qt/6.8.3/macos/bin/linguist translations/qgc_zh_TW.ts
+// QLocale::Chinese is forced to Taiwan territory in QGCApplication::setLanguage(),
+// so the runtime loads qgc_source_zh_TW.qm + qgc_json_zh_TW.qm (Traditional).
+// To refine translations, open the source files in Qt Linguist:
+//   ~/Qt/6.8.3/macos/bin/linguist translations/qgc_source_zh_TW.ts
+//   ~/Qt/6.8.3/macos/bin/linguist translations/qgc_json_zh_TW.ts
 QList<QLocale::Language> AppSettings::_rgReleaseLanguages = {
     QLocale::English,
     QLocale::Chinese,   // loads qgc_zh_TW.ts (Traditional Chinese)
