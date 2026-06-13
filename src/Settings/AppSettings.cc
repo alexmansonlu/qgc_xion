@@ -22,44 +22,22 @@
 #include <QtCore/QDir>
 #include <QtCore/QSettings>
 
-// Release languages are 90%+ complete
+// [ACULA GCS] Language list trimmed to English + Traditional Chinese only.
+// Qt loads qgc_zh_TW.ts when locale is Chinese/Taiwan (Traditional script).
+// To edit translations: open translations/qgc_zh_TW.ts in Qt Linguist:
+//   ~/Qt/6.8.3/macos/bin/linguist translations/qgc_zh_TW.ts
 QList<QLocale::Language> AppSettings::_rgReleaseLanguages = {
     QLocale::English,
-    QLocale::Azerbaijani,    
-    QLocale::Chinese,
-    QLocale::Japanese,
-    QLocale::Korean,
-    QLocale::Portuguese,
-    QLocale::Russian,
+    QLocale::Chinese,   // loads qgc_zh_TW.ts (Traditional Chinese)
 };
 
-// Partial languages are 40%+ complete
-QList<QLocale::Language> AppSettings::_rgPartialLanguages = {
-    QLocale::Ukrainian,
-};
+// No partial languages for ACULA build
+QList<QLocale::Language> AppSettings::_rgPartialLanguages = {};
 
 AppSettings::LanguageInfo_t AppSettings::_rgLanguageInfo[] = {
-    { QLocale::AnyLanguage,     "System" },                     // Must be first
-    { QLocale::Azerbaijani,     "Azerbaijani (Azerbaijani)" },
-    { QLocale::Bulgarian,       "български (Bulgarian)" },
-    { QLocale::Chinese,         "中文 (Chinese)" },
-    { QLocale::Dutch,           "Nederlands (Dutch)" },
-    { QLocale::English,         "English" },
-    { QLocale::Finnish,         "Suomi (Finnish)" },
-    { QLocale::French,          "Français (French)" },
-    { QLocale::German,          "Deutsche (German)" },
-    { QLocale::Greek,           "Ελληνικά (Greek)" },
-    { QLocale::Hebrew,          "עברית (Hebrew)" },
-    { QLocale::Italian,         "Italiano (Italian)" },
-    { QLocale::Japanese,        "日本語 (Japanese)" },
-    { QLocale::Korean,          "한국어 (Korean)" },
-    { QLocale::NorwegianBokmal, "Norsk (Norwegian)" },
-    { QLocale::Polish,          "Polskie (Polish)" },
-    { QLocale::Portuguese,      "Português (Portuguese)" },
-    { QLocale::Russian,         "Pусский (Russian)" },
-    { QLocale::Spanish,         "Español (Spanish)" },
-    { QLocale::Swedish,         "Svenska (Swedish)" },
-    { QLocale::Turkish,         "Türk (Turkish)" }
+    { QLocale::AnyLanguage, "System" },             // Must be first
+    { QLocale::English,     "English" },
+    { QLocale::Chinese,     "繁體中文 (Traditional Chinese)" },
 };
 
 DECLARE_SETTINGGROUP(App, "")

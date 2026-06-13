@@ -12,16 +12,23 @@ import QtQuick.Layouts
 
 import QGroundControl
 import QGroundControl.Controls
+import QGroundControl.ScreenTools
+import QGroundControl.Palette
 
 ColumnLayout {
     property var additionalActions
     property var mavlinkActions
     property var customActions
 
-    property var  _activeVehicle:       QGroundControl.multiVehicleManager.activeVehicle
-    property var  _guidedController:    globals.guidedControllerFlyView
+    property var  _activeVehicle:    QGroundControl.multiVehicleManager.activeVehicle
+    property var  _guidedController: globals.guidedControllerFlyView
+    property bool _cameraExpanded:   false
 
-    // Pre-defined Additional Guided Actions
+    spacing: ScreenTools.defaultFontPixelHeight * 0.3
+
+    QGCPalette { id: qgcPal; colorGroupEnabled: true }
+
+    // ── Pre-defined Additional Guided Actions ────────────────────────
     Repeater {
         model: additionalActions.model
 
@@ -37,7 +44,7 @@ ColumnLayout {
         }
     }
 
-    // Custom Build Actions
+    // ── Custom Build Actions ─────────────────────────────────────────
     Repeater {
         model: customActions.model
 
@@ -53,9 +60,58 @@ ColumnLayout {
         }
     }
 
-    // User-defined Mavlink Actions
+    // ── [ACULA GCS] Feature C — Camera Resolution ────────────────────
+    Rectangle {
+        Layout.fillWidth:   true
+        height:             ScreenTools.defaultFontPixelHeight * 2.5
+        radius:             height * 0.2
+        color:              _cameraExpanded ? qgcPal.primaryButton : qgcPal.button
+
+        RowLayout {
+            anchors.fill:           parent
+            anchors.leftMargin:     ScreenTools.defaultFontPixelWidth
+            anchors.rightMargin:    ScreenTools.defaultFontPixelWidth
+
+            QGCColoredImage {
+                width:              ScreenTools.defaultFontPixelHeight * 1.2
+                height:             width
+                source:             "/res/AculaIconDrone.png"
+                color:              _cameraExpanded ? qgcPal.primaryButtonText : qgcPal.buttonText
+                fillMode:           Image.PreserveAspectFit
+            }
+
+            QGCLabel {
+                Layout.fillWidth:   true
+                text:               qsTr("Camera Resolution")
+                color:              _cameraExpanded ? qgcPal.primaryButtonText : qgcPal.buttonText
+                font.pixelSize:     ScreenTools.defaultFontPixelSize
+            }
+
+            QGCLabel {
+                text:   _cameraExpanded ? "▲" : "▼"
+                color:  _cameraExpanded ? qgcPal.primaryButtonText : qgcPal.buttonText
+                font.pixelSize: ScreenTools.smallFontPixelSize
+            }
+        }
+
+        MouseArea {
+            anchors.fill:   parent
+            cursorShape:    Qt.PointingHandCursor
+            onClicked:      _cameraExpanded = !_cameraExpanded
+        }
+    }
+
+    Loader {
+        Layout.fillWidth:   true
+        active:             _cameraExpanded
+        sourceComponent:    Component {
+            CameraResolutionPanel {}
+        }
+    }
+
+    // ── User-defined MAVLink Actions ─────────────────────────────────
     Repeater {
-        model: _activeVehicle ? mavlinkActions : undefined // The action list is a QmlObjectListModel
+        model: _activeVehicle ? mavlinkActions : undefined
 
         QGCButton {
             Layout.fillWidth:   true

@@ -12,11 +12,14 @@ import QtQml.Models
 import QGroundControl
 import QGroundControl.ScreenTools
 
+// [ACULA GCS] Trimmed settings pages — only pages relevant to client spec.
+// Hidden: Plan View, Video (GStreamer OFF), ADSB Server, Remote ID, Help, PX4 Log.
+
 ListModel {
     ListElement {
         name: qsTr("General")
         url: "qrc:/qml/QGroundControl/AppSettings/GeneralSettings.qml"
-        iconUrl: "qrc:/res/QGCLogoWhite.svg"
+        iconUrl: "qrc:/res/AculaIconSetting.png"
         pageVisible: function() { return true }
     }
 
@@ -27,19 +30,11 @@ ListModel {
         pageVisible: function() { return true }
     }
 
-    ListElement {
-        name: qsTr("Plan View")
-        url: "qrc:/qml/QGroundControl/AppSettings/PlanViewSettings.qml"
-        iconUrl: "qrc:/qmlimages/Plan.svg"
-        pageVisible: function() { return true }
-    }
+    // [ACULA] Plan View hidden — Plan view removed from navigation
+    // ListElement { name: qsTr("Plan View") ... }
 
-    ListElement {
-        name: qsTr("Video")
-        url: "qrc:/qml/QGroundControl/AppSettings/VideoSettings.qml"
-        iconUrl: "qrc:/InstrumentValueIcons/camera.svg"
-        pageVisible: function() { return QGroundControl.settingsManager.videoSettings.visible }
-    }
+    // [ACULA] Video hidden — GStreamer disabled in this build (re-enable Phase 3)
+    // ListElement { name: qsTr("Video") ... }
 
     ListElement {
         name: qsTr("Telemetry")
@@ -48,12 +43,8 @@ ListModel {
         pageVisible: function() { return true }
     }
 
-    ListElement {
-        name: qsTr("ADSB Server")
-        url: "qrc:/qml/QGroundControl/AppSettings/ADSBServerSettings.qml"
-        iconUrl: "qrc:/InstrumentValueIcons/airplane.svg"
-        pageVisible: function() { return true }
-    }
+    // [ACULA] ADSB Server hidden — not in client spec
+    // ListElement { name: qsTr("ADSB Server") ... }
 
     ListElement {
         name: qsTr("Comm Links")
@@ -69,24 +60,10 @@ ListModel {
         pageVisible: function() { return true }
     }
 
-    ListElement {
-        name: qsTr("PX4 Log Transfer")
-        url: "qrc:/qml/QGroundControl/AppSettings/PX4LogTransferSettings.qml"
-        iconUrl: "qrc:/InstrumentValueIcons/inbox-download.svg"
-        pageVisible: function() { 
-            var activeVehicle = QGroundControl.multiVehicleManager.activeVehicle
-            return QGroundControl.corePlugin.options.showPX4LogTransferOptions && 
-                        QGroundControl.px4ProFirmwareSupported && 
-                        (activeVehicle ? activeVehicle.px4Firmware : true)
-        }
-    }
-
-    ListElement {
-        name: qsTr("Remote ID")
-        url: "qrc:/qml/QGroundControl/AppSettings/RemoteIDSettings.qml"
-        iconUrl: "qrc:/qmlimages/RidIconManNoID.svg"
-        pageVisible: function() { return true }
-    }
+    // [ACULA] Remote ID hidden — drone-side compliance tool, not needed in GCS.
+    //         Remote ID broadcasts identification data (ID, operator, position)
+    //         from the drone hardware — configure on the drone, not here.
+    // ListElement { name: qsTr("Remote ID") ... }
 
     ListElement {
         name: qsTr("Console")
@@ -95,13 +72,10 @@ ListModel {
         pageVisible: function() { return true }
     }
 
-    ListElement {
-        name: qsTr("Help")
-        url: "qrc:/qml/QGroundControl/AppSettings/HelpSettings.qml"
-        iconUrl: "qrc:/InstrumentValueIcons/question.svg"
-        pageVisible: function() { return true }
-    }
+    // [ACULA] Help hidden — not needed in production GCS
+    // ListElement { name: qsTr("Help") ... }
 
+    // Debug-only pages remain conditional
     ListElement {
         name: qsTr("Mock Link")
         url: "qrc:/qml/QGroundControl/AppSettings/MockLink.qml"
@@ -115,12 +89,4 @@ ListModel {
         iconUrl: "qrc:/InstrumentValueIcons/bug.svg"
         pageVisible: function() { return ScreenTools.isDebug }
     }
-
-    ListElement {
-        name: qsTr("Palette Test")
-        url: "qrc:/qml/QGroundControl/AppSettings/QmlTest.qml"
-        iconUrl: "qrc:/InstrumentValueIcons/photo.svg"
-        pageVisible: function() { return ScreenTools.isDebug }
-    }
 }
-

@@ -69,6 +69,7 @@ qt_add_qml_module(QGroundControlControlsModule
         AltModeDialog.qml
         AppSettings.qml
         AutonomousFlightPlaceholder.qml
+        CameraResolutionPanel.qml
         APMSubMotorDisplay.qml
         AppMessages.qml
         AutotuneUI.qml
