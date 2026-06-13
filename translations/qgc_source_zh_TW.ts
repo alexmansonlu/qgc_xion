@@ -6597,206 +6597,172 @@ Click Ok to start the auto-tuning process.
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="50" />
       <source>&lt;None&gt;</source>
       <translation>&lt;無&gt;</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="56" />
       <source>General</source>
       <translation>一般</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="61" />
       <source>Use Preflight Checklist</source>
       <translation>使用起飛前檢查清單</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="69" />
       <source>Enforce Preflight Checklist</source>
       <translation>強制執行起飛前檢查清單</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="78" />
       <source>Enable Multi-Vehicle Panel</source>
       <translation>啟用多載具面板</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="85" />
       <source>Keep Map Centered On Vehicle</source>
       <translation>地圖維持以載具為中心</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="93" />
       <source>Show Telemetry Log Replay Status Bar</source>
       <translation>顯示遙測記錄重播狀態列</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="101" />
       <source>Show simple camera controls (DIGICAM_CONTROL)</source>
       <translation>顯示簡易相機控制 (DIGICAM_CONTROL)</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="110" />
       <source>Update return to home position based on device location.</source>
       <translation>根據裝置位置更新返航點位置。</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="119" />
       <source>Guided Commands</source>
       <translation>導引指令</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="126" />
       <source>Minimum Altitude</source>
       <translation>最小高度</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="133" />
       <source>Maximum Altitude</source>
       <translation>最大高度</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="140" />
       <source>Go To Location Max Distance</source>
       <translation>前往位置最大距離</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="147" />
       <source>Loiter Radius in Forward Flight Guided Mode</source>
       <translation>前飛導引模式盤旋半徑</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="154" />
       <source>Require Confirmation for Go To Location in Guided Mode</source>
       <translation>導引模式前往位置需要確認</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="163" />
       <source>MAVLink Actions</source>
       <translation>MAVLink 動作</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="164" />
       <source>Action JSON files should be created in the '%1' folder.</source>
       <translation>動作 JSON 檔案應建立於 '%1' 資料夾中。</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="168" />
       <source>Fly View Actions</source>
       <translation>飛行檢視動作</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="181" />
       <source>Joystick Actions</source>
       <translation>搖桿動作</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="195" />
       <source>Virtual Joystick</source>
       <translation>虛擬搖桿</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="200" />
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="249" />
       <source>Enabled</source>
       <translation>已啟用</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="207" />
       <source>Auto-Center Throttle</source>
       <translation>油門自動置中</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="215" />
       <source>Left-Handed Mode (swap sticks)</source>
       <translation>左手模式（交換搖桿）</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="224" />
       <source>Instrument Panel</source>
       <translation>儀表面板</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="229" />
       <source>Show additional heading indicators on Compass</source>
       <translation>在羅盤上顯示額外航向指示</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="236" />
       <source>Lock Compass Nose-Up</source>
       <translation>鎖定羅盤機首朝上</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="244" />
       <source>3D View</source>
       <translation>3D 檢視</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="267" />
       <source>3D Map File:</source>
       <translation>3D 地圖檔案：</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="287" />
       <source>Clear</source>
       <translation>清除</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="296" />
       <source>Select File</source>
       <translation>選擇檔案</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="310" />
       <source>OpenStreetMap files (*.osm)</source>
       <translation>OpenStreetMap 檔案 (*.osm)</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="311" />
       <source>Select map file</source>
       <translation>選擇地圖檔案</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="324" />
       <source>Average Building Level Height</source>
       <translation>平均樓層高度</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/FlyViewSettings.qml" line="332" />
       <source>Vehicles Altitude Bias</source>
       <translation>載具高度偏差</translation>
-      <translation />
     </message>
   </context>
   <context>
@@ -7027,20 +6993,17 @@ Click Ok to start the auto-tuning process.
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="37" />
       <source>Vehicle GPS Status</source>
       <translation>載具 GPS 狀態</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="41" />
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="75" />
       <source>Satellites</source>
       <translation>衛星數</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="46" />
       <source>GPS Lock</source>
       <translation>GPS 鎖定</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="51" />
@@ -7056,97 +7019,81 @@ Click Ok to start the auto-tuning process.
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="61" />
       <source>Course Over Ground</source>
       <translation>對地航向</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="67" />
       <source>RTK GPS Status</source>
       <translation>RTK GPS 狀態</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="71" />
       <source>Survey-in Active</source>
       <translation>定點測量進行中</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="71" />
       <source>RTK Streaming</source>
       <translation>RTK 串流中</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="80" />
       <source>Duration</source>
       <translation>持續時間</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="85" />
       <source>Accuracy</source>
       <translation>精度</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="85" />
       <source>Current Accuracy</source>
       <translation>目前精度</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="95" />
       <source>RTK GPS Settings</source>
       <translation>RTK GPS 設定</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="101" />
       <source>AutoConnect</source>
       <translation>自動連線</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="110" />
       <source>Survey-In</source>
       <translation>定點測量</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="116" />
       <source>Specify position</source>
       <translation>指定位置</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="125" />
       <source>Accuracy (u-blox only)</source>
       <translation>精度（僅限 u-blox）</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="134" />
       <source>Min Duration</source>
       <translation>最短持續時間</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="165" />
       <source>Current Base Position</source>
       <translation>目前基站位置</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="166" />
       <source>Save</source>
       <translation>儲存</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/QmlControls/GPSIndicatorPage.qml" line="166" />
       <source>Not Yet Valid</source>
       <translation>尚未有效</translation>
-      <translation />
     </message>
   </context>
   <context>
@@ -8805,19 +8752,16 @@ Click Ok to start the auto-tuning process.
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="192" />
       <source>Add</source>
       <translation>新增</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="178" />
       <source>Connect</source>
       <translation>連線</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="26" />
       <source>AutoConnect</source>
       <translation>自動連線</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="41" />
@@ -8858,104 +8802,87 @@ Click Ok to start the auto-tuning process.
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="58" />
       <source>Device</source>
       <translation>裝置</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="71" />
       <source>Disabled</source>
       <translation>已停用</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="72" />
       <source>UDP Port</source>
       <translation>UDP 連接埠</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="75" />
       <source>Serial &lt;none available&gt;</source>
       <translation>序列埠 &lt;無可用&gt;</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="91" />
       <source>Baudrate</source>
       <translation>鮑率</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="108" />
       <source>NMEA stream UDP port</source>
       <translation>NMEA 串流 UDP 連接埠</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="114" />
       <source>Links</source>
       <translation>連線</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="169" />
       <source>Delete Link</source>
       <translation>刪除連線</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="170" />
       <source>Are you sure you want to delete '%1'?</source>
       <translation>確定要刪除 '%1' 嗎？</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="178" />
       <source>Disconnect</source>
       <translation>斷線</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="191" />
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="205" />
       <source>Add New Link</source>
       <translation>新增連線</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="205" />
       <source>Edit Link</source>
       <translation>編輯連線</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="233" />
       <source>Name</source>
       <translation>名稱</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="238" />
       <source>Enter name</source>
       <translation>輸入名稱</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="244" />
       <source>Automatically Connect on Start</source>
       <translation>啟動時自動連線</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="251" />
       <source>High Latency</source>
       <translation>高延遲</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/LinkSettings.qml" line="257" />
       <source>Type</source>
       <translation>類型</translation>
-      <translation />
     </message>
     <message>
       <source>Comm Links</source>
@@ -9965,91 +9892,76 @@ Click Ok to start the auto-tuning process.
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="62" />
       <source>Provider</source>
       <translation>供應商</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="78" />
       <source>Type</source>
       <translation>類型</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="91" />
       <source>Elevation Provider</source>
       <translation>高程供應商</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="106" />
       <source>Offline Maps</source>
       <translation>離線地圖</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="107" />
       <source>Download map tiles for use when offline</source>
       <translation>下載地圖圖磚供離線使用</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="120" />
       <source>Add New Set</source>
       <translation>新增圖組</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="121" />
       <source>Add</source>
       <translation>新增</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="127" />
       <source>Import Map Tiles</source>
       <translation>匯入地圖圖磚</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="128" />
       <source>Import</source>
       <translation>匯入</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="138" />
       <source>Export Map Tiles</source>
       <translation>匯出地圖圖磚</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="139" />
       <source>Export</source>
       <translation>匯出</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="151" />
       <source>Exporting</source>
       <translation>匯出中</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="151" />
       <source>Importing</source>
       <translation>匯入中</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="165" />
       <source>Tokens</source>
       <translation>權杖</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="166" />
       <source>Allows access to additional providers</source>
       <translation>允許存取額外的供應商</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="170" />
@@ -10070,91 +9982,76 @@ Click Ok to start the auto-tuning process.
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="189" />
       <source>Mapbox Login</source>
       <translation>Mapbox 登入</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="193" />
       <source>Account</source>
       <translation>帳號</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="199" />
       <source>Map Style</source>
       <translation>地圖樣式</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="206" />
       <source>Custom Map URL</source>
       <translation>自訂地圖網址</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="207" />
       <source>URL with {x} {y} {z} or {zoom} substitutions</source>
       <translation>含 {x} {y} {z} 或 {zoom} 替換的網址</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="211" />
       <source>Server URL</source>
       <translation>伺服器網址</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="218" />
       <source>Tile Cache</source>
       <translation>圖磚快取</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="232" />
       <source>Tile Sets (*.%1)</source>
       <translation>圖磚組 (*.%1)</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="250" />
       <source>Export Selected Tile Sets</source>
       <translation>匯出所選圖磚組</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="255" />
       <source>Export Tiles</source>
       <translation>匯出圖磚</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="279" />
       <source>Import TileSets</source>
       <translation>匯入圖磚組</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="284" />
       <source>Import Tiles</source>
       <translation>匯入圖磚</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="292" />
       <source>Append to existing sets</source>
       <translation>附加至現有圖組</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="297" />
       <source>Replace existing sets</source>
       <translation>取代現有圖組</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/MapSettings.qml" line="309" />
       <source>Error Message</source>
       <translation>錯誤訊息</translation>
-      <translation />
     </message>
     <message>
       <source>Maps</source>
@@ -17006,187 +16903,156 @@ ROTATION_NONE indicates component points in direction of flight.</translation>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="30" />
       <source>Not Connected</source>
       <translation>未連線</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="37" />
       <source>Ground Station</source>
       <translation>地面站</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="47" />
       <source>Emit heartbeat</source>
       <translation>發送心跳訊號</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="41" />
       <source>MAVLink System ID</source>
       <translation>MAVLink 系統 ID</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="55" />
       <source>MAVLink 2 Signing</source>
       <translation>MAVLink 2 簽章</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="56" />
       <source>Signing keys should only be sent to the vehicle over secure links.</source>
       <translation>簽章金鑰僅應透過安全連線傳送至載具。</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="72" />
       <source>Key</source>
       <translation>金鑰</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="77" />
       <source>Send to Vehicle</source>
       <translation>傳送至載具</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="90" />
       <source>Signing key has changed. Don't forget to send to Vehicle(s) if needed.</source>
       <translation>簽章金鑰已變更。如有需要請記得傳送至載具。</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="97" />
       <source>MAVLink Forwarding</source>
       <translation>MAVLink 轉發</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="101" />
       <source>Enable</source>
       <translation>啟用</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="109" />
       <source>Host name</source>
       <translation>主機名稱</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="118" />
       <source>Logging</source>
       <translation>記錄</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="123" />
       <source>Save log after each flight</source>
       <translation>每次飛行後儲存記錄</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="131" />
       <source>Save logs even if vehicle was not armed</source>
       <translation>即使載具未解鎖也儲存記錄</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="140" />
       <source>Save CSV log of telemetry data</source>
       <translation>儲存遙測資料的 CSV 記錄</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="149" />
       <source>Stream Rates (ArduPilot Only)</source>
       <translation>串流速率（僅限 ArduPilot）</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="155" />
       <source>Controlled By vehicle</source>
       <translation>由載具控制</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="162" />
       <source>Raw Sensors</source>
       <translation>原始感測器</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="170" />
       <source>Extended Status</source>
       <translation>延伸狀態</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="178" />
       <source>RC Channels</source>
       <translation>遙控通道</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="186" />
       <source>Position</source>
       <translation>位置</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="194" />
       <source>Extra 1</source>
       <translation>額外 1</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="202" />
       <source>Extra 2</source>
       <translation>額外 2</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="210" />
       <source>Extra 3</source>
       <translation>額外 3</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="219" />
       <source>Link Status (Current Vehicle))</source>
       <translation>連線狀態（目前載具）</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="223" />
       <source>Total messages sent (computed)</source>
       <translation>傳送訊息總數（計算值）</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="229" />
       <source>Total messages received</source>
       <translation>接收訊息總數</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="235" />
       <source>Total message loss</source>
       <translation>訊息遺失總數</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="241" />
       <source>Loss rate:</source>
       <translation>遺失率：</translation>
-      <translation />
     </message>
     <message>
       <location filename="../src/UI/AppSettings/TelemetrySettings.qml" line="247" />
       <source>Signing:</source>
       <translation>簽章：</translation>
-      <translation />
     </message>
     <message>
       <source>Telemetry</source>
