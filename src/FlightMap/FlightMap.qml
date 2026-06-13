@@ -204,18 +204,25 @@ Map {
         visible:        gcsPosition.isValid
         coordinate:     gcsPosition
 
-        sourceItem: Image {
-            id:             mapItemImage
-            source:         isNaN(gcsHeading) ? "/res/QGCLogoFull.svg" : "/res/QGCLogoArrow.svg"
-            mipmap:         true
-            antialiasing:   true
-            fillMode:       Image.PreserveAspectFit
-            height:         ScreenTools.defaultFontPixelHeight * (isNaN(gcsHeading) ? 1.75 : 2.5 )
-            sourceSize.height: height
-            transform: Rotation {
-                origin.x:       mapItemImage.width  / 2
-                origin.y:       mapItemImage.height / 2
-                angle:          isNaN(gcsHeading) ? 0 : gcsHeading
+        // [ACULA GCS] Ground-station marker: ACULA logo on a black rounded badge.
+        // Kept upright (no heading rotation) so the logo text stays readable.
+        sourceItem: Rectangle {
+            id:             gcsMarkerBadge
+            color:          "#000000"
+            radius:         ScreenTools.defaultFontPixelHeight * 0.35
+            width:          aculaMarkerLogo.width  + ScreenTools.defaultFontPixelWidth * 1.2
+            height:         aculaMarkerLogo.height + ScreenTools.defaultFontPixelHeight * 0.5
+
+            Image {
+                id:                 aculaMarkerLogo
+                anchors.centerIn:   parent
+                source:             "/res/AculaLogo.png"
+                mipmap:             true
+                antialiasing:       true
+                fillMode:           Image.PreserveAspectFit
+                height:             ScreenTools.defaultFontPixelHeight * 1.1
+                width:              height * (646 / 144)
+                sourceSize.height:  height * 2
             }
         }
     }
