@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>金門機場禁止施放有礙飛航安全物體範圍.kml</name>
+	<Style id="line-FFFF00-1-normal">
+		<LineStyle>
+			<color>ff00ffff</color>
+		</LineStyle>
+	</Style>
+	<Style id="sh_forbidden">
+		<IconStyle>
+			<color>ff0000ff</color>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/forbidden.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff0000ff</color>
+		</LabelStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="sh_forbidden0">
+		<IconStyle>
+			<color>ff00ffff</color>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/forbidden.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff00ffff</color>
+		</LabelStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="line-FFFF00-1-highlight">
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="line-FF0000-1-highlight">
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_forbidden">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_forbidden0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_forbidden0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="line-FFFF00-1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#line-FFFF00-1-normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#line-FFFF00-1-highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="icon-1899-0288D1-normal0">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="icon-1899-0288D1-highlight0">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="line-FF0000-1-normal">
+		<LineStyle>
+			<color>ff0000ff</color>
+		</LineStyle>
+	</Style>
+	<Style id="sn_forbidden">
+		<IconStyle>
+			<color>ff0000ff</color>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/forbidden.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff0000ff</color>
+		</LabelStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<StyleMap id="msn_forbidden0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_forbidden</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_forbidden</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="icon-1899-0288D10">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#icon-1899-0288D1-normal0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#icon-1899-0288D1-highlight0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="line-FF0000-1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#line-FF0000-1-normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#line-FF0000-1-highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_forbidden0">
+		<IconStyle>
+			<color>ff00ffff</color>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/forbidden.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff00ffff</color>
+		</LabelStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Folder>
+		<name>金門機場禁止施放有礙飛航安全物體範圍</name>
+		<Placemark>
+			<name>機場標高60公尺以上禁止施放有礙飛航安全物體範圍</name>
+			<Camera>
+				<longitude>118.4627481938367</longitude>
+				<latitude>24.46650037607581</latitude>
+				<altitude>33666.09899809014</altitude>
+				<heading>3.192002794812198</heading>
+				<tilt>1.111128055204081</tilt>
+				<roll>4.503576873364394</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_forbidden</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>118.4567100146168,24.46723538157682,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>禁止施放有礙飛航安全物體範圍</name>
+			<LookAt>
+				<longitude>118.4093302975315</longitude>
+				<latitude>24.45046961473597</latitude>
+				<altitude>0</altitude>
+				<heading>-1.350176917602321</heading>
+				<tilt>0</tilt>
+				<range>26111.38013435921</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_forbidden0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>118.360637190124,24.42905834014408,0</coordinates>
+			</Point>
+		</Placemark>
+		<Folder>
+			<name>金門機場禁止施放有礙飛航安全物體範圍(點)</name>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   0    <br>   金門機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>118.477915,24.543114,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   1    <br>   金門機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>118.530908,24.446227,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   2    <br>   金門機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>118.19117,24.411361,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   3    <br>   金門機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>118.244322,24.314577,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   4    <br>   金門機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>118.301105,24.430324,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   5    <br>   金門機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>118.305662,24.429713,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   6    <br>   金門機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>118.393377,24.470014,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   7    <br>   金門機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>118.395566,24.473724,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   8    <br>   金門機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>118.420921,24.427431,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   9    <br>   金門機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>118.416365,24.428045,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   10    <br>   金門機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>118.326485,24.384047,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   11    <br>   金門機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>118.328671,24.387758,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   12    <br>   金門機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>118.349889,24.423778,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   13    <br>   金門機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>118.372139,24.434,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   14    <br>   金門機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>118.416219,24.454237,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   15    <br>   金門機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>118.30583,24.403522,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   0    <br>   金門機訛ID   0]]></description>
+			<styleUrl>#line-FF0000-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					118.395566,24.473724,0 118.397066,24.472952,0 118.398536,24.472131,0 118.399974,24.471265,0 118.401378,24.470353,0 118.402746,24.469396,0 118.404077,24.468397,0 118.405369,24.467355,0 118.406621,24.466273,0 118.40783,24.465152,0 118.408996,24.463993,0 118.410117,24.462797,0 118.411191,24.461566,0 118.412219,24.460301,0 118.413197,24.459004,0 118.414125,24.457677,0 118.415002,24.456321,0 118.415826,24.454938,0 118.416598,24.45353,0 118.417315,24.452097,0 118.417977,24.450643,0 118.418584,24.449168,0 118.419133,24.447675,0 118.419626,24.446165,0 118.42006,24.44464,0 118.420436,24.443103,0 118.420754,24.441554,0 118.421012,24.439996,0 118.42121,24.438431,0 118.421349,24.43686,0 118.421428,24.435286,0 118.421446,24.433711,0 118.421405,24.432135,0 118.421304,24.430562,0 118.421142,24.428994,0 118.420921,24.427431,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   1    <br>   金門機訛ID   0]]></description>
+			<styleUrl>#line-FF0000-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					118.395566,24.473724,0 118.372139,24.434,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   2    <br>   金門機訛ID   0]]></description>
+			<styleUrl>#line-FF0000-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					118.420921,24.427431,0 118.372139,24.434,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   3    <br>   金門機訛ID   0]]></description>
+			<styleUrl>#line-FF0000-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					118.349889,24.423778,0 118.326485,24.384047,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   4    <br>   金門機訛ID   0]]></description>
+			<styleUrl>#line-FF0000-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					118.326485,24.384047,0 118.322793,24.386065,0 118.319307,24.388371,0 118.316054,24.390946,0 118.313058,24.393771,0 118.310342,24.396825,0 118.307926,24.400083,0 118.30583,24.403522,0 118.30407,24.407115,0 118.302657,24.410835,0 118.301604,24.414653,0 118.300919,24.41854100000001,0 118.300606,24.422468,0 118.300668,24.426406,0 118.301105,24.430324,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   5    <br>   金門機訛ID   0]]></description>
+			<styleUrl>#line-FF0000-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					118.349889,24.423778,0 118.301105,24.430324,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   6    <br>   金門機訛ID   0]]></description>
+			<styleUrl>#line-FFFF00-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					118.477915,24.543114,0 118.19117,24.411361,0 118.244322,24.314577,0 118.530908,24.446227,0 118.477915,24.543114,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   7    <br>   金門機訛ID   0]]></description>
+			<styleUrl>#line-FF0000-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					118.416365,24.428045,0 118.328671,24.387758,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   8    <br>   金門機訛ID   0]]></description>
+			<styleUrl>#line-FF0000-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					118.393377,24.470014,0 118.305662,24.429713,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   9    <br>   金門機訛ID   0]]></description>
+			<styleUrl>#line-FF0000-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					118.372139,24.434,0 118.349889,24.423778,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

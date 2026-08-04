@@ -46,6 +46,7 @@
         <file alias="AculaIconAI.png">resources/AculaIconAI.png</file>
         <file alias="AculaIconDrone.png">resources/AculaIconDrone.png</file>
         <file alias="AculaIconSetting.png">resources/AculaIconSetting.png</file>
+        <file alias="AculaIconJoystick.png">resources/AculaIconJoystick.png</file>
         <file alias="QGroundControlConnect.svg">resources/QGroundControlConnect.svg</file>
         <file alias="rtl.svg">resources/rtl.svg</file>
         <file alias="SplashScreen">resources/SplashScreen.png</file>

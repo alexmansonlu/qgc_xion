@@ -244,6 +244,16 @@ Rectangle {
                 property bool   _forcedToButtonsOnly:   !QGroundControl.corePlugin.options.allowJoystickSelection && _buttonsOnly
             }
 
+            // [ACULA] Camera resolution setup (Feature C). Replaces the default
+            // autopilot "Camera" component, which is hidden in componentRepeater below.
+            ConfigButton {
+                id:                 cameraButton
+                icon.source:        "/qmlimages/CameraComponentIcon.png"
+                text:               qsTr("Camera")
+                Layout.fillWidth:   true
+                onClicked:          showPanel(this, "qrc:/qml/QGroundControl/VehicleSetup/CameraResolutionConfig.qml")
+            }
+
             Repeater {
                 id:     componentRepeater
                 model:  _fullParameterVehicleAvailable ? QGroundControl.multiVehicleManager.activeVehicle.autopilotPlugin.vehicleComponents : 0
@@ -252,7 +262,11 @@ Rectangle {
                     icon.source:      modelData.iconResource
                     setupComplete:      modelData.setupComplete
                     text:               modelData.name
-                    visible:            modelData.setupSource.toString() !== ""
+                    // [ACULA] Hide the default autopilot Camera setup component (gimbal/trigger) —
+                    // replaced by our dedicated Camera resolution page above. Matched by source
+                    // path so it is language-independent.
+                    visible:            modelData.setupSource.toString() !== "" &&
+                                        modelData.setupSource.toString().indexOf("CameraComponent") === -1
                     Layout.fillWidth:   true
                     onClicked:          showVehicleComponentPanel(componentUrl)
 

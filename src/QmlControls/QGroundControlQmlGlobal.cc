@@ -19,6 +19,7 @@
 #include "SettingsManager.h"
 #include "PositionManager.h"
 #include "QGCMapEngineManager.h"
+#include "NoFlyZoneManager.h"
 #include "ADSBVehicleManager.h"
 #include "MissionCommandTree.h"
 #include "HorizontalFactValueGrid.h"
@@ -110,6 +111,7 @@ void QGroundControlQmlGlobal::registerQmlTypes()
 QGroundControlQmlGlobal::QGroundControlQmlGlobal(QObject *parent)
     : QObject(parent)
     , _mapEngineManager(QGCMapEngineManager::instance())
+    , _noFlyZoneManager(NoFlyZoneManager::instance())
     , _adsbVehicleManager(ADSBVehicleManager::instance())
     , _qgcPositionManager(QGCPositionManager::instance())
     , _missionCommandTree(MissionCommandTree::instance())

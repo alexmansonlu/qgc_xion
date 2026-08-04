@@ -42,33 +42,37 @@ Rectangle {
         visible:        qgcPal.globalTheme === QGCPalette.Light
     }
 
-    RowLayout {
-        id:                     viewButtonRow
-        anchors.bottomMargin:   1
-        anchors.top:            parent.top
-        anchors.bottom:         parent.bottom
-        spacing:                ScreenTools.defaultFontPixelWidth / 2
+    // [ACULA GCS] Exit shown as the same rounded red button used by the other views
+    Rectangle {
+        id:                     exitButton
+        anchors.left:           parent.left
+        anchors.leftMargin:     ScreenTools.defaultFontPixelWidth
+        anchors.verticalCenter: parent.verticalCenter
+        height:                 ScreenTools.defaultFontPixelHeight * 1.8
+        width:                  exitLabel.implicitWidth + ScreenTools.defaultFontPixelWidth * 3
+        radius:                 height / 2
+        color:                  exitMouse.pressed ? Qt.darker("#CC2200", 1.2) : "#CC2200"
 
         QGCLabel {
-            font.pointSize: ScreenTools.largeFontPointSize
-            text:           "<"
+            id:                 exitLabel
+            anchors.centerIn:   parent
+            text:               qsTr("Exit")
+            color:              "#FFFFFF"
+            font.bold:          true
+            font.pointSize:     ScreenTools.defaultFontPointSize
         }
 
-        QGCLabel {
-            text:           qsTr("Exit Plan")
-            font.pointSize: ScreenTools.largeFontPointSize
+        QGCMouseArea {
+            id:             exitMouse
+            anchors.fill:   parent
+            onClicked:      mainWindow.showFlyView()
         }
-    }
-
-    QGCMouseArea {
-        anchors.fill:   viewButtonRow
-        onClicked:      mainWindow.showFlyView()
     }
 
     QGCFlickable {
         id:                     toolsFlickable
-        //anchors.leftMargin:     ScreenTools.defaultFontPixelWidth * ScreenTools.largeFontPointRatio * 1.5
-        anchors.left:           viewButtonRow.right
+        anchors.leftMargin:     ScreenTools.defaultFontPixelWidth
+        anchors.left:           exitButton.right
         anchors.bottomMargin:   1
         anchors.top:            parent.top
         anchors.bottom:         parent.bottom

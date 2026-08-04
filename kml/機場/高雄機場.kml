@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>高雄機場禁止施放有礙飛航安全物體範圍</name>
+	<LookAt>
+		<longitude>120.4159039186783</longitude>
+		<latitude>22.5423628107254</latitude>
+		<altitude>0</altitude>
+		<heading>0</heading>
+		<tilt>0</tilt>
+		<range>0.1</range>
+	</LookAt>
+	<Style id="sh_forbidden">
+		<IconStyle>
+			<color>ff0000ff</color>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/forbidden.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff0000ff</color>
+		</LabelStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="sh_forbidden0">
+		<IconStyle>
+			<color>ff00ffff</color>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/forbidden.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff00ffff</color>
+		</LabelStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="icon-1899-0288D1-normal2">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="icon-1899-0288D1-highlight2">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="icon-1899-0288D13">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#icon-1899-0288D1-normal2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#icon-1899-0288D1-highlight2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_forbidden">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_forbidden0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_forbidden0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_forbidden">
+		<IconStyle>
+			<color>ff0000ff</color>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/forbidden.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff0000ff</color>
+		</LabelStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<StyleMap id="msn_forbidden0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_forbidden</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_forbidden</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_forbidden0">
+		<IconStyle>
+			<color>ff00ffff</color>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/forbidden.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff00ffff</color>
+		</LabelStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Placemark>
+		<name>機場標高60公尺以上禁止施放有礙飛航安全物體範圍</name>
+		<Camera>
+			<longitude>120.4202180519637</longitude>
+			<latitude>22.52151408489404</latitude>
+			<altitude>85693.91036974445</altitude>
+			<heading>1.645013889591525</heading>
+			<tilt>3.509017128560487</tilt>
+			<roll>2.157250234579897</roll>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</Camera>
+		<styleUrl>#msn_forbidden</styleUrl>
+		<Point>
+			<gx:drawOrder>1</gx:drawOrder>
+			<coordinates>120.4597442067522,22.57361687642322,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>禁止施放有礙飛航安全物體範圍</name>
+		<LookAt>
+			<longitude>120.3862885561541</longitude>
+			<latitude>22.57391899488941</latitude>
+			<altitude>0</altitude>
+			<heading>-0.4965565832592612</heading>
+			<tilt>11.17279802013655</tilt>
+			<range>16373.18210265308</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<styleUrl>#msn_forbidden0</styleUrl>
+		<Point>
+			<gx:drawOrder>1</gx:drawOrder>
+			<coordinates>120.3482379999754,22.57672965721087,0</coordinates>
+		</Point>
+	</Placemark>
+	<Folder>
+		<name>高雄機場禁止施放有礙飛航安全物體範圍(點)</name>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   0    <br>   高雄機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D13</styleUrl>
+			<Point>
+				<coordinates>120.287821,22.578981,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   1    <br>   高雄機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D13</styleUrl>
+			<Point>
+				<coordinates>120.409756,22.575217,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   2    <br>   高雄機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D13</styleUrl>
+			<Point>
+				<coordinates>120.336417,22.577492,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   3    <br>   高雄機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D13</styleUrl>
+			<Point>
+				<coordinates>120.361161,22.576728,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   4    <br>   高雄機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D13</styleUrl>
+			<Point>
+				<coordinates>120.400031,22.549606,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   5    <br>   高雄機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D13</styleUrl>
+			<Point>
+				<coordinates>120.396401,22.55214000000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   6    <br>   高雄機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D13</styleUrl>
+			<Point>
+				<coordinates>120.299496,22.555132,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   7    <br>   高雄機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D13</styleUrl>
+			<Point>
+				<coordinates>120.295693,22.552828,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   8    <br>   高雄機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D13</styleUrl>
+			<Point>
+				<coordinates>120.401904,22.601376,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   9    <br>   高雄機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D13</styleUrl>
+			<Point>
+				<coordinates>120.398098,22.599074,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   10    <br>   高雄機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D13</styleUrl>
+			<Point>
+				<coordinates>120.30116,22.602066,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   11    <br>   高雄機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D13</styleUrl>
+			<Point>
+				<coordinates>120.297527,22.604597,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   12    <br>   高雄機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D13</styleUrl>
+			<Point>
+				<coordinates>120.504943,22.517996,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   13    <br>   高雄機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D13</styleUrl>
+			<Point>
+				<coordinates>120.508943,22.626303,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   14    <br>   高雄機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D13</styleUrl>
+			<Point>
+				<coordinates>120.188752,22.52776,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   15    <br>   高雄機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D13</styleUrl>
+			<Point>
+				<coordinates>120.192506,22.636069,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>Cameras</name>
+	</Folder>
+	<Folder>
+		<name>Paths</name>
+	</Folder>
+	<Folder>
+		<name>Model</name>
+		<Folder>
+			<name>聚合線 [1E7]</name>
+			<Placemark>
+				<name>聚合線 [1E7]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff00fefe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							120.1887523559315,22.5277599549606,0 120.1925056060677,22.6360691377387,0 
+						</coordinates>
+					</LineString>
+					<LineString>
+						<coordinates>
+							120.1925056060667,22.6360691377377,0 120.5089431915728,22.6263033509933,0 
+						</coordinates>
+					</LineString>
+					<LineString>
+						<coordinates>
+							120.5089431915718,22.6263033509923,0 120.5049425722298,22.5179958482787,0 
+						</coordinates>
+					</LineString>
+					<LineString>
+						<coordinates>
+							120.5049425722288,22.5179958482777,0 120.1887523559325,22.5277599549616,0 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>聚合線 [1DC]</name>
+			<Placemark>
+				<name>聚合線 [1DC]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							120.301159844273,22.6020658419462,0 120.3980975276,22.5990736633898,0 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>弧 [20C]</name>
+			<Placemark>
+				<name>弧 [20C]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							120.2975265714545,22.6045972950835,6.096 120.2939344762326,22.599460347905,6.096 120.2911243826011,22.5939192400513,6.096 120.289147916415,22.5880759629799,6.096 120.2880413445482,22.5820380565328,6.096 120.287824914857,22.5759166282337,6.096 120.2885024918708,22.5698243079249,6.096 120.2900614943063,22.5638731754542,6.096 120.2924731349236,22.558172699537,6.096 120.2956929576992,22.552827725638,6.096 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>聚合線 [20E]</name>
+			<Placemark>
+				<name>聚合線 [20E]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							120.297526571449,22.6045972950766,6.096 120.3364166673953,22.5774916842009,6.096 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>聚合線 [20D]</name>
+			<Placemark>
+				<name>聚合線 [20D]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							120.2956929576898,22.55282772562961,6.096 120.3364166673953,22.5774916842009,6.096 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>聚合線 [1D3]</name>
+			<Placemark>
+				<name>聚合線 [1D3]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							120.3364166673943,22.5774916841999,6.096 120.3611611105399,22.5767277956695,6.096 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>聚合線 [1DD]</name>
+			<Placemark>
+				<name>聚合線 [1DD]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							120.2994962437704,22.5551319530426,0 120.3964010820116,22.5521399975672,0 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>聚合線 [20A]</name>
+			<Placemark>
+				<name>聚合線 [20A]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							120.3611611105389,22.5767277956685,6.096 120.4019038305951,22.6013755228007,6.096 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>聚合線 [20B]</name>
+			<Placemark>
+				<name>聚合線 [20B]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							120.3611611105389,22.5767277956685,6.096 120.4000312079091,22.5496062182989,6.096 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>弧 [209]</name>
+			<Placemark>
+				<name>弧 [209]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							120.4000312079025,22.5496062182909,6.096 120.4036260578077,22.5547408865493,6.096 120.4064399508706,22.560280139648,6.096 120.4084210370118,22.5661220995373,6.096 120.4095327680481,22.5721593075179,6.096 120.4097545772852,22.5782806992817,6.096 120.4090822660975,22.5843736472555,6.096 120.4075280897848,22.5903260327554,6.096 120.4051205404969,22.5960283098382,6.096 120.4019038306027,22.6013755228093,6.096 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+	</Folder>
+</Document>
+</kml>

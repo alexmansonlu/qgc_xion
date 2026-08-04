@@ -398,6 +398,7 @@ void Joystick::setTXMode(int mode)
         _remapAxes(_transmitterMode, mode, _rgFunctionAxis);
         _transmitterMode = mode;
         _saveSettings();
+        emit txModeChanged(mode);   // [ACULA] notify the 飛手模式 UI
     } else {
         qCWarning(JoystickLog) << "Invalid mode:" << mode;
     }

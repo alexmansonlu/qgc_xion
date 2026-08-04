@@ -27,6 +27,7 @@ qt_add_qml_module(VehicleSetupModule
     VERSION 1.0
     RESOURCE_PREFIX /qml
     QML_FILES
+        CameraResolutionConfig.qml
         FirmwareUpgrade.qml
         JoystickConfig.qml
         JoystickConfigAdvanced.qml

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>RCR9.kml</name>
+	<Style id="icon-1899-0288D1-normal300">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="line-FFFF00-1-highlight3">
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="icon-1899-0288D1-highlight300">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="icon-1899-0288D1300">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#icon-1899-0288D1-normal300</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#icon-1899-0288D1-highlight300</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="line-FFFF00-13">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#line-FFFF00-1-normal3</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#line-FFFF00-1-highlight3</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="line-FFFF00-1-normal3">
+		<LineStyle>
+			<color>ff00ffff</color>
+		</LineStyle>
+	</Style>
+	<Folder>
+		<name>RCR9</name>
+		<visibility>0</visibility>
+		<Folder>
+			<name>RCR9-點</name>
+			<visibility>0</visibility>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   0    <br>   RCR9-點_ID   0]]></description>
+				<styleUrl>#icon-1899-0288D1300</styleUrl>
+				<Point>
+					<coordinates>120.383333,24.866667,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   1    <br>   RCR9-點_ID   0]]></description>
+				<styleUrl>#icon-1899-0288D1300</styleUrl>
+				<Point>
+					<coordinates>119.916667,24.866667,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   2    <br>   RCR9-點_ID   0]]></description>
+				<styleUrl>#icon-1899-0288D1300</styleUrl>
+				<Point>
+					<coordinates>121.333333,25.8,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   3    <br>   RCR9-點_ID   0]]></description>
+				<styleUrl>#icon-1899-0288D1300</styleUrl>
+				<Point>
+					<coordinates>120.8,25.8,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Placemark>
+			<name>0</name>
+			<visibility>0</visibility>
+			<description><![CDATA[0    <br>       <br>   FID   0    <br>   RCR9_ID   0]]></description>
+			<styleUrl>#line-FFFF00-13</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					120.8,25.8,0 121.333333,25.8,0 120.383333,24.866667,0 119.916667,24.866667,0 120.8,25.8,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

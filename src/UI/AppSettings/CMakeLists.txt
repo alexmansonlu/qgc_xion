@@ -11,11 +11,13 @@ qt_add_qml_module(AppSettingsModule
         FlyViewSettings.qml
         GeneralSettings.qml
         HelpSettings.qml
+        JoystickSettings.qml
         LinkSettings.qml
         LogReplaySettings.qml
         MapSettings.qml
         MockLink.qml
         MockLinkSettings.qml
+        NoFlyZoneSettings.qml
         PlanViewSettings.qml
         PX4LogTransferSettings.qml
         RemoteIDSettings.qml

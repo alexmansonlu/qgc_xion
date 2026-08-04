@@ -26,6 +26,7 @@
 #endif
 
 #ifdef Q_OS_ANDROID
+    #include <QtCore/QJniObject>
     #include "AndroidInterface.h"
 #endif
 
@@ -180,6 +181,24 @@ int main(int argc, char *argv[])
     }
 #endif // Q_OS_WIN
 #endif // QT_DEBUG
+
+#ifdef Q_OS_ANDROID
+    // Graphics backend on Android depends on where we run.
+    // - ARM64 AVDs on Apple Silicon: Qt's default OpenGL ES hits a gfxstream
+    //   color-buffer bug; Vulkan (via MoltenVK host path) is the stable choice.
+    // - Real RB3 Gen 2 hardware (QCS6490, Android 15 system over Android 11
+    //   vendor): the vendor gralloc predates the AHardwareBuffer formats the
+    //   Vulkan swapchain requests (0x38/0x3b) — every allocation fails and the
+    //   app dies seconds after launch. OpenGL ES is the path Adreno actually
+    //   supports there.
+    const QString fingerprint = QJniObject::getStaticObjectField<jstring>(
+        "android/os/Build", "FINGERPRINT").toString();
+    const bool runningInEmulator = fingerprint.contains(QStringLiteral("generic"))
+        || fingerprint.contains(QStringLiteral("emulator"))
+        || fingerprint.contains(QStringLiteral("sdk_gphone"));
+    QQuickWindow::setGraphicsApi(runningInEmulator ? QSGRendererInterface::Vulkan
+                                                   : QSGRendererInterface::OpenGL);
+#endif
 
     QGCApplication app(argc, argv, runUnitTests, simpleBootTest);
 

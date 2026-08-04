@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>南竿機場禁止施放有礙飛航安全物體範圍.kml</name>
+	<Style id="line-FF5500-1-highlight">
+		<LineStyle>
+			<color>ff0055ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_forbidden">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_forbidden</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_forbidden0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="line-FFFF00-1-highlight">
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="line-FF5500-1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#line-FF5500-1-normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#line-FF5500-1-highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_forbidden">
+		<IconStyle>
+			<color>ff0000ff</color>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/forbidden.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff0000ff</color>
+		</LabelStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="sh_forbidden">
+		<IconStyle>
+			<color>ff00ffff</color>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/forbidden.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff00ffff</color>
+		</LabelStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="line-FFFF00-1-normal">
+		<LineStyle>
+			<color>ff00ffff</color>
+		</LineStyle>
+	</Style>
+	<Style id="line-FF5500-1-normal">
+		<LineStyle>
+			<color>ff0055ff</color>
+		</LineStyle>
+	</Style>
+	<Style id="icon-1899-0288D1-normal0">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<StyleMap id="msn_forbidden0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_forbidden0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_forbidden</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="icon-1899-0288D1-highlight0">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="line-FF0000-1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#line-FF0000-1-normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#line-FF0000-1-highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="line-FFFF00-1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#line-FFFF00-1-normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#line-FFFF00-1-highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="line-FF0000-1-highlight">
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="line-FF0000-1-normal">
+		<LineStyle>
+			<color>ff0000ff</color>
+		</LineStyle>
+	</Style>
+	<Style id="sn_forbidden0">
+		<IconStyle>
+			<color>ff00ffff</color>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/forbidden.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff00ffff</color>
+		</LabelStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="sh_forbidden0">
+		<IconStyle>
+			<color>ff0000ff</color>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/forbidden.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff0000ff</color>
+		</LabelStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<StyleMap id="icon-1899-0288D10">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#icon-1899-0288D1-normal0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#icon-1899-0288D1-highlight0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder>
+		<name>南竿機場禁止施放有礙飛航安全物體範圍</name>
+		<Placemark>
+			<name>機場標高60公尺以上禁止施放有礙飛航安全物體範圍</name>
+			<Camera>
+				<longitude>119.9812695006313</longitude>
+				<latitude>26.08404579651829</latitude>
+				<altitude>31003.92662122392</altitude>
+				<heading>3.684726736012093</heading>
+				<tilt>1.148183152579338</tilt>
+				<roll>4.363619635527995</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_forbidden0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>119.9075113176642,26.06647236256017,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>禁止施放有礙飛航安全物體範圍</name>
+			<LookAt>
+				<longitude>119.9795159558369</longitude>
+				<latitude>26.17412029933732</latitude>
+				<altitude>0</altitude>
+				<heading>-0.7087697485404392</heading>
+				<tilt>0</tilt>
+				<range>21459.57543567413</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_forbidden</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>119.9586830626898,26.16006996061068,0</coordinates>
+			</Point>
+		</Placemark>
+		<Folder>
+			<name>南竿機場禁止施放有礙飛航安全物體範圍(點)</name>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   0    <br>   俏竿機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>119.974592,26.311536,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   1    <br>   俏竿機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>120.082295,26.263531,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   2    <br>   俏竿機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>119.834852,26.05591,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   3    <br>   俏竿機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>119.942384,26.008013,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   4    <br>   俏竿機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>119.954374,26.210773,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   5    <br>   俏竿機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>119.955082,26.206606,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   6    <br>   俏竿機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>120.005825,26.187845,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   7    <br>   俏竿機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>120.001727,26.185821,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   8    <br>   俏竿機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>119.961959,26.166165,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   9    <br>   俏竿機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>119.95497,26.15339,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   10    <br>   俏竿機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>119.911126,26.131694,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   11    <br>   俏竿機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>119.91522,26.133721,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   12    <br>   俏竿機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>119.961844,26.112949,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   13    <br>   俏竿機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>119.962552,26.108782,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   14    <br>   俏竿機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>119.932841,26.112921,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<description><![CDATA[0    <br>       <br>   FID   15    <br>   俏竿機訛ID   0]]></description>
+				<styleUrl>#icon-1899-0288D10</styleUrl>
+				<Point>
+					<coordinates>119.984109,26.206629,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   0    <br>   俏竿機訛ID   0]]></description>
+			<styleUrl>#line-FF5500-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					119.962552,26.108782,0 119.958217,26.108355,0 119.953857,26.108271,0 119.949506,26.10853,0 119.945196,26.109131,0 119.940961,26.110068,0 119.936832,26.111334,0 119.932841,26.112921,0 119.929018,26.114816,0 119.925392,26.117004,0 119.921991,26.119469,0 119.918842,26.122192,0 119.915966,26.125152,0 119.913388,26.128327,0 119.911126,26.131694,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   1    <br>   俏竿機訛ID   0]]></description>
+			<styleUrl>#line-FF0000-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					119.95497,26.15339,0 119.962552,26.108782,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   2    <br>   俏竿機訛ID   0]]></description>
+			<styleUrl>#line-FF0000-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					119.95497,26.15339,0 119.911126,26.131694,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   3    <br>   俏竿機訛ID   0]]></description>
+			<styleUrl>#line-FF0000-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					120.005825,26.187845,0 119.961959,26.166165,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   4    <br>   俏竿機訛ID   0]]></description>
+			<styleUrl>#line-FF0000-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					119.954374,26.210773,0 119.958712,26.2112,0 119.963076,26.211284,0 119.967431,26.211024,0 119.971744,26.210423,0 119.975983,26.209485,0 119.980115,26.208217,0 119.984109,26.206629,0 119.987934,26.204733,0 119.991561,26.202543,0 119.994962,26.200077,0 119.998112,26.197352,0 120.000987,26.19439,0 120.003565,26.191213,0 120.005825,26.187845,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   5    <br>   俏竿機訛ID   0]]></description>
+			<styleUrl>#line-FF0000-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					119.954374,26.210773,0 119.961959,26.166165,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   6    <br>   俏竿機訛ID   0]]></description>
+			<styleUrl>#line-FF0000-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					120.001727,26.185821,0 119.961844,26.112949,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   7    <br>   俏竿機訛ID   0]]></description>
+			<styleUrl>#line-FF0000-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					119.955082,26.206606,0 119.91522,26.133721,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   8    <br>   俏竿機訛ID   0]]></description>
+			<styleUrl>#line-FFFF00-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					119.942384,26.008013,0 120.082295,26.263531,0 119.974592,26.311536,0 119.834852,26.05591,0 119.942384,26.008013,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   9    <br>   俏竿機訛ID   0]]></description>
+			<styleUrl>#line-FF0000-1</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					119.961959,26.166165,0 119.95497,26.15339,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

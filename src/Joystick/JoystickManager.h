@@ -29,6 +29,9 @@ class JoystickManager : public QObject
     Q_PROPERTY(QStringList joystickNames READ joystickNames NOTIFY availableJoysticksChanged)
     Q_PROPERTY(Joystick *activeJoystick READ activeJoystick WRITE setActiveJoystick NOTIFY activeJoystickChanged)
     Q_PROPERTY(QString activeJoystickName READ activeJoystickName WRITE setActiveJoystickName NOTIFY activeJoystickNameChanged)
+    // [ACULA] Global "enable joystick by default" preference. A vehicle with no per-vehicle
+    // JoystickEnabled value falls back to this, so the operator can set it with no aircraft connected.
+    Q_PROPERTY(bool defaultJoystickEnabled READ defaultJoystickEnabled WRITE setDefaultJoystickEnabled NOTIFY defaultJoystickEnabledChanged)
 
 public:
     explicit JoystickManager(QObject *parent = nullptr);
@@ -46,11 +49,15 @@ public:
     QString activeJoystickName() const;
     bool setActiveJoystickName(const QString &name);
 
+    bool defaultJoystickEnabled() const;            // [ACULA]
+    void setDefaultJoystickEnabled(bool enabled);   // [ACULA]
+
 signals:
     void activeJoystickChanged(Joystick *joystick);
     void activeJoystickNameChanged(const QString &name);
     void availableJoysticksChanged();
     void updateAvailableJoysticksSignal();
+    void defaultJoystickEnabledChanged(bool enabled);   // [ACULA]
 
 public slots:
     void init();
@@ -72,4 +79,5 @@ private:
     static constexpr int kTimeout = 1000;
     static constexpr const char *_settingsGroup = "JoystickManager";
     static constexpr const char *_settingsKeyActiveJoystick = "ActiveJoystick";
+    static constexpr const char *_settingsKeyDefaultEnabled = "DefaultJoystickEnabled";   // [ACULA]
 };

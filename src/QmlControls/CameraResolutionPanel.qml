@@ -18,7 +18,7 @@ Rectangle {
     height: _col.implicitHeight + _margin * 2
 
     property real   _margin:        ScreenTools.defaultFontPixelWidth
-    property real   _panelWidth:    ScreenTools.defaultFontPixelWidth * 28
+    property real   _panelWidth:    ScreenTools.defaultFontPixelWidth * 50
     property real   _rowHeight:     ScreenTools.defaultFontPixelHeight * 2.8
     property var    _activeVehicle: QGroundControl.multiVehicleManager.activeVehicle
 
@@ -174,29 +174,39 @@ Rectangle {
         property bool   selected: false
         signal          clicked()
 
-        height:     _rowHeight
-        radius:     height * 0.2
+        // Size to content so longer text (e.g. "3840 × 2160 / 30fps") never overflows.
+        implicitHeight: Math.max(_rowHeight, contentCol.implicitHeight + _margin)
+        radius:     ScreenTools.defaultFontPixelHeight * 0.4
         color:      selected ? qgcPal.primaryButton : qgcPal.button
         border.color: selected ? qgcPal.primaryButton : "transparent"
         border.width: 2
+        clip:       true
 
         ColumnLayout {
-            anchors.centerIn: parent
-            spacing:          2
+            id:                     contentCol
+            anchors.left:           parent.left
+            anchors.right:          parent.right
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.leftMargin:     _margin * 0.4
+            anchors.rightMargin:    _margin * 0.4
+            spacing:                2
 
             QGCLabel {
-                Layout.alignment:   Qt.AlignHCenter
-                text:               label
-                color:              selected ? qgcPal.primaryButtonText : qgcPal.buttonText
-                font.bold:          selected
-                font.pixelSize:     ScreenTools.defaultFontPixelSize
+                Layout.fillWidth:    true
+                horizontalAlignment: Text.AlignHCenter
+                text:                label
+                color:               selected ? qgcPal.primaryButtonText : qgcPal.buttonText
+                font.bold:           selected
+                font.pixelSize:      ScreenTools.defaultFontPixelSize
             }
             QGCLabel {
-                Layout.alignment:   Qt.AlignHCenter
-                text:               sublabel
-                color:              selected ? qgcPal.primaryButtonText : qgcPal.buttonText
-                opacity:            0.7
-                font.pixelSize:     ScreenTools.smallFontPixelSize
+                Layout.fillWidth:    true
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode:            Text.WordWrap
+                text:                sublabel
+                color:               selected ? qgcPal.primaryButtonText : qgcPal.buttonText
+                opacity:             0.7
+                font.pixelSize:      ScreenTools.smallFontPixelSize
             }
         }
 

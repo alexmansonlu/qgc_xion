@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>RCR48.kml</name>
+	<StyleMap id="line-FFFF00-10">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#line-FFFF00-1-normal0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#line-FFFF00-1-highlight0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="icon-1899-0288D140">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#icon-1899-0288D1-normal4</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#icon-1899-0288D1-highlight4</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="icon-1899-0288D1-highlight4">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="icon-1899-0288D1-normal4">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="line-FFFF00-1-normal0">
+		<LineStyle>
+			<color>ff00ffff</color>
+		</LineStyle>
+	</Style>
+	<Style id="line-FFFF00-1-highlight0">
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Folder>
+		<name>RCR48</name>
+		<visibility>0</visibility>
+		<Folder>
+			<name>RCR48-點</name>
+			<visibility>0</visibility>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   0    <br>   RCR48_ID   0]]></description>
+				<styleUrl>#icon-1899-0288D140</styleUrl>
+				<Point>
+					<coordinates>121.509444,25.030556,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   1    <br>   RCR48_ID   0]]></description>
+				<styleUrl>#icon-1899-0288D140</styleUrl>
+				<Point>
+					<coordinates>121.523889,25.035278,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   2    <br>   RCR48_ID   0]]></description>
+				<styleUrl>#icon-1899-0288D140</styleUrl>
+				<Point>
+					<coordinates>121.518889,25.048611,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   3    <br>   RCR48_ID   0]]></description>
+				<styleUrl>#icon-1899-0288D140</styleUrl>
+				<Point>
+					<coordinates>121.5025,25.043056,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Placemark>
+			<name>0</name>
+			<visibility>0</visibility>
+			<description><![CDATA[0    <br>       <br>   FID   0    <br>   RCR48_ID   0]]></description>
+			<styleUrl>#line-FFFF00-10</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					121.518889,25.048611,0 121.523889,25.035278,0 121.509444,25.030556,0 121.5025,25.043056,0 121.518889,25.048611,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

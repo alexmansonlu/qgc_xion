@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>花蓮機場禁止施放有礙飛航安全物體範圍</name>
+	<LookAt>
+		<longitude>121.769813768038</longitude>
+		<latitude>23.9525824884682</latitude>
+		<altitude>0</altitude>
+		<heading>0</heading>
+		<tilt>0</tilt>
+		<range>0.1</range>
+	</LookAt>
+	<Style id="sh_forbidden">
+		<IconStyle>
+			<color>ff0000ff</color>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/forbidden.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff0000ff</color>
+		</LabelStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="sh_forbidden0">
+		<IconStyle>
+			<color>ff00ffff</color>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/forbidden.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff00ffff</color>
+		</LabelStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Style id="icon-1899-0288D1-normal01">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="icon-1899-0288D1-highlight01">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="msn_forbidden">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_forbidden0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_forbidden0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_forbidden">
+		<IconStyle>
+			<color>ff0000ff</color>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/forbidden.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff0000ff</color>
+		</LabelStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<StyleMap id="icon-1899-0288D101">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#icon-1899-0288D1-normal01</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#icon-1899-0288D1-highlight01</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_forbidden0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_forbidden</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_forbidden</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_forbidden0">
+		<IconStyle>
+			<color>ff00ffff</color>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/forbidden.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff00ffff</color>
+		</LabelStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Placemark>
+		<name>機場標高60公尺以上禁止施放有礙飛航安全物體範圍</name>
+		<Camera>
+			<longitude>121.6419510253883</longitude>
+			<latitude>23.97848927437273</latitude>
+			<altitude>80759.8114355756</altitude>
+			<heading>5.11682272538203</heading>
+			<tilt>1.455007145205601</tilt>
+			<roll>5.120433711406161</roll>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</Camera>
+		<styleUrl>#msn_forbidden</styleUrl>
+		<Point>
+			<gx:drawOrder>1</gx:drawOrder>
+			<coordinates>121.5704655990571,23.92903814794905,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>禁止施放有礙飛航安全物體範圍</name>
+		<LookAt>
+			<longitude>121.5989587528801</longitude>
+			<latitude>24.02439390968201</latitude>
+			<altitude>0</altitude>
+			<heading>-0.2470318187222187</heading>
+			<tilt>0.1244199147899402</tilt>
+			<range>35654.46000052937</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<styleUrl>#msn_forbidden0</styleUrl>
+		<Point>
+			<gx:drawOrder>1</gx:drawOrder>
+			<coordinates>121.6169188513924,24.0236258911869,0</coordinates>
+		</Point>
+	</Placemark>
+	<Folder>
+		<name>花蓮機場禁止施放有礙飛航安全物體範圍(點)</name>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   0    <br>   花蓮機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D101</styleUrl>
+			<Point>
+				<coordinates>121.64472,24.075302,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   1    <br>   花蓮機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D101</styleUrl>
+			<Point>
+				<coordinates>121.589165,23.972101,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   2    <br>   花蓮機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D101</styleUrl>
+			<Point>
+				<coordinates>121.618365,23.96794600000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   3    <br>   花蓮機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D101</styleUrl>
+			<Point>
+				<coordinates>121.617672,23.972114,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   4    <br>   花蓮機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D101</styleUrl>
+			<Point>
+				<coordinates>121.571861,23.992918,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   5    <br>   花蓮機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D101</styleUrl>
+			<Point>
+				<coordinates>121.567835,23.990892,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   6    <br>   花蓮機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D101</styleUrl>
+			<Point>
+				<coordinates>121.61094,24.012573,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   7    <br>   花蓮機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D101</styleUrl>
+			<Point>
+				<coordinates>121.622924,24.034836,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   8    <br>   花蓮機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D101</styleUrl>
+			<Point>
+				<coordinates>121.662023,24.054478,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   9    <br>   花蓮機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D101</styleUrl>
+			<Point>
+				<coordinates>121.666052,24.056501,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   10    <br>   花蓮機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D101</styleUrl>
+			<Point>
+				<coordinates>121.616191,24.075295,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   11    <br>   花蓮機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D101</styleUrl>
+			<Point>
+				<coordinates>121.615497,24.079463,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   12    <br>   花蓮機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D101</styleUrl>
+			<Point>
+				<coordinates>121.59848,23.867152,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   13    <br>   花蓮機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D101</styleUrl>
+			<Point>
+				<coordinates>121.492817,23.915125,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   14    <br>   花蓮機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D101</styleUrl>
+			<Point>
+				<coordinates>121.741254,24.132178,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>0</name>
+			<description><![CDATA[0    <br>       <br>   FID   15    <br>   花蓮機訛ID   0]]></description>
+			<styleUrl>#icon-1899-0288D101</styleUrl>
+			<Point>
+				<coordinates>121.635432,24.180251,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+	<Folder>
+		<name>Cameras</name>
+	</Folder>
+	<Folder>
+		<name>Paths</name>
+	</Folder>
+	<Folder>
+		<name>Model</name>
+		<Folder>
+			<name>聚合線 [CA]</name>
+			<Placemark>
+				<name>聚合線 [CA]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff00fefe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							121.7412536125975,24.1321776393722,0 121.5984799942318,23.8671515423381,0 
+						</coordinates>
+					</LineString>
+					<LineString>
+						<coordinates>
+							121.5984799942308,23.8671515423371,0 121.4928173896855,23.9151249806035,0 
+						</coordinates>
+					</LineString>
+					<LineString>
+						<coordinates>
+							121.4928173896845,23.9151249806025,0 121.6354319270992,24.1802512514001,0 
+						</coordinates>
+					</LineString>
+					<LineString>
+						<coordinates>
+							121.6354319270982,24.1802512513991,0 121.7412536125985,24.1321776393732,0 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>聚合線 [12F]</name>
+			<Placemark>
+				<name>聚合線 [12F]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							121.5718607280925,23.9929175067629,0 121.6161909706643,24.0752946226697,0 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>聚合線 [1B6]</name>
+			<Placemark>
+				<name>聚合線 [1B6]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							121.622924051039,24.0348358985824,0 121.6154970275862,24.0794631260537,0 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>弧 [1B8]</name>
+			<Placemark>
+				<name>弧 [1B8]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							121.6660523574678,24.0565009305582,0 121.6624634148708,24.0616621391999,0 121.6581465322234,24.0663297651474,0 121.6531811129186,24.0704178713212,0 121.6476585274985,24.0738511821444,0 121.6416804317383,24.0765664727988,0 121.6353568929987,24.0785137365373,0 121.628804359558,24.0796571082753,0 121.622143510691,24.0799755272086,0 121.6154970275957,24.0794631260619,0 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>聚合線 [1B7]</name>
+			<Placemark>
+				<name>聚合線 [1B7]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							121.622924051039,24.0348358985824,0 121.6660523574693,24.0565009305582,0 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>聚合線 [130]</name>
+			<Placemark>
+				<name>聚合線 [130]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							121.617671575668,23.9721141536639,0 121.662023239319,24.0544777807138,0 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>聚合線 [9D]</name>
+			<Placemark>
+				<name>聚合線 [9D]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							121.6109396385394,24.0125729430757,0 121.62292405104,24.0348358985834,0 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>聚合線 [1B5]</name>
+			<Placemark>
+				<name>聚合線 [1B5]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							121.5678350306242,23.9908917937748,0 121.6109396385404,24.0125729430767,0 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>聚合線 [1B4]</name>
+			<Placemark>
+				<name>聚合線 [1B4]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							121.6183649559149,23.9679455955554,0 121.6109396385404,24.0125729430767,0 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>弧 [1B3]</name>
+			<Placemark>
+				<name>弧 [1B3]:0</name>
+				<Style>
+					<LineStyle>
+						<color>ff0000fe</color>
+						<width>1</width>
+					</LineStyle>
+				</Style>
+				<MultiGeometry>
+					<LineString>
+						<coordinates>
+							121.5678350306248,23.9908917937738,0 121.5714259072231,23.9857327181203,0 121.5757433580771,23.9810674781072,0 121.580707922623,23.9769818541592,0 121.5862282682573,23.9735509612009,0 121.5922028699283,23.9708378707798,0 121.5985218748203,23.9688924545433,0 121.6050691180675,23.9677504700644,0 121.6117242528085,23.9674329055883,0 121.6183649559224,23.9679455955642,0 
+						</coordinates>
+					</LineString>
+				</MultiGeometry>
+			</Placemark>
+		</Folder>
+	</Folder>
+</Document>
+</kml>

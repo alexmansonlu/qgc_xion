@@ -22,7 +22,6 @@ ColumnLayout {
 
     property var  _activeVehicle:    QGroundControl.multiVehicleManager.activeVehicle
     property var  _guidedController: globals.guidedControllerFlyView
-    property bool _cameraExpanded:   false
 
     spacing: ScreenTools.defaultFontPixelHeight * 0.3
 
@@ -60,54 +59,8 @@ ColumnLayout {
         }
     }
 
-    // ── [ACULA GCS] Feature C — Camera Resolution ────────────────────
-    Rectangle {
-        Layout.fillWidth:   true
-        height:             ScreenTools.defaultFontPixelHeight * 2.5
-        radius:             height * 0.2
-        color:              _cameraExpanded ? qgcPal.primaryButton : qgcPal.button
-
-        RowLayout {
-            anchors.fill:           parent
-            anchors.leftMargin:     ScreenTools.defaultFontPixelWidth
-            anchors.rightMargin:    ScreenTools.defaultFontPixelWidth
-
-            QGCColoredImage {
-                width:              ScreenTools.defaultFontPixelHeight * 1.2
-                height:             width
-                source:             "/res/AculaIconDrone.png"
-                color:              _cameraExpanded ? qgcPal.primaryButtonText : qgcPal.buttonText
-                fillMode:           Image.PreserveAspectFit
-            }
-
-            QGCLabel {
-                Layout.fillWidth:   true
-                text:               qsTr("Camera Resolution")
-                color:              _cameraExpanded ? qgcPal.primaryButtonText : qgcPal.buttonText
-                font.pixelSize:     ScreenTools.defaultFontPixelSize
-            }
-
-            QGCLabel {
-                text:   _cameraExpanded ? "▲" : "▼"
-                color:  _cameraExpanded ? qgcPal.primaryButtonText : qgcPal.buttonText
-                font.pixelSize: ScreenTools.smallFontPixelSize
-            }
-        }
-
-        MouseArea {
-            anchors.fill:   parent
-            cursorShape:    Qt.PointingHandCursor
-            onClicked:      _cameraExpanded = !_cameraExpanded
-        }
-    }
-
-    Loader {
-        Layout.fillWidth:   true
-        active:             _cameraExpanded
-        sourceComponent:    Component {
-            CameraResolutionPanel {}
-        }
-    }
+    // [ACULA GCS] Feature C — Camera Resolution moved to Vehicle Setup → Camera
+    // (CameraResolutionConfig.qml). No longer shown as a fly-view overlay.
 
     // ── User-defined MAVLink Actions ─────────────────────────────────
     Repeater {

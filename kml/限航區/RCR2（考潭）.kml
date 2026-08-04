@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>RCR2(考潭).kml</name>
+	<Style id="line-FFFF00-1-normal4">
+		<LineStyle>
+			<color>ff00ffff</color>
+		</LineStyle>
+	</Style>
+	<Style id="icon-1899-0288D1-normal40">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<StyleMap id="icon-1899-0288D1400">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#icon-1899-0288D1-normal40</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#icon-1899-0288D1-highlight40</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="line-FFFF00-1-highlight4">
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="icon-1899-0288D1-highlight40">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="line-FFFF00-14">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#line-FFFF00-1-normal4</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#line-FFFF00-1-highlight4</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder>
+		<name>RCR2(考潭)</name>
+		<visibility>0</visibility>
+		<Folder>
+			<name>RCR2(考潭)-點</name>
+			<visibility>0</visibility>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   0    <br>   RCR2(考_ID   0]]></description>
+				<styleUrl>#icon-1899-0288D1400</styleUrl>
+				<Point>
+					<coordinates>120.378056,22.697222,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   1    <br>   RCR2(考_ID   0]]></description>
+				<styleUrl>#icon-1899-0288D1400</styleUrl>
+				<Point>
+					<coordinates>120.3775,22.7,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   2    <br>   RCR2(考_ID   0]]></description>
+				<styleUrl>#icon-1899-0288D1400</styleUrl>
+				<Point>
+					<coordinates>120.363611,22.691667,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   3    <br>   RCR2(考_ID   0]]></description>
+				<styleUrl>#icon-1899-0288D1400</styleUrl>
+				<Point>
+					<coordinates>120.363333,22.694444,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Placemark>
+			<name>0</name>
+			<visibility>0</visibility>
+			<description><![CDATA[0    <br>       <br>   FID   0    <br>   RCR2 (囝ID   0]]></description>
+			<styleUrl>#line-FFFF00-14</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					120.363333,22.694444,0 120.363611,22.691667,0 120.378056,22.697222,0 120.3775,22.7,0 120.363333,22.694444,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

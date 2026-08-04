@@ -30,11 +30,24 @@ ListModel {
         pageVisible: function() { return true }
     }
 
+    // [ACULA] Joystick / controller setup — connection, enable, 飛手模式 (US/Japan), calibration
+    ListElement {
+        name: qsTr("Joystick")
+        url: "qrc:/qml/QGroundControl/AppSettings/JoystickSettings.qml"
+        iconUrl: "qrc:/res/AculaIconJoystick.png"
+        pageVisible: function() { return true }
+    }
+
     // [ACULA] Plan View hidden — Plan view removed from navigation
     // ListElement { name: qsTr("Plan View") ... }
 
-    // [ACULA] Video hidden — GStreamer disabled in this build (re-enable Phase 3)
-    // ListElement { name: qsTr("Video") ... }
+    // [ACULA] Video — RTSP / video stream configuration (GStreamer enabled in this build)
+    ListElement {
+        name: qsTr("Video")
+        url: "qrc:/qml/QGroundControl/AppSettings/VideoSettings.qml"
+        iconUrl: "qrc:/InstrumentValueIcons/video-camera.svg"
+        pageVisible: function() { return true }
+    }
 
     ListElement {
         name: qsTr("Telemetry")
@@ -57,6 +70,14 @@ ListModel {
         name: qsTr("Maps")
         url: "qrc:/qml/QGroundControl/AppSettings/MapSettings.qml"
         iconUrl: "qrc:/InstrumentValueIcons/globe.svg"
+        pageVisible: function() { return true }
+    }
+
+    // [ACULA] No-fly zones (禁航區) — overlay toggle, remove / upload KML files
+    ListElement {
+        name: qsTr("禁航區")
+        url: "qrc:/qml/QGroundControl/AppSettings/NoFlyZoneSettings.qml"
+        iconUrl: "qrc:/InstrumentValueIcons/block.svg"
         pageVisible: function() { return true }
     }
 

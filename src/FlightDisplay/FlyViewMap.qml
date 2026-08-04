@@ -340,6 +340,11 @@ FlightMap {
         homePosition:           _activeVehicle && _activeVehicle.homePosition.isValid ? _activeVehicle.homePosition :  QtPositioning.coordinate()
     }
 
+    // [ACULA] No-fly zone (禁航區) KML overlay — managed in Settings → 禁航區
+    NoFlyZoneMapVisuals {
+        map: _root
+    }
+
     // Rally points on map
     MapItemView {
         model: _rallyPointController.points

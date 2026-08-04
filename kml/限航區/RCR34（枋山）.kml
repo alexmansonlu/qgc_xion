@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>RCR34(枋山).kml</name>
+	<StyleMap id="icon-1899-0288D112">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#icon-1899-0288D1-normal12</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#icon-1899-0288D1-highlight12</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="line-FFFF00-1-normal1">
+		<LineStyle>
+			<color>ff00ffff</color>
+		</LineStyle>
+	</Style>
+	<Style id="icon-1899-0288D1-normal12">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<StyleMap id="line-FFFF00-11">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#line-FFFF00-1-normal1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#line-FFFF00-1-highlight1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="line-FFFF00-1-highlight1">
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="icon-1899-0288D1-highlight12">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Folder>
+		<name>RCR34(枋山)</name>
+		<visibility>0</visibility>
+		<Folder>
+			<name>RCR34(枋山)-點</name>
+			<visibility>0</visibility>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   0    <br>   RCR34(泣ID   0]]></description>
+				<styleUrl>#icon-1899-0288D112</styleUrl>
+				<Point>
+					<coordinates>120.683246,22.159696,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   1    <br>   RCR34(泣ID   0]]></description>
+				<styleUrl>#icon-1899-0288D112</styleUrl>
+				<Point>
+					<coordinates>120.63,22.319444,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   2    <br>   RCR34(泣ID   0]]></description>
+				<styleUrl>#icon-1899-0288D112</styleUrl>
+				<Point>
+					<coordinates>120.457466,22.366506,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Placemark>
+			<name>0</name>
+			<visibility>0</visibility>
+			<description><![CDATA[0    <br>       <br>   FID   0    <br>   RCR34(泣ID   0]]></description>
+			<styleUrl>#line-FFFF00-11</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					120.457466,22.366506,0 120.455814,22.360892,0 120.454372,22.355228,0 120.453144,22.349521,0 120.45213,22.343778,0 120.451331,22.338005,0 120.450749,22.33221,0 120.450383,22.3264,0 120.450236,22.320581,0 120.450306,22.314761,0 120.450593,22.308947,0 120.451098,22.303145,0 120.45182,22.297364,0 120.452757,22.291609,0 120.453908,22.285888,0 120.455273,22.280208,0 120.456849,22.274575,0 120.458635,22.268997,0 120.460627,22.26348,0 120.462825,22.258031,0 120.465225,22.252656,0 120.467824,22.247363,0 120.470619,22.242156,0 120.473607,22.237043,0 120.476784,22.23203,0 120.480146,22.227123,0 120.483689,22.222328,0 120.487409,22.21765,0 120.491302,22.213096,0 120.495362,22.20867,0 120.499584,22.204379,0 120.503964,22.200226,0 120.508497,22.196218,0 120.513176,22.192359,0 120.517996,22.188654,0 120.522951,22.185107,0 120.528036,22.181723,0 120.533244,22.178506,0 120.538569,22.175458,0 120.544004,22.172586,0 120.549543,22.16989,0 120.555179,22.167376,0 120.560905,22.165046,0 120.566715,22.162902,0 120.572601,22.160948,0 120.578556,22.159186,0 120.584574,22.157617,0 120.590646,22.156245,0 120.596766,22.155069,0 120.602926,22.154093,0 120.609118,22.153316,0 120.615336,22.15274,0 120.621571,22.152367,0 120.627817,22.152195,0 120.634065,22.152225,0 120.640309,22.152458,0 120.64654,22.152892,0 120.652751,22.153529,0 120.658934,22.154365,0 120.665083,22.155402,0 120.671189,22.156637,0 120.677246,22.158069,0 120.683246,22.159696,0 120.63,22.319444,0 120.457466,22.366506,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

@@ -11,6 +11,7 @@ qt_add_qml_module(FlightMapModule
         MapItems/MissionItemIndicator.qml
         MapItems/MissionItemIndicatorDrag.qml
         MapItems/MissionLineView.qml
+        MapItems/NoFlyZoneMapVisuals.qml
         MapItems/PlanMapItems.qml
         MapItems/ProximityRadarMapView.qml
         MapItems/QGCMapCircleVisuals.qml

@@ -1531,8 +1531,11 @@ void Vehicle::_loadJoystickSettings()
     settings.beginGroup(QString(_settingsGroup).arg(_id));
 
     if (JoystickManager::instance()->activeJoystick()) {
-        qCDebug(JoystickLog) << "Vehicle " << this->id() << " Notified of an active joystick. Loading setting joystickenabled: " << settings.value(_joystickEnabledSettingsKey, false).toBool();
-        setJoystickEnabled(settings.value(_joystickEnabledSettingsKey, false).toBool());
+        // [ACULA] Fall back to the global default when this vehicle has no stored value, so the
+        // operator can choose "enable by default" with no aircraft connected.
+        const bool defaultEnabled = JoystickManager::instance()->defaultJoystickEnabled();
+        qCDebug(JoystickLog) << "Vehicle " << this->id() << " Notified of an active joystick. Loading setting joystickenabled: " << settings.value(_joystickEnabledSettingsKey, defaultEnabled).toBool();
+        setJoystickEnabled(settings.value(_joystickEnabledSettingsKey, defaultEnabled).toBool());
     } else {
         qCDebug(JoystickLog) << "Vehicle " << this->id() << " Notified that there is no active joystick";
         setJoystickEnabled(false);

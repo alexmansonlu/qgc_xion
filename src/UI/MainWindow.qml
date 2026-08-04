@@ -336,8 +336,22 @@ ApplicationWindow {
                         Layout.margins: toolSelectDialog._margins
                         spacing:        ScreenTools.defaultFontPixelWidth
 
-                        // [ACULA GCS] Plan Flight hidden — client does not use mission planning
-                        // SubMenuButton { text: qsTr("Plan Flight") ... }
+                        // [ACULA GCS] Plan Flight — mission planning + geofence editor
+                        SubMenuButton {
+                            id:                 planButton
+                            height:             toolSelectDialog._toolButtonHeight
+                            Layout.fillWidth:   true
+                            text:               qsTr("Plan Flight")
+                            imageResource:      "/qmlimages/Plan.svg"
+                            imageColor:         qgcPal.text
+                            imageSize:          ScreenTools.defaultFontPixelHeight * 1.2
+                            onClicked: {
+                                if (mainWindow.allowViewSwitch()) {
+                                    mainWindow.closeIndicatorDrawer()
+                                    mainWindow.showPlanView()
+                                }
+                            }
+                        }
 
                         // [ACULA GCS] Analyze Tools hidden — not in client spec
                         // SubMenuButton { text: qsTr("Analyze Tools") ... }

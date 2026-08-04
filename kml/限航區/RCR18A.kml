@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>RCR18A.kml</name>
+	<StyleMap id="icon-1899-0288D121">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#icon-1899-0288D1-normal21</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#icon-1899-0288D1-highlight21</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="icon-1899-0288D1-normal21">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="icon-1899-0288D1-highlight21">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<StyleMap id="line-FFFF00-12">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#line-FFFF00-1-normal2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#line-FFFF00-1-highlight2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="line-FFFF00-1-highlight2">
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="line-FFFF00-1-normal2">
+		<LineStyle>
+			<color>ff00ffff</color>
+		</LineStyle>
+	</Style>
+	<Folder>
+		<name>RCR18A</name>
+		<visibility>0</visibility>
+		<Folder>
+			<name>RCR18A-點</name>
+			<visibility>0</visibility>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   0    <br>   RCR18A_ID   0]]></description>
+				<styleUrl>#icon-1899-0288D121</styleUrl>
+				<Point>
+					<coordinates>119.424722,22.581667,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   1    <br>   RCR18A_ID   0]]></description>
+				<styleUrl>#icon-1899-0288D121</styleUrl>
+				<Point>
+					<coordinates>119.758056,22.581667,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   2    <br>   RCR18A_ID   0]]></description>
+				<styleUrl>#icon-1899-0288D121</styleUrl>
+				<Point>
+					<coordinates>119.758056,22.915,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   3    <br>   RCR18A_ID   0]]></description>
+				<styleUrl>#icon-1899-0288D121</styleUrl>
+				<Point>
+					<coordinates>119.424722,22.915,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Placemark>
+			<name>0</name>
+			<visibility>0</visibility>
+			<description><![CDATA[0    <br>       <br>   FID   0    <br>   RCR18A_ID   0]]></description>
+			<styleUrl>#line-FFFF00-12</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					119.424722,22.581667,0 119.758056,22.581667,0 119.758056,22.915,0 119.424722,22.915,0 119.424722,22.581667,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

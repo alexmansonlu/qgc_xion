@@ -3952,7 +3952,7 @@
       <extracomment>.mavCmdInfo[MAV_CMD_DO_SET_PARAMETER].friendlyName, </extracomment>
       <location filename="../src/MissionManager/MavCmdInfoCommon.json"/>
       <source>Set Parameter</source>
-      <translation>設定引數</translation>
+      <translation>設定參數</translation>
     </message>
     <message>
       <extracomment>.mavCmdInfo[MAV_CMD_DO_SET_RELAY].friendlyName, </extracomment>
@@ -4654,7 +4654,7 @@
       <extracomment>.mavCmdInfo[MAV_CMD_PREFLIGHT_STORAGE].friendlyName, </extracomment>
       <location filename="../src/MissionManager/MavCmdInfoCommon.json"/>
       <source>Store parameters</source>
-      <translation>儲存引數</translation>
+      <translation>儲存參數</translation>
     </message>
     <message>
       <extracomment>.mavCmdInfo[MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN].friendlyName, </extracomment>

@@ -25,6 +25,7 @@ class MissionCommandTree;
 class MultiVehicleManager;
 class QGCCorePlugin;
 class QGCMapEngineManager;
+class NoFlyZoneManager;
 class QGCPalette;
 class QGCPositionManager;
 class SettingsManager;
@@ -39,6 +40,7 @@ Q_MOC_INCLUDE("MissionCommandTree.h")
 Q_MOC_INCLUDE("MultiVehicleManager.h")
 Q_MOC_INCLUDE("QGCCorePlugin.h")
 Q_MOC_INCLUDE("QGCMapEngineManager.h")
+Q_MOC_INCLUDE("NoFlyZoneManager.h")
 Q_MOC_INCLUDE("QGCPalette.h")
 Q_MOC_INCLUDE("PositionManager.h")
 Q_MOC_INCLUDE("SettingsManager.h")
@@ -74,6 +76,7 @@ public:
     Q_PROPERTY(LinkManager*         linkManager             READ    linkManager             CONSTANT)
     Q_PROPERTY(MultiVehicleManager* multiVehicleManager     READ    multiVehicleManager     CONSTANT)
     Q_PROPERTY(QGCMapEngineManager* mapEngineManager        READ    mapEngineManager        CONSTANT)
+    Q_PROPERTY(NoFlyZoneManager*    noFlyZoneManager        READ    noFlyZoneManager        CONSTANT)
     Q_PROPERTY(QGCPositionManager*  qgcPositionManger       READ    qgcPositionManger       CONSTANT)
     Q_PROPERTY(VideoManager*        videoManager            READ    videoManager            CONSTANT)
     Q_PROPERTY(SettingsManager*     settingsManager         READ    settingsManager         CONSTANT)
@@ -164,6 +167,7 @@ public:
     LinkManager*            linkManager         ()  { return _linkManager; }
     MultiVehicleManager*    multiVehicleManager ()  { return _multiVehicleManager; }
     QGCMapEngineManager*    mapEngineManager    ()  { return _mapEngineManager; }
+    NoFlyZoneManager*       noFlyZoneManager    ()  { return _noFlyZoneManager; }
     QGCPositionManager*     qgcPositionManger   ()  { return _qgcPositionManager; }
     MissionCommandTree*     missionCommandTree  ()  { return _missionCommandTree; }
     VideoManager*           videoManager        ()  { return _videoManager; }
@@ -236,6 +240,7 @@ signals:
 
 private:
     QGCMapEngineManager*    _mapEngineManager       = nullptr;
+    NoFlyZoneManager*       _noFlyZoneManager       = nullptr;
     ADSBVehicleManager*     _adsbVehicleManager     = nullptr;
     QGCPositionManager*     _qgcPositionManager     = nullptr;
     MissionCommandTree*     _missionCommandTree     = nullptr;

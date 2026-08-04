@@ -428,8 +428,14 @@ public class QGCUsbSerialManager {
         final List<String> deviceInfoList = new ArrayList<>();
 
         for (final UsbDevice device : usbManager.getDeviceList().values()) {
-            final String deviceInfo = formatDeviceInfo(device);
-            deviceInfoList.add(deviceInfo);
+            // A device we hold no permission for (ethernet dongle, HID receiver, ...)
+            // throws from getSerialNumber(). Skip it instead of losing the whole list.
+            try {
+                final String deviceInfo = formatDeviceInfo(device);
+                deviceInfoList.add(deviceInfo);
+            } catch (Exception e) {
+                QGCLogger.i(TAG, "Skipping device " + device.getDeviceName() + ": " + e.getMessage());
+            }
         }
 
         return deviceInfoList.toArray(new String[0]);
@@ -442,11 +448,20 @@ public class QGCUsbSerialManager {
      * @return A formatted string containing device information.
      */
     private static String formatDeviceInfo(final UsbDevice device) {
+        // getSerialNumber() requires per-device USB permission and throws
+        // SecurityException without it; the serial is informational only.
+        String serialNumber = "";
+        try {
+            serialNumber = device.getSerialNumber();
+        } catch (SecurityException e) {
+            QGCLogger.i(TAG, "No permission for serial of " + device.getDeviceName());
+        }
+
         StringBuilder deviceInfo = new StringBuilder();
         deviceInfo.append(device.getDeviceName()).append(":")
                  .append(device.getProductName()).append(":")
                  .append(device.getManufacturerName()).append(":")
-                 .append(device.getSerialNumber()).append(":")
+                 .append(serialNumber).append(":")
                  .append(device.getProductId()).append(":")
                  .append(device.getVendorId());
 

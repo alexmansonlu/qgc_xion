@@ -14,6 +14,8 @@ target_sources(${CMAKE_PROJECT_NAME}
         MavlinkAction.h
         MavlinkActionManager.cc
         MavlinkActionManager.h
+        NoFlyZoneManager.cc
+        NoFlyZoneManager.h
         ParameterEditorController.cc
         ParameterEditorController.h
         QGCFenceCircle.cc
@@ -58,6 +60,18 @@ target_sources(${CMAKE_PROJECT_NAME}
 )
 
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+
+# [ACULA] Bundle the default no-fly-zone (禁航區) KML files as a Qt resource so they
+# can be seeded into the writable app-data folder on first run (NoFlyZoneManager).
+# Recursive so the category subfolders (機場 / 限航區) are preserved as resource paths.
+file(GLOB_RECURSE NOFLYZONE_DEFAULT_KML CONFIGURE_DEPENDS "${CMAKE_SOURCE_DIR}/kml/*.kml")
+if(NOFLYZONE_DEFAULT_KML)
+    qt_add_resources(${CMAKE_PROJECT_NAME} "NoFlyZoneDefaults"
+        PREFIX "/NoFlyZoneDefaults"
+        BASE "${CMAKE_SOURCE_DIR}/kml"
+        FILES ${NOFLYZONE_DEFAULT_KML}
+    )
+endif()
 
 qt_add_library(QGroundControlControlsModule STATIC)
 

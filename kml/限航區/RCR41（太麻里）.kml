@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>RCR41(太麻里).kml</name>
+	<StyleMap id="icon-1899-0288D1020">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#icon-1899-0288D1-normal020</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#icon-1899-0288D1-highlight020</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="icon-1899-0288D1-highlight020">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="icon-1899-0288D1-normal020">
+		<IconStyle>
+			<color>ffd18802</color>
+			<Icon>
+				<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="line-FFFF00-1-normal00">
+		<LineStyle>
+			<color>ff00ffff</color>
+		</LineStyle>
+	</Style>
+	<Style id="line-FFFF00-1-highlight00">
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="line-FFFF00-100">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#line-FFFF00-1-normal00</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#line-FFFF00-1-highlight00</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder>
+		<name>RCR41(太麻里)</name>
+		<visibility>0</visibility>
+		<Folder>
+			<name>RCR41(太麻里)-點</name>
+			<visibility>0</visibility>
+			<Placemark>
+				<name>0</name>
+				<visibility>0</visibility>
+				<description><![CDATA[0    <br>       <br>   FID   0    <br>   RCR41(于ID   0]]></description>
+				<styleUrl>#icon-1899-0288D1020</styleUrl>
+				<Point>
+					<coordinates>121.008056,22.598333,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Placemark>
+			<name>0</name>
+			<visibility>0</visibility>
+			<description><![CDATA[0    <br>       <br>   FID   0    <br>   RCR41(于ID   0]]></description>
+			<styleUrl>#line-FFFF00-100</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					121.098122,22.598304,0 121.097774,22.591015,0 121.096743,22.583782,0 121.095038,22.57666100000001,0 121.092671,22.569704,0 121.08966,22.562965,0 121.086029,22.556496,0 121.081805,22.550345,0 121.07702,22.544559,0 121.071711,22.539183,0 121.065919,22.534256,0 121.059686,22.529817,0 121.053061,22.5259,0 121.046094,22.522533,0 121.038838,22.519743,0 121.031348,22.51755100000001,0 121.023681,22.515973,0 121.015896,22.515022,0 121.008051,22.514704,0 121.000206,22.515023,0 120.99242,22.515975,0 120.984754,22.517553,0 120.977264,22.51974600000001,0 120.970008,22.522537,0 120.963042,22.525904,0 120.956417,22.529823,0 120.950185,22.534262,0 120.944393,22.539189,0 120.939084,22.544566,0 120.9343,22.550352,0 120.930077,22.556504,0 120.926447,22.562974,0 120.923437,22.569713,0 120.921071,22.576669,0 120.919366,22.583791,0 120.918336,22.591024,0 120.917989,22.598313,0 120.918328,22.60560200000001,0 120.919349,22.612835,0 120.921046,22.619959,0 120.923405,22.626918,0 120.926409,22.63366,0 120.930035,22.640133,0 120.934255,22.646287,0 120.939037,22.652077,0 120.944345,22.657458,0 120.950139,22.662389,0 120.956374,22.666832,0 120.963003,22.670754,0 120.969975,22.674124,0 120.977238,22.676917,0 120.984736,22.679112,0 120.992411,22.680691,0 121.000206,22.681644,0 121.00806,22.681962,0 121.015915,22.681643,0 121.02371,22.68069,0 121.031385,22.679109,0 121.038882,22.676914,0 121.046145,22.67412,0 121.053117,22.670749,0 121.059745,22.666827,0 121.06598,22.662383,0 121.071773,22.657452,0 121.07708,22.65207,0 121.081862,22.64628,0 121.086081,22.640125,0 121.089706,22.633651,0 121.092709,22.626909,0 121.095068,22.61995,0 121.096764,22.612826,0 121.097784,22.605592,0 121.098122,22.598304,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

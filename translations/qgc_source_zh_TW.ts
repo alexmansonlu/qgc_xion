@@ -37,7 +37,7 @@
     <message>
       <location filename="../src/AutoPilotPlugins/APM/APMAirframeComponent.qml" line="209" />
       <source>Invalid setting for FRAME_TYPE. Click to Reset.</source>
-      <translation>FRAME_TYPE 引數設定無效。點選重置</translation>
+      <translation>FRAME_TYPE 參數設定無效。點選重置</translation>
     </message>
     <message>
       <location filename="../src/AutoPilotPlugins/APM/APMAirframeComponent.h" line="35" />
@@ -55,12 +55,12 @@
     <message>
       <location filename="../src/AutoPilotPlugins/APM/APMAirframeComponentController.cc" line="145" />
       <source>Param file github json download failed: %1</source>
-      <translation>從github下載json引數檔案失敗：%1</translation>
+      <translation>從github下載json參數檔案失敗：%1</translation>
     </message>
     <message>
       <location filename="../src/AutoPilotPlugins/APM/APMAirframeComponentController.cc" line="155" />
       <source>Param file download failed: %1</source>
-      <translation>引數檔案下載失敗：%1</translation>
+      <translation>參數檔案下載失敗：%1</translation>
     </message>
   </context>
   <context>
@@ -840,7 +840,7 @@
     <message>
       <location filename="../src/AutoPilotPlugins/APM/APMFollowComponent.qml" line="224" />
       <source>The vehicle parameters required for follow me are currently set in a way which is not supported. Using follow with this setup may lead to unpredictable/hazardous results.</source>
-      <translation>跟隨模式的車輛引數設定不支援。使用此設定可能將導致不可預測或危險的結果。</translation>
+      <translation>跟隨模式的車輛參數設定不支援。使用此設定可能將導致不可預測或危險的結果。</translation>
     </message>
     <message>
       <location filename="../src/AutoPilotPlugins/APM/APMFollowComponent.qml" line="230" />
@@ -1086,7 +1086,7 @@
     <message>
       <location filename="../src/AutoPilotPlugins/APM/APMHeliComponent.h" line="24" />
       <source>Heli Setup is used to setup parameters which are specific to a helicopter.</source>
-      <translation>直升機設定，用於設定一架直升機引數。</translation>
+      <translation>直升機設定，用於設定一架直升機參數。</translation>
     </message>
   </context>
   <context>
@@ -1558,7 +1558,7 @@
     <message>
       <location filename="../src/AutoPilotPlugins/APM/APMPowerComponent.qml" line="510" />
       <source>If the current draw reported by the vehicle is largely different than the current read externally using a current meter you can adjust the amps per volt value to correct this. Click the Calculate button for help with calculating a new value.</source>
-      <translation>如果飛機所報告的電流與使用電流表的電流讀數有較大偏差的話，你可以調整“安培/伏特”的值來修正它。點選“計算”按鈕可以幫助你計算新的引數值。</translation>
+      <translation>如果飛機所報告的電流與使用電流表的電流讀數有較大偏差的話，你可以調整“安培/伏特”的值來修正它。點選“計算”按鈕可以幫助你計算新的參數值。</translation>
     </message>
     <message>
       <location filename="../src/AutoPilotPlugins/APM/APMPowerComponent.qml" line="344" />
@@ -1624,7 +1624,7 @@
     <message>
       <location filename="../src/AutoPilotPlugins/APM/APMPowerComponent.h" line="24" />
       <source>The Power Component is used to setup battery parameters.</source>
-      <translation>電源元件用來設定電池相關的引數。</translation>
+      <translation>電源元件用來設定電池相關的參數。</translation>
     </message>
   </context>
   <context>
@@ -3681,17 +3681,17 @@ Please place your vehicle in water, click the button, and wait. Note that the th
     <message>
       <location filename="../src/AutoPilotPlugins/APM/APMTuningComponentSub.qml" line="41" />
       <source>Attitude Controller Parameters</source>
-      <translation>姿態控制器引數</translation>
+      <translation>姿態控制器參數</translation>
     </message>
     <message>
       <location filename="../src/AutoPilotPlugins/APM/APMTuningComponentSub.qml" line="49" />
       <source>Position Controller Parameters</source>
-      <translation>位置控制器引數</translation>
+      <translation>位置控制器參數</translation>
     </message>
     <message>
       <location filename="../src/AutoPilotPlugins/APM/APMTuningComponentSub.qml" line="56" />
       <source>Waypoint navigation parameters</source>
-      <translation>航點導航引數</translation>
+      <translation>航點導航參數</translation>
     </message>
   </context>
   <context>
@@ -3892,7 +3892,7 @@ Please place your vehicle in water, click the button, and wait. Note that the th
       <source>This configuration can only be modified through the Parameter Editor.
 
 </source>
-      <translation>此配置只能通過引數編輯器進行修改。
+      <translation>此配置只能通過參數編輯器進行修改。
 </translation>
     </message>
     <message>
@@ -3939,7 +3939,7 @@ Please place your vehicle in water, click the button, and wait. Note that the th
     <message>
       <location filename="../src/AutoPilotPlugins/PX4/AirframeComponent.cc" line="32" />
       <source>Airframe Setup is used to select the airframe that matches your vehicle. This will in turn set up the various tuning values for flight parameters.</source>
-      <translation>機架設定可用於選擇與您的裝置相匹配的機架構型。這將設定並可能改變一些飛行引數的數值。</translation>
+      <translation>機架設定可用於選擇與您的裝置相匹配的機架構型。這將設定並可能改變一些飛行參數的數值。</translation>
     </message>
   </context>
   <context>
@@ -4688,7 +4688,7 @@ Click Ok to start the auto-tuning process.
     <message>
       <location filename="../src/MissionManager/CameraCalc.cc" line="302" />
       <source>Manual (no camera specs)</source>
-      <translation>手動（無相機引數）</translation>
+      <translation>手動（無相機參數）</translation>
     </message>
   </context>
   <context>
@@ -5815,12 +5815,12 @@ Click Ok to start the auto-tuning process.
     <message>
       <location filename="../src/Vehicle/VehicleSetup/FirmwareImage.cc" line="263" />
       <source>Write failed for parameter meta data file, error: %1</source>
-      <translation>引數後設資料檔案寫入失敗，錯誤：%1</translation>
+      <translation>參數後設資料檔案寫入失敗，錯誤：%1</translation>
     </message>
     <message>
       <location filename="../src/Vehicle/VehicleSetup/FirmwareImage.cc" line="270" />
       <source>Unable to open parameter meta data file %1 for writing, error: %2</source>
-      <translation>無法開啟引數後設資料檔案 %1 以進行寫入，錯誤：%2</translation>
+      <translation>無法開啟參數後設資料檔案 %1 以進行寫入，錯誤：%2</translation>
     </message>
     <message>
       <location filename="../src/Vehicle/VehicleSetup/FirmwareImage.cc" line="292" />
@@ -10166,7 +10166,7 @@ Click Ok to start the auto-tuning process.
     <message>
       <location filename="../src/MissionManager/MissionItem.cc" line="282" />
       <source>Param %1 incorrect type %2, must be double or null</source>
-      <translation>引數 %1 不正確的型別 %2，必須為雙精度或null</translation>
+      <translation>參數 %1 不正確的型別 %2，必須為雙精度或null</translation>
     </message>
   </context>
   <context>
@@ -12180,7 +12180,7 @@ Is this really what you want?</translation>
     <message>
       <location filename="../src/QmlControls/ParameterEditor.qml" line="76" />
       <source>Load Parameters</source>
-      <translation>載入引數</translation>
+      <translation>載入參數</translation>
     </message>
     <message>
       <location filename="../src/QmlControls/ParameterEditor.qml" line="81" />
@@ -12190,12 +12190,12 @@ Is this really what you want?</translation>
     <message>
       <location filename="../src/QmlControls/ParameterEditor.qml" line="83" />
       <source>Save Parameters</source>
-      <translation>儲存引數</translation>
+      <translation>儲存參數</translation>
     </message>
     <message>
       <location filename="../src/QmlControls/ParameterEditor.qml" line="89" />
       <source>Clear all RC to Param</source>
-      <translation>清除遙控調整引數</translation>
+      <translation>清除遙控調整參數</translation>
     </message>
     <message>
       <location filename="../src/QmlControls/ParameterEditor.qml" line="107" />
@@ -12230,12 +12230,12 @@ Note that this will also completely reset everything, including UAVCAN nodes, al
     <message>
       <location filename="../src/QmlControls/ParameterEditor.qml" line="107" />
       <source>Parameter Files (*.%1)</source>
-      <translation>引數檔案 (*.%1)</translation>
+      <translation>參數檔案 (*.%1)</translation>
     </message>
     <message>
       <location filename="../src/QmlControls/ParameterEditor.qml" line="68" />
       <source>Select Reset to reset all parameters to the vehicle's configuration defaults.</source>
-      <translation>選擇重置以將所有引數重置為載具's 配置預設值。</translation>
+      <translation>選擇重置以將所有參數重置為載具's 配置預設值。</translation>
     </message>
     <message>
       <location filename="../src/QmlControls/ParameterEditor.qml" line="97" />
@@ -12321,7 +12321,7 @@ Note that this will also completely reset everything, including UAVCAN nodes, al
     <message>
       <location filename="../src/QmlControls/ParameterEditorDialog.qml" line="250" />
       <source>Set RC to Param</source>
-      <translation>將遙控設到引數...</translation>
+      <translation>將遙控設到參數...</translation>
     </message>
   </context>
   <context>
@@ -12329,39 +12329,39 @@ Note that this will also completely reset everything, including UAVCAN nodes, al
     <message>
       <location filename="../src/FactSystem/ParameterManager.cc" line="690" />
       <source>Parameter write failed: veh:%1 comp:%2 param:%3</source>
-      <translation>引數寫入失敗：飛機：%1 元件：%2 引數：%3</translation>
+      <translation>參數寫入失敗：飛機：%1 元件：%2 參數：%3</translation>
     </message>
     <message>
       <location filename="../src/FactSystem/ParameterManager.cc" line="712" />
       <source>Parameter read failed: veh:%1 comp:%2 param:%3</source>
-      <translation>引數讀取失敗：飛機：%1 元件：%2 引數：%3</translation>
+      <translation>參數讀取失敗：飛機：%1 元件：%2 參數：%3</translation>
     </message>
     <message>
       <location filename="../src/FactSystem/ParameterManager.cc" line="933" />
       <source>Parameter cache CRC match failed</source>
-      <translation>引數快取 CRC 匹配失敗</translation>
+      <translation>參數快取 CRC 匹配失敗</translation>
     </message>
     <message>
       <location filename="../src/FactSystem/ParameterManager.cc" line="984" />
       <source>Parameters not loaded since they are not currently on the vehicle: %1
 </source>
-      <translation>引數未載入，因為它們目前不在模型上： %1
+      <translation>參數未載入，因為它們目前不在模型上： %1
 </translation>
     </message>
     <message>
       <location filename="../src/FactSystem/ParameterManager.cc" line="988" />
       <source>Parameters not loaded due to type mismatch: %1</source>
-      <translation>由於型別不匹配而未載入引數： %1</translation>
+      <translation>由於型別不匹配而未載入參數： %1</translation>
     </message>
     <message>
       <location filename="../src/FactSystem/ParameterManager.cc" line="1133" />
       <source>%1 was unable to retrieve the full set of parameters from vehicle %2. This will cause %1 to be unable to display its full user interface. If you are using modified firmware, you may need to resolve any vehicle startup errors to resolve the issue. If you are using standard firmware, you may need to upgrade to a newer version to resolve the issue.</source>
-      <translation>%1 無法從飛機%2檢索完整的引數集。這將導致%1無法顯示其完整的使用者介面。如果使用的是修改後的韌體，則可能需要解決所有飛機啟動錯誤以解決此問題。如果使用的是標準韌體，則可能需要升級到較新的版本來解決此問題。</translation>
+      <translation>%1 無法從飛機%2檢索完整的參數集。這將導致%1無法顯示其完整的使用者介面。如果使用的是修改後的韌體，則可能需要解決所有飛機啟動錯誤以解決此問題。如果使用的是標準韌體，則可能需要升級到較新的版本來解決此問題。</translation>
     </message>
     <message>
       <location filename="../src/FactSystem/ParameterManager.cc" line="1158" />
       <source>Vehicle %1 did not respond to request for parameters. This will cause %2 to be unable to display its full user interface.</source>
-      <translation>飛機%1未響應對引數的請求。這將導致 %2 無法顯示其完整的使用者介面。</translation>
+      <translation>飛機%1未響應對參數的請求。這將導致 %2 無法顯示其完整的使用者介面。</translation>
     </message>
   </context>
   <context>
@@ -12623,42 +12623,42 @@ Note that this will also completely reset everything, including UAVCAN nodes, al
     <message>
       <location filename="../src/MissionManager/PlanManager.cc" line="766" />
       <source>One of the parameters has an invalid value.</source>
-      <translation>其中一個引數有一個無效值。</translation>
+      <translation>其中一個參數有一個無效值。</translation>
     </message>
     <message>
       <location filename="../src/MissionManager/PlanManager.cc" line="769" />
       <source>Param 1 invalid value.</source>
-      <translation>引數 1 無效值。</translation>
+      <translation>參數 1 無效值。</translation>
     </message>
     <message>
       <location filename="../src/MissionManager/PlanManager.cc" line="772" />
       <source>Param 2 invalid value.</source>
-      <translation>引數 2 無效值。</translation>
+      <translation>參數 2 無效值。</translation>
     </message>
     <message>
       <location filename="../src/MissionManager/PlanManager.cc" line="775" />
       <source>Param 3 invalid value.</source>
-      <translation>引數 3 無效值。</translation>
+      <translation>參數 3 無效值。</translation>
     </message>
     <message>
       <location filename="../src/MissionManager/PlanManager.cc" line="778" />
       <source>Param 4 invalid value.</source>
-      <translation>引數 4 無效值。</translation>
+      <translation>參數 4 無效值。</translation>
     </message>
     <message>
       <location filename="../src/MissionManager/PlanManager.cc" line="781" />
       <source>Param 5 invalid value.</source>
-      <translation>引數 5 值無效。</translation>
+      <translation>參數 5 值無效。</translation>
     </message>
     <message>
       <location filename="../src/MissionManager/PlanManager.cc" line="784" />
       <source>Param 6 invalid value.</source>
-      <translation>引數6無效值。</translation>
+      <translation>參數6無效值。</translation>
     </message>
     <message>
       <location filename="../src/MissionManager/PlanManager.cc" line="787" />
       <source>Param 7 invalid value.</source>
-      <translation>引數7 無效值。</translation>
+      <translation>參數7 無效值。</translation>
     </message>
     <message>
       <location filename="../src/MissionManager/PlanManager.cc" line="790" />
@@ -13147,13 +13147,13 @@ Click 'Ok' to upload the Plan anyway.</translation>
     <name>PlanViewToolBar</name>
     <message>
       <location filename="../src/QmlControls/PlanViewToolBar.qml" line="58" />
-      <source>Exit Plan</source>
-      <translation type="unfinished">Exit Plan</translation>
+      <source>Exit</source>
+      <translation>退出</translation>
     </message>
     <message>
       <location filename="../src/QmlControls/PlanViewToolBar.qml" line="131" />
       <source>Syncing Mission</source>
-      <translation type="unfinished">Syncing Mission</translation>
+      <translation>同步任務中</translation>
     </message>
     <message>
       <location filename="../src/QmlControls/PlanViewToolBar.qml" line="138" />
@@ -13388,7 +13388,7 @@ Click 'Ok' to upload the Plan anyway.</translation>
     <message>
       <location filename="../src/AutoPilotPlugins/PX4/PowerComponent.qml" line="184" />
       <source>ESC parameters will only be accessible in the editor after assignment.</source>
-      <translation>電調引數只有在分配後才能在編輯器中訪問。</translation>
+      <translation>電調參數只有在分配後才能在編輯器中訪問。</translation>
     </message>
     <message>
       <location filename="../src/AutoPilotPlugins/PX4/PowerComponent.qml" line="190" />
@@ -13448,7 +13448,7 @@ Click 'Ok' to upload the Plan anyway.</translation>
     <message>
       <location filename="../src/AutoPilotPlugins/PX4/PowerComponent.cc" line="31" />
       <source>Power Setup is used to setup battery parameters as well as advanced settings for propellers.</source>
-      <translation>電源設定，用於設定電池引數以及螺旋槳的高階設定。</translation>
+      <translation>電源設定，用於設定電池參數以及螺旋槳的高階設定。</translation>
     </message>
   </context>
   <context>
@@ -13657,7 +13657,7 @@ sudo apt-get 移除數據機管理器</translation>
     <message>
       <location filename="../src/QGCApplication.cc" line="451" />
       <source>Parameters are missing from firmware. You may be running a version of firmware which is not fully supported or your firmware has a bug in it. Missing params: %1</source>
-      <translation>從韌體中缺少引數。 您可能正在執行一個不完全支援的韌體版本，或者您的韌體裡有一個錯誤。 缺少引數： %1</translation>
+      <translation>從韌體中缺少參數。 您可能正在執行一個不完全支援的韌體版本，或者您的韌體裡有一個錯誤。 缺少參數： %1</translation>
     </message>
     <message>
       <location filename="../src/QGCApplication.cc" line="588" />
@@ -14566,22 +14566,22 @@ sudo apt-get 移除數據機管理器</translation>
     <message>
       <location filename="../src/QmlControls/RCToParamDialog.qml" line="23" />
       <source>RC To Param</source>
-      <translation>遙控器引數</translation>
+      <translation>遙控器參數</translation>
     </message>
     <message>
       <location filename="../src/QmlControls/RCToParamDialog.qml" line="41" />
       <source>Bind an RC Channel to a parameter value. Tuning IDs can be mapped to an RC Channel from Radio Setup page.</source>
-      <translation>將RC通道繫結到引數值。可以從電臺設定頁面將id調優對映到RC頻道。</translation>
+      <translation>將RC通道繫結到參數值。可以從電臺設定頁面將id調優對映到RC頻道。</translation>
     </message>
     <message>
       <location filename="../src/QmlControls/RCToParamDialog.qml" line="47" />
       <source>Waiting on parameter update from Vehicle.</source>
-      <translation>正在等待車輛的引數更新。</translation>
+      <translation>正在等待車輛的參數更新。</translation>
     </message>
     <message>
       <location filename="../src/QmlControls/RCToParamDialog.qml" line="58" />
       <source>Parameter</source>
-      <translation>引數</translation>
+      <translation>參數</translation>
     </message>
     <message>
       <location filename="../src/QmlControls/RCToParamDialog.qml" line="61" />
@@ -14873,7 +14873,7 @@ Click Next to continue</source>
     <message>
       <location filename="../src/AutoPilotPlugins/Common/RadioComponentController.cc" line="86" />
       <source>All settings have been captured. Click Next to write the new parameters to your board.</source>
-      <translation>已獲取所有設定，點選下一步將所有引數寫入你的飛控板。</translation>
+      <translation>已獲取所有設定，點選下一步將所有參數寫入你的飛控板。</translation>
     </message>
     <message>
       <location filename="../src/AutoPilotPlugins/Common/RadioComponentController.cc" line="163" />
@@ -16038,11 +16038,103 @@ ROTATION_NONE indicates component points in direction of flight.</translation>
     </message>
   </context>
   <context>
+    <name>JoystickSettings</name>
+    <message>
+      <source>Controller</source>
+      <translation>遙控器</translation>
+    </message>
+    <message>
+      <source>No controller detected — connect the handheld controller over USB.</source>
+      <translation>尚未偵測到遙控器,請以 USB 連接手持遙控器。</translation>
+    </message>
+    <message>
+      <source>Active controller</source>
+      <translation>目前遙控器</translation>
+    </message>
+    <message>
+      <source>Joystick Input</source>
+      <translation>搖桿輸入</translation>
+    </message>
+    <message>
+      <source>Enable joystick input</source>
+      <translation>啟用搖桿輸入</translation>
+    </message>
+    <message>
+      <source>Enable not allowed (calibrate first)</source>
+      <translation>無法啟用(請先校正)</translation>
+    </message>
+    <message>
+      <source>Applies to the connected aircraft now and is saved as the default for future connections.</source>
+      <translation>立即套用至已連接的飛機,並儲存為日後連線的預設值。</translation>
+    </message>
+    <message>
+      <source>No aircraft connected — this is saved as the default and applied automatically when an aircraft connects.</source>
+      <translation>尚未連接飛機 — 此設定會儲存為預設值,並於飛機連線時自動套用。</translation>
+    </message>
+    <message>
+      <source>Pilot Stick Mode</source>
+      <translation>飛手模式</translation>
+    </message>
+    <message>
+      <source>Choose how the two sticks map to throttle and pitch. Yaw and roll are the same in both modes.</source>
+      <translation>選擇兩支搖桿如何對應油門與俯仰。偏航與橫滾在兩種模式下相同。</translation>
+    </message>
+    <message>
+      <source>Mode 2</source>
+      <translation>Mode 2</translation>
+    </message>
+    <message>
+      <source>American</source>
+      <translation>美國手</translation>
+    </message>
+    <message>
+      <source>Mode 1</source>
+      <translation>Mode 1</translation>
+    </message>
+    <message>
+      <source>Japanese</source>
+      <translation>日本手</translation>
+    </message>
+    <message>
+      <source>Throttle</source>
+      <translation>油門</translation>
+    </message>
+    <message>
+      <source>Pitch</source>
+      <translation>俯仰</translation>
+    </message>
+    <message>
+      <source>Yaw</source>
+      <translation>偏航</translation>
+    </message>
+    <message>
+      <source>Roll</source>
+      <translation>橫滾</translation>
+    </message>
+    <message>
+      <source>The horizontal stick directions (yaw / roll) are identical in both modes; only the vertical directions (throttle / pitch) swap.</source>
+      <translation>左右搖桿的水平方向(偏航/橫滾)在兩種模式下相同,僅垂直方向(油門/俯仰)互換。</translation>
+    </message>
+    <message>
+      <source>Calibration</source>
+      <translation>校正</translation>
+    </message>
+    <message>
+      <source>Move both sticks to their extremes when prompted. Calibration is required before the joystick can be enabled.</source>
+      <translation>依提示將兩支搖桿推至極限位置。啟用搖桿前必須先完成校正。</translation>
+    </message>
+  </context>
+  <context>
     <name>SettingsPagesModel</name>
     <message>
       <location filename="../src/UI/AppSettings/SettingsPagesModel.qml" line="17" />
       <source>General</source>
       <translation>一般</translation>
+    </message>
+    <message>
+      <location filename="../src/UI/AppSettings/SettingsPagesModel.qml" line="35" />
+      <source>Joystick</source>
+      <translation>搖桿</translation>
     </message>
     <message>
       <location filename="../src/UI/AppSettings/SettingsPagesModel.qml" line="24" />
@@ -16057,7 +16149,7 @@ ROTATION_NONE indicates component points in direction of flight.</translation>
     <message>
       <location filename="../src/UI/AppSettings/SettingsPagesModel.qml" line="38" />
       <source>Video</source>
-      <translation type="unfinished">Video</translation>
+      <translation>視訊</translation>
     </message>
     <message>
       <location filename="../src/UI/AppSettings/SettingsPagesModel.qml" line="45" />
@@ -16173,7 +16265,7 @@ ROTATION_NONE indicates component points in direction of flight.</translation>
     <message>
       <location filename="../src/Vehicle/VehicleSetup/SetupView.qml" line="171" />
       <source>You are currently connected to a vehicle but it did not return the full parameter list. </source>
-      <translation>您當前已連線到飛機，但未返回完整引數列表。 </translation>
+      <translation>您當前已連線到飛機，但未返回完整參數列表。 </translation>
     </message>
     <message>
       <location filename="../src/Vehicle/VehicleSetup/SetupView.qml" line="172" />
@@ -16184,6 +16276,11 @@ ROTATION_NONE indicates component points in direction of flight.</translation>
       <location filename="../src/Vehicle/VehicleSetup/SetupView.qml" line="215" />
       <source>Summary</source>
       <translation>概況</translation>
+    </message>
+    <message>
+      <location filename="../src/Vehicle/VehicleSetup/SetupView.qml" line="250" />
+      <source>Camera</source>
+      <translation>相機</translation>
     </message>
     <message>
       <location filename="../src/Vehicle/VehicleSetup/SetupView.qml" line="273" />
@@ -16208,7 +16305,7 @@ ROTATION_NONE indicates component points in direction of flight.</translation>
     <message>
       <location filename="../src/Vehicle/VehicleSetup/SetupView.qml" line="263" />
       <source>Parameters</source>
-      <translation>引數</translation>
+      <translation>參數</translation>
     </message>
   </context>
   <context>
@@ -16254,7 +16351,7 @@ ROTATION_NONE indicates component points in direction of flight.</translation>
     <message>
       <location filename="../src/QmlControls/SimpleItemEditor.qml" line="64" />
       <source>Provides advanced access to all commands/parameters. Be very careful!</source>
-      <translation>提供對所有命令/引數的高階訪問。請非常小心！</translation>
+      <translation>提供對所有命令/參數的高階訪問。請非常小心！</translation>
     </message>
     <message>
       <location filename="../src/QmlControls/SimpleItemEditor.qml" line="76" />
@@ -18490,6 +18587,17 @@ Functionality will be activated by ACULA.</source>
     <message>
       <source>Camera Resolution</source>
       <translation>相機解析度</translation>
+    </message>
+  </context>
+  <context>
+    <name>CameraResolutionConfig</name>
+    <message>
+      <source>Camera Resolution</source>
+      <translation>相機解析度</translation>
+    </message>
+    <message>
+      <source>Set the photo and video resolution. The available options and the final values are provided by the connected camera.</source>
+      <translation>設定照片與錄影解析度。可選項目與最終數值由已連接的相機提供。</translation>
     </message>
   </context>
 </TS>

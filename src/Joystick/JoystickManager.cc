@@ -166,6 +166,26 @@ void JoystickManager::setActiveJoystick(Joystick *joystick)
     emit activeJoystickNameChanged(_activeJoystick ? _activeJoystick->name() : "");
 }
 
+// [ACULA] Global default for whether the joystick should be enabled on vehicles.
+bool JoystickManager::defaultJoystickEnabled() const
+{
+    QSettings settings;
+    settings.beginGroup(_settingsGroup);
+    return settings.value(_settingsKeyDefaultEnabled, false).toBool();
+}
+
+void JoystickManager::setDefaultJoystickEnabled(bool enabled)
+{
+    if (enabled == defaultJoystickEnabled()) {
+        return;
+    }
+    QSettings settings;
+    settings.beginGroup(_settingsGroup);
+    settings.setValue(_settingsKeyDefaultEnabled, enabled);
+    settings.endGroup();
+    emit defaultJoystickEnabledChanged(enabled);
+}
+
 QVariantList JoystickManager::joysticks()
 {
     QVariantList list;

@@ -336,7 +336,8 @@ void QGCApplication::_initVideo()
 {
 #if defined(QGC_GST_STREAMING) && !defined(Q_OS_ANDROID)
     // GStreamer video playback requires OpenGL on desktop platforms.
-    // On Android we keep Vulkan (set in main.cc) to avoid gfxstream GLES bugs.
+    // On Android the backend is chosen at runtime in main.cc (Vulkan in the
+    // emulator, OpenGL ES on real hardware).
     QQuickWindow::setGraphicsApi(QSGRendererInterface::OpenGL);
 #endif
 

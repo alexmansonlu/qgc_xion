@@ -76,6 +76,8 @@ class Joystick : public QThread
     Q_PROPERTY(float                    minButtonFrequencyHz    MEMBER  _minButtonFrequencyHz                               CONSTANT)
     Q_PROPERTY(int                      axisCount               READ    axisCount                                           CONSTANT)
     Q_PROPERTY(int                      throttleMode            READ    throttleMode            WRITE setThrottleMode       NOTIFY throttleModeChanged)
+    // [ACULA] 飛手模式 (transmitter mode): 1 = 日本手 (Mode 1 / Japanese), 2 = 美國手 (Mode 2 / American)
+    Q_PROPERTY(int                      transmitterMode         READ    getTXMode               WRITE setTXMode             NOTIFY txModeChanged)
     Q_PROPERTY(int                      totalButtonCount        READ    totalButtonCount                                    CONSTANT)
     Q_PROPERTY(const QmlObjectListModel *assignableActions      READ    assignableActions                                   NOTIFY assignableActionsChanged)
     Q_PROPERTY(QString                  disabledActionName      READ    disabledActionName                                  CONSTANT)
@@ -191,6 +193,7 @@ signals:
     void buttonActionsChanged();
     void assignableActionsChanged();
     void throttleModeChanged(int mode);
+    void txModeChanged(int mode);   // [ACULA] 飛手模式切換 (US/Japan)
     void negativeThrustChanged(bool allowNegative);
     void exponentialChanged(float exponential);
     void accumulatorChanged(bool accumulator);
