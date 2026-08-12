@@ -3920,6 +3920,39 @@ void Vehicle::sendJoystickDataThreadSafe(float roll, float pitch, float yaw, flo
     sendMessageOnLinkThreadSafe(sharedLink.get(), message);
 }
 
+// [ACULA] RC_CHANNELS_OVERRIDE uplink for the handheld controller (ch7 =
+// flight-mode switch etc.). Values are PWM µs; UINT16_MAX leaves a channel
+// untouched on the FC. Called from the HID reader thread — same thread-safe
+// link pattern as sendJoystickDataThreadSafe above.
+void Vehicle::sendRcChannelsOverrideThreadSafe(const quint16 channels[18])
+{
+    SharedLinkInterfacePtr sharedLink = vehicleLinkManager()->primaryLink().lock();
+    if (!sharedLink) {
+        qCDebug(VehicleLog) << "sendRcChannelsOverrideThreadSafe: primary link gone!";
+        return;
+    }
+
+    if (sharedLink->linkConfiguration()->isHighLatency()) {
+        return;
+    }
+
+    mavlink_message_t message;
+    mavlink_msg_rc_channels_override_pack_chan(
+        static_cast<uint8_t>(MAVLinkProtocol::instance()->getSystemId()),
+        static_cast<uint8_t>(MAVLinkProtocol::getComponentId()),
+        sharedLink->mavlinkChannel(),
+        &message,
+        static_cast<uint8_t>(_id),
+        0,                      // target_component: all
+        channels[0], channels[1], channels[2], channels[3],
+        channels[4], channels[5], channels[6], channels[7],
+        channels[8], channels[9], channels[10], channels[11],
+        channels[12], channels[13], channels[14], channels[15],
+        channels[16], channels[17]
+    );
+    sendMessageOnLinkThreadSafe(sharedLink.get(), message);
+}
+
 void Vehicle::triggerSimpleCamera()
 {
     sendMavCommand(_defaultComponentId,

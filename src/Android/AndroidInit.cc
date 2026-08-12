@@ -3,6 +3,7 @@
     #include "AndroidSerial.h"
 #endif
 #include "JoystickAndroid.h"
+#include "JoystickUsbHid.h"
 #include "QGCLoggingCategory.h"
 
 #include <QtCore/QJniEnvironment>
@@ -109,6 +110,7 @@ jint JNI_OnLoad(JavaVM *vm, void *reserved)
     #endif
 
     JoystickAndroid::setNativeMethods();
+    JoystickUsbHid::setNativeMethods();
 
     QNativeInterface::QAndroidApplication::hideSplashScreen(333);
 

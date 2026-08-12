@@ -12,8 +12,10 @@
 #include "MAVLinkLib.h"
 
 #include <QtCore/QLoggingCategory>
+#include <QtCore/QMutex>
 #include <QtCore/QObject>
 #include <QtCore/QThread>
+#include <QtCore/QVariantList>
 #include <QtQmlIntegration/QtQmlIntegration>
 
 Q_DECLARE_LOGGING_CATEGORY(JoystickLog)
@@ -78,6 +80,11 @@ class Joystick : public QThread
     Q_PROPERTY(int                      throttleMode            READ    throttleMode            WRITE setThrottleMode       NOTIFY throttleModeChanged)
     // [ACULA] 飛手模式 (transmitter mode): 1 = 日本手 (Mode 1 / Japanese), 2 = 美國手 (Mode 2 / American)
     Q_PROPERTY(int                      transmitterMode         READ    getTXMode               WRITE setTXMode             NOTIFY txModeChanged)
+    // [ACULA] RC-override engine (works with every joystick backend):
+    // live remapped channel PWMs for the Controller page, and the master
+    // enable for sending RC_CHANNELS_OVERRIDE (persisted).
+    Q_PROPERTY(QVariantList             rcChannels              READ    rcChannels                                          NOTIFY rcChannelsChanged)
+    Q_PROPERTY(bool                     rcOverrideEnabled       READ    rcOverrideEnabled       WRITE setRcOverrideEnabled  NOTIFY rcOverrideEnabledChanged)
     Q_PROPERTY(int                      totalButtonCount        READ    totalButtonCount                                    CONSTANT)
     Q_PROPERTY(const QmlObjectListModel *assignableActions      READ    assignableActions                                   NOTIFY assignableActionsChanged)
     Q_PROPERTY(QString                  disabledActionName      READ    disabledActionName                                  CONSTANT)
@@ -151,6 +158,13 @@ public:
 
 	virtual bool requiresCalibration() const { return true; }
 
+    // [ACULA] This product uplinks pilot input exclusively as
+    // RC_CHANNELS_OVERRIDE (see JoystickUsbHid) — MANUAL_CONTROL is suppressed
+    // for ALL joystick types by default so the FC can never receive a second,
+    // conflicting control stream. Override to false per-class to consciously
+    // re-enable the stock MANUAL_CONTROL path (e.g. for a PX4 target).
+    virtual bool suppressManualControl() const { return true; }
+
     int throttleMode() const { return _throttleMode; }
     void setThrottleMode(int mode);
 
@@ -185,6 +199,17 @@ public:
     /// Set joystick button repeat rate (in Hz)
     void setButtonFrequency(float val);
 
+    // [ACULA] Run the polling thread purely to stream rawAxisValueChanged /
+    // rawButtonPressedChanged for the settings-page live monitor — no vehicle
+    // needed, calibration mode untouched.
+    Q_INVOKABLE void startRawMonitoring();
+    Q_INVOKABLE void stopRawMonitoring();
+
+    // [ACULA] RC-override engine
+    QVariantList rcChannels() const;
+    bool rcOverrideEnabled() const { return _rcOverrideEnabled; }
+    void setRcOverrideEnabled(bool enabled);
+
 signals:
     // The raw signals are only meant for use by calibration
     void rawAxisValueChanged(int index, int value);
@@ -194,6 +219,8 @@ signals:
     void assignableActionsChanged();
     void throttleModeChanged(int mode);
     void txModeChanged(int mode);   // [ACULA] 飛手模式切換 (US/Japan)
+    void rcChannelsChanged();               // [ACULA]
+    void rcOverrideEnabledChanged(bool enabled);   // [ACULA]
     void negativeThrustChanged(bool allowNegative);
     void exponentialChanged(float exponential);
     void accumulatorChanged(bool accumulator);
@@ -288,6 +315,29 @@ private:
     bool _deadband = false;
     bool _negativeThrust = false;
     bool _pollingStartedForCalibration = false;
+    bool _pollingStartedForMonitor = false;     // [ACULA]
+
+    // [ACULA] RC-override engine ------------------------------------------
+    // Data-driven channel map: each entry feeds one RC channel from an axis
+    // index, a button index, or a fixed center value. Missing sources (axis
+    // beyond this device's axisCount) leave the channel undriven. The future
+    // 16-way controller only needs more rows.
+    struct RcMapEntry {
+        int axis;       // source axis index, or -1
+        int button;     // source button index, or -1 (axis takes precedence)
+        int channel;    // 1-based RC channel
+    };
+    static const RcMapEntry _rcMap[];
+    static const int _rcMapSize;
+
+    void _updateAndSendRcOverride();
+
+    mutable QMutex _rcMutex;
+    quint16 _rcChannelPwm[18];
+    bool _rcOverrideEnabled = true;
+    static constexpr const char *_rcOverrideSettingsGroup = "RcOverride";
+    static constexpr const char *_rcOverrideEnabledKey = "Enabled";
+    // ---------------------------------------------------------------------
     float _axisFrequencyHz = _defaultAxisFrequencyHz;
     float _buttonFrequencyHz = _defaultButtonFrequencyHz;
     float _exponential = 0;

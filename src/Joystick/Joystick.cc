@@ -72,6 +72,17 @@ Joystick::Joystick(const QString &name, int axisCount, int buttonCount, int hatC
         _buttonActionArray.append(nullptr);
     }
 
+    // [ACULA] RC-override engine state
+    for (int i = 0; i < 18; i++) {
+        _rcChannelPwm[i] = UINT16_MAX;
+    }
+    {
+        QSettings rcSettings;
+        rcSettings.beginGroup(_rcOverrideSettingsGroup);
+        _rcOverrideEnabled = rcSettings.value(_rcOverrideEnabledKey, true).toBool();
+        rcSettings.endGroup();
+    }
+
     _buildActionList(MultiVehicleManager::instance()->activeVehicle());
     _updateTXModeSettingsKey(MultiVehicleManager::instance()->activeVehicle());
     _loadSettings();
@@ -593,7 +604,13 @@ void Joystick::_handleAxis()
         emit rawAxisValueChanged(axisIndex, newAxisValue);
     }
 
-    if (!_activeVehicle->joystickEnabled() || _calibrationMode || !_calibrated) {
+    // [ACULA] remap to RC channels and uplink RC_CHANNELS_OVERRIDE — runs for
+    // every backend, before the MANUAL_CONTROL gating below (which no longer
+    // sends anyway; suppressManualControl defaults true product-wide).
+    _updateAndSendRcOverride();
+
+    // [ACULA] null guard: the thread also runs vehicle-less for the live monitor
+    if (!_activeVehicle || !_activeVehicle->joystickEnabled() || _calibrationMode || !_calibrated) {
         return;
     }
 
@@ -674,7 +691,9 @@ void Joystick::_handleAxis()
     emit axisValues(roll, pitch, yaw, throttle);
 
     const uint16_t shortButtons = static_cast<uint16_t>(buttonPressedBits & 0xFFFF);
-    _activeVehicle->sendJoystickDataThreadSafe(roll, pitch, yaw, throttle, shortButtons);
+    if (!suppressManualControl()) {   // [ACULA] RC-override joysticks uplink themselves
+        _activeVehicle->sendJoystickDataThreadSafe(roll, pitch, yaw, throttle, shortButtons);
+    }
 }
 
 void Joystick::startPolling(Vehicle* vehicle)
@@ -988,6 +1007,117 @@ void Joystick::setCalibrationMode(bool calibrating)
     } else if (_pollingStartedForCalibration) {
         stopPolling();
     }
+}
+
+/* [ACULA] RC-override channel map — current ACULA controller hardware.
+ * axis indices: 0=X 1=Y 2=Z 3=Rx 4=Knob (knob exists only on the direct
+ * USB-HID reader; on backends with fewer axes the row is skipped and the
+ * channel stays undriven). ch7 (flight mode — FLTMODE_CH=7 on the FC)
+ * carries the button: 1000/2000 µs. Z is deliberately unmapped: the
+ * firmware does not report the switch yet and the pin floats. */
+const Joystick::RcMapEntry Joystick::_rcMap[] = {
+    { 0, -1, 1 },    // X  -> ch1 (roll)
+    { 1, -1, 2 },    // Y  -> ch2 (pitch)
+    { 4, -1, 3 },    // knob -> ch3 (throttle)
+    { -1, -1, 4 },   // ch4 fixed center (yaw not fitted)
+    { -1, 0, 7 },    // button -> ch7 (flight mode)
+    { 3, -1, 8 },    // Rx -> ch8 (spare)
+};
+const int Joystick::_rcMapSize = sizeof(_rcMap) / sizeof(_rcMap[0]);
+
+QVariantList Joystick::rcChannels() const
+{
+    QMutexLocker lock(&_rcMutex);
+    QVariantList list;
+    for (int i = 0; i < 12; i++) {
+        list.append((_rcChannelPwm[i] == UINT16_MAX) ? 0 : _rcChannelPwm[i]);
+    }
+    return list;
+}
+
+void Joystick::setRcOverrideEnabled(bool enabled)
+{
+    if (enabled == _rcOverrideEnabled) {
+        return;
+    }
+    _rcOverrideEnabled = enabled;
+
+    QSettings rcSettings;
+    rcSettings.beginGroup(_rcOverrideSettingsGroup);
+    rcSettings.setValue(_rcOverrideEnabledKey, enabled);
+    rcSettings.endGroup();
+
+    emit rcOverrideEnabledChanged(enabled);
+}
+
+/* Runs on the joystick thread from _handleAxis (axisFrequencyHz). Computes
+ * the remapped channel PWMs from the raw values and uplinks them as
+ * RC_CHANNELS_OVERRIDE when a vehicle is connected and joystick input is
+ * enabled. */
+void Joystick::_updateAndSendRcOverride()
+{
+    {
+        QMutexLocker lock(&_rcMutex);
+        for (int i = 0; i < _rcMapSize; i++) {
+            const RcMapEntry &e = _rcMap[i];
+            if ((e.channel < 1) || (e.channel > 18)) {
+                continue;
+            }
+            quint16 pwm = UINT16_MAX;
+            if (e.axis >= 0) {
+                if (e.axis < _axisCount) {
+                    // raw ±32767 -> 1000..2000 µs
+                    const int clamped = qBound(-32767, _rgAxisValues[e.axis], 32767);
+                    pwm = static_cast<quint16>(1500 + (clamped * 500) / 32767);
+                }
+            } else if (e.button >= 0) {
+                if (e.button < _totalButtonCount) {
+                    pwm = (_rgButtonValues[e.button] != BUTTON_UP) ? 2000 : 1000;
+                }
+            } else {
+                pwm = 1500;
+            }
+            _rcChannelPwm[e.channel - 1] = pwm;
+        }
+    }
+
+    emit rcChannelsChanged();
+
+    if (!_rcOverrideEnabled || !_activeVehicle || !_activeVehicle->joystickEnabled()) {
+        return;
+    }
+
+    quint16 channels[18];
+    {
+        QMutexLocker lock(&_rcMutex);
+        memcpy(channels, _rcChannelPwm, sizeof(channels));
+    }
+    // MAVLink quirk: "ignore" is UINT16_MAX for ch1-8 but 0 for ch9-18
+    for (int i = 8; i < 18; i++) {
+        if (channels[i] == UINT16_MAX) {
+            channels[i] = 0;
+        }
+    }
+    _activeVehicle->sendRcChannelsOverrideThreadSafe(channels);
+}
+
+// [ACULA] see Joystick.h — vehicle-less polling for the live output monitor
+void Joystick::startRawMonitoring()
+{
+    if (!isRunning()) {
+        _pollingStartedForMonitor = true;
+        startPolling(MultiVehicleManager::instance()->activeVehicle());
+    }
+}
+
+void Joystick::stopRawMonitoring()
+{
+    // Only stop the thread if we were the reason it started and no vehicle
+    // has captured the joystick in the meantime.
+    if (_pollingStartedForMonitor && !_activeVehicle) {
+        stopPolling();
+    }
+    _pollingStartedForMonitor = false;
 }
 
 void Joystick::_executeButtonAction(const QString &action, bool buttonDown)

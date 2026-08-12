@@ -13,25 +13,22 @@ import QtQuick.Layouts
 
 import QGroundControl
 import QGroundControl.Controls
-import QGroundControl.Controllers
 import QGroundControl.ScreenTools
 import QGroundControl.Palette
 
-// [ACULA GCS] Consolidated controller / 搖桿 setup page.
+// [ACULA GCS] Controller (遙控器) page — v0.2.2 redesign.
 //
-// All joystick configuration lives here in Application Settings, independent of
-// whether an aircraft is connected (the handheld controller is always attached
-// to the RB3). Contains: connection status + warning, enable toggle, 飛手模式
-// (US/Japan stick mode), and the embedded calibration wizard.
+// The ACULA handheld controller uplinks pilot input exclusively as MAVLink
+// RC_CHANNELS_OVERRIDE with a fixed, self-scaled channel map (JoystickUsbHid).
+// QGC's stock joystick machinery (calibration wizard, expo, axis functions,
+// MANUAL_CONTROL) is not used, so this page intentionally shows only what is
+// real for this product:
+//   - controller connection status
+//   - the RC output enable switch
+//   - a live monitor: raw controls in → remapped RC channel values out
 //
-// The HID->RC translation happens inside QGC's joystick subsystem, which reads
-// the gamepad and sends MANUAL_CONTROL. No MCU reconfiguration, no FC params.
-//
-//   Mode 2 (American):  L-vert = Throttle, R-vert = Pitch
-//   Mode 1 (Japanese):  L-vert = Pitch,    R-vert = Throttle
-//
-// Strings are English source + zh_TW translations (qgc_source_zh_TW.ts,
-// context "JoystickSettings") so the page follows the app language setting.
+// The stock Vehicle Setup → Joystick page is hidden (SetupView.qml) and
+// MANUAL_CONTROL is suppressed product-wide (Joystick::suppressManualControl).
 
 SettingsPage {
     id: root
@@ -39,23 +36,19 @@ SettingsPage {
     property var  _activeJoystick: joystickManager.activeJoystick
     property var  _activeVehicle:  QGroundControl.multiVehicleManager.activeVehicle
     property bool _connected:      _activeJoystick !== null
-    property bool _calibrated:     _connected && _activeJoystick.calibrated
-    property bool _buttonsOnly:    _connected && _activeJoystick.axisCount === 0
-
-    readonly property int _modeJapan:    1
-    readonly property int _modeAmerican: 2
 
     QGCPalette { id: qgcPal }
 
-    // Calibration controller — used by the embedded JoystickConfigCalibration.qml
-    // (resolved through this document's context) and for the live stick-mode state.
-    JoystickConfigController { id: controller }
-
-    Component.onCompleted: if (_connected) controller.start()
+    Component.onCompleted: if (_connected) _activeJoystick.startRawMonitoring()
+    Component.onDestruction: if (_connected) _activeJoystick.stopRawMonitoring()
 
     Connections {
         target: joystickManager
-        function onActiveJoystickChanged() { if (root._connected) controller.start() }
+        function onActiveJoystickChanged() {
+            if (root._connected) {
+                root._activeJoystick.startRawMonitoring()
+            }
+        }
     }
 
     //-------------------------------------------------------------------------
@@ -81,16 +74,16 @@ SettingsPage {
     }
 
     //-------------------------------------------------------------------------
-    //-- Enable joystick input
+    //-- RC output enable
     SettingsGroupLayout {
         Layout.fillWidth:   true
-        heading:            qsTr("Joystick Input")
+        heading:            qsTr("RC Output")
+        headingDescription: qsTr("When enabled and an aircraft is connected, the controller state is sent to the aircraft as RC channels (RC_CHANNELS_OVERRIDE, 25 Hz) — the aircraft sees it exactly like an RC receiver.")
 
         QGCCheckBox {
             id:         enableCheck
-            enabled:    root._calibrated
-            text:       root._calibrated ? qsTr("Enable joystick input")
-                                         : qsTr("Enable not allowed (calibrate first)")
+            enabled:    root._connected
+            text:       qsTr("Enable RC override output")
 
             function _sync() {
                 checked = root._activeVehicle ? root._activeVehicle.joystickEnabled
@@ -98,7 +91,7 @@ SettingsPage {
             }
             Component.onCompleted: _sync()
             onClicked: {
-                // Always record the operator's intent as the global default…
+                // Record the operator's intent as the global default…
                 joystickManager.defaultJoystickEnabled = checked
                 // …and apply it live to the connected aircraft, if any.
                 if (root._activeVehicle) {
@@ -128,165 +121,151 @@ SettingsPage {
             color:              qgcPal.text
             text:               root._activeVehicle
                                     ? qsTr("Applies to the connected aircraft now and is saved as the default for future connections.")
-                                    : qsTr("No aircraft connected — this is saved as the default and applied automatically when an aircraft connects.")
+                                    : qsTr("No aircraft connected — saved as the default and applied automatically when an aircraft connects.")
         }
     }
 
     //-------------------------------------------------------------------------
-    //-- 飛手模式 (Pilot stick mode)
+    //-- Live output monitor (raw controls + remapped RC channels)
     SettingsGroupLayout {
         Layout.fillWidth:   true
-        heading:            qsTr("Pilot Stick Mode")
-        headingDescription: qsTr("Choose how the two sticks map to throttle and pitch. Yaw and roll are the same in both modes.")
-        visible:            !root._buttonsOnly
+        heading:            qsTr("Live Output")
+        headingDescription: qsTr("Raw controller values and the remapped RC channels. Move the controls to verify the connection.")
+        visible:            root._connected
+
+        property var _axisValues: [0, 0, 0, 0, 0]
+        property bool _buttonDown: false
+        // rcChannels only exists on the ACULA HID controller class
+        property var _rcChannels: (root._connected && root._activeJoystick.rcChannels !== undefined)
+                                      ? root._activeJoystick.rcChannels : []
+
+        id: liveMonitor
+
+        readonly property var _axisNames: [qsTr("X (roll)"), qsTr("Y (pitch)"), qsTr("Z"), qsTr("Rx"), qsTr("Knob")]
+
+        Connections {
+            target: root._activeJoystick
+            ignoreUnknownSignals: true
+            function onRawAxisValueChanged(index, value) {
+                let vals = liveMonitor._axisValues.slice()
+                if (index >= 0 && index < 5) {
+                    vals[index] = value
+                    liveMonitor._axisValues = vals
+                }
+            }
+            function onRawButtonPressedChanged(index, pressed) {
+                if (index === 0) {
+                    liveMonitor._buttonDown = (pressed !== 0)
+                }
+            }
+            function onRcChannelsChanged() {
+                liveMonitor._rcChannels = root._activeJoystick.rcChannels
+            }
+        }
+
+        Repeater {
+            model: Math.min(root._connected ? root._activeJoystick.axisCount : 0, 5)
+
+            RowLayout {
+                Layout.fillWidth:   true
+                spacing:            ScreenTools.defaultFontPixelWidth
+
+                QGCLabel {
+                    Layout.preferredWidth:  ScreenTools.defaultFontPixelWidth * 12
+                    text:                   liveMonitor._axisNames[index]
+                    font.pointSize:         ScreenTools.smallFontPointSize
+                }
+                Rectangle {
+                    Layout.fillWidth:   true
+                    height:             ScreenTools.defaultFontPixelHeight * 0.8
+                    radius:             2
+                    color:              qgcPal.windowShadeDark
+                    border.color:       qgcPal.text
+                    border.width:       1
+                    Rectangle {
+                        // center-origin bar: value is ±32767
+                        readonly property real frac: liveMonitor._axisValues[index] / 32767
+                        x:      (frac >= 0) ? parent.width / 2 : parent.width / 2 * (1 + frac)
+                        width:  Math.abs(frac) * parent.width / 2
+                        height: parent.height - 4
+                        anchors.verticalCenter: parent.verticalCenter
+                        radius: 2
+                        color:  qgcPal.buttonHighlight
+                    }
+                    Rectangle {
+                        anchors.horizontalCenter:   parent.horizontalCenter
+                        width:                      1
+                        height:                     parent.height
+                        color:                      qgcPal.text
+                        opacity:                    0.5
+                    }
+                }
+                QGCLabel {
+                    Layout.preferredWidth:  ScreenTools.defaultFontPixelWidth * 7
+                    horizontalAlignment:    Text.AlignRight
+                    text:                   liveMonitor._axisValues[index]
+                    font.pointSize:         ScreenTools.smallFontPointSize
+                    font.family:            ScreenTools.fixedFontFamily
+                }
+            }
+        }
 
         RowLayout {
             Layout.fillWidth:   true
-            Layout.topMargin:   ScreenTools.defaultFontPixelHeight / 2
-            spacing:            ScreenTools.defaultFontPixelWidth * 2
+            spacing:            ScreenTools.defaultFontPixelWidth
 
-            ModeCard {
-                Layout.fillWidth:   true
-                title:              qsTr("Mode 2")
-                subtitle:           qsTr("American")
-                leftLabel:          qsTr("Throttle")
-                rightLabel:         qsTr("Pitch")
-                selected:           controller.transmitterMode === root._modeAmerican
-                enabled:            root._connected && !controller.calibrating
-                onClicked:          controller.transmitterMode = root._modeAmerican
+            QGCLabel {
+                Layout.preferredWidth:  ScreenTools.defaultFontPixelWidth * 12
+                text:                   qsTr("Button")
+                font.pointSize:         ScreenTools.smallFontPointSize
             }
+            Rectangle {
+                width:          ScreenTools.defaultFontPixelHeight * 0.8
+                height:         width
+                radius:         width / 2
+                color:          liveMonitor._buttonDown ? qgcPal.buttonHighlight : qgcPal.windowShadeDark
+                border.color:   qgcPal.text
+                border.width:   1
+            }
+            QGCLabel {
+                text:           liveMonitor._buttonDown ? qsTr("pressed") : qsTr("released")
+                font.pointSize: ScreenTools.smallFontPointSize
+            }
+        }
 
-            ModeCard {
-                Layout.fillWidth:   true
-                title:              qsTr("Mode 1")
-                subtitle:           qsTr("Japanese")
-                leftLabel:          qsTr("Pitch")
-                rightLabel:         qsTr("Throttle")
-                selected:           controller.transmitterMode === root._modeJapan
-                enabled:            root._connected && !controller.calibrating
-                onClicked:          controller.transmitterMode = root._modeJapan
+        GridLayout {
+            Layout.fillWidth:   true
+            Layout.topMargin:   ScreenTools.defaultFontPixelHeight / 2
+            columns:            12
+            visible:            liveMonitor._rcChannels.length > 0
+
+            Repeater {
+                model: liveMonitor._rcChannels.length
+                ColumnLayout {
+                    spacing: 0
+                    QGCLabel {
+                        Layout.alignment:   Qt.AlignHCenter
+                        text:               qsTr("ch%1").arg(index + 1)
+                        font.pointSize:     ScreenTools.smallFontPointSize
+                        color:              (index === 6) ? qgcPal.buttonHighlight : qgcPal.text  // ch7 = flight mode
+                    }
+                    QGCLabel {
+                        Layout.alignment:   Qt.AlignHCenter
+                        text:               (liveMonitor._rcChannels[index] > 0) ? liveMonitor._rcChannels[index] : "—"
+                        font.pointSize:     ScreenTools.smallFontPointSize
+                        font.family:        ScreenTools.fixedFontFamily
+                    }
+                }
             }
         }
 
         QGCLabel {
             Layout.fillWidth:   true
-            Layout.topMargin:   ScreenTools.defaultFontPixelHeight / 2
             wrapMode:           Text.WordWrap
             font.pointSize:     ScreenTools.smallFontPointSize
             color:              qgcPal.text
-            text:               qsTr("The horizontal stick directions (yaw / roll) are identical in both modes; only the vertical directions (throttle / pitch) swap.")
-        }
-    }
-
-    //-------------------------------------------------------------------------
-    //-- Calibration (embedded wizard)
-    SettingsGroupLayout {
-        Layout.fillWidth:   true
-        heading:            qsTr("Calibration")
-        headingDescription: qsTr("Move both sticks to their extremes when prompted. Calibration is required before the joystick can be enabled.")
-        visible:            root._connected && !root._buttonsOnly
-
-        Loader {
-            Layout.fillWidth:   true
-            Layout.alignment:   Qt.AlignHCenter
-            // controller + _activeJoystick are resolved from this document's context
-            active:             root._connected && !root._buttonsOnly
-            source:             "qrc:/qml/QGroundControl/VehicleSetup/JoystickConfigCalibration.qml"
-        }
-    }
-
-    //-------------------------------------------------------------------------
-    //-- Reusable: selectable stick-mode card
-    component ModeCard: Rectangle {
-        id:             card
-        implicitHeight: cardCol.implicitHeight + ScreenTools.defaultFontPixelHeight * 1.5
-        radius:         ScreenTools.defaultFontPixelWidth / 2
-        color:          selected ? qgcPal.buttonHighlight : qgcPal.windowShadeDark
-        border.color:   selected ? qgcPal.buttonHighlight : qgcPal.text
-        border.width:   selected ? 2 : 1
-        opacity:        enabled ? 1.0 : 0.4
-
-        property string title
-        property string subtitle
-        property string leftLabel
-        property string rightLabel
-        property bool   selected
-        signal clicked()
-
-        ColumnLayout {
-            id:                 cardCol
-            anchors.centerIn:   parent
-            width:              parent.width - ScreenTools.defaultFontPixelWidth * 2
-            spacing:            ScreenTools.defaultFontPixelHeight / 3
-
-            QGCLabel {
-                Layout.alignment:   Qt.AlignHCenter
-                text:               card.title
-                font.pointSize:     ScreenTools.mediumFontPointSize
-                font.bold:          true
-                color:              card.selected ? qgcPal.buttonHighlightText : qgcPal.text
-            }
-            QGCLabel {
-                Layout.alignment:   Qt.AlignHCenter
-                text:               card.subtitle
-                font.pointSize:     ScreenTools.smallFontPointSize
-                color:              card.selected ? qgcPal.buttonHighlightText : qgcPal.text
-            }
-
-            RowLayout {
-                Layout.alignment:   Qt.AlignHCenter
-                Layout.topMargin:   ScreenTools.defaultFontPixelHeight / 2
-                spacing:            ScreenTools.defaultFontPixelWidth * 3
-
-                StickGlyph { vertLabel: card.leftLabel;  horizLabel: qsTr("Yaw");  highlight: card.selected }
-                StickGlyph { vertLabel: card.rightLabel; horizLabel: qsTr("Roll"); highlight: card.selected }
-            }
-        }
-
-        MouseArea {
-            anchors.fill:   parent
-            enabled:        card.enabled
-            onClicked:      card.clicked()
-        }
-    }
-
-    //-- Reusable: single stick glyph (vertical label above, horizontal below)
-    component StickGlyph: ColumnLayout {
-        property string vertLabel
-        property string horizLabel
-        property bool   highlight
-
-        readonly property color _fg: highlight ? qgcPal.buttonHighlightText : qgcPal.text
-
-        QGCLabel {
-            Layout.alignment:    Qt.AlignHCenter
-            horizontalAlignment: Text.AlignHCenter
-            text:                vertLabel
-            font.pointSize:      ScreenTools.smallFontPointSize
-            color:               _fg
-        }
-        Rectangle {
-            Layout.alignment:   Qt.AlignHCenter
-            width:              ScreenTools.defaultFontPixelWidth * 6
-            height:             width
-            radius:             width / 2
-            color:              "transparent"
-            border.color:       _fg
-            border.width:       1
-            Rectangle {
-                anchors.centerIn:   parent
-                width:              parent.width / 2.5
-                height:             width
-                radius:             width / 2
-                color:              _fg
-            }
-        }
-        QGCLabel {
-            Layout.alignment:    Qt.AlignHCenter
-            horizontalAlignment: Text.AlignHCenter
-            text:                horizLabel
-            font.pointSize:      ScreenTools.smallFontPointSize
-            color:               _fg
+            visible:            liveMonitor._rcChannels.length > 0
+            text:               qsTr("ch7 (highlighted) carries the flight-mode button. Channels shown as — are not driven.")
         }
     }
 }

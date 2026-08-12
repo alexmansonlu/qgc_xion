@@ -14,6 +14,7 @@
     #include <SDL.h>
 #elif defined(Q_OS_ANDROID)
     #include "JoystickAndroid.h"
+    #include "JoystickUsbHid.h"   // [ACULA] STM32 handheld controller
 #endif
 #include "QGCLoggingCategory.h"
 
@@ -72,6 +73,7 @@ void JoystickManager::init()
     if (!JoystickAndroid::init()) {
         return;
     }
+    (void) JoystickUsbHid::init();   // [ACULA]
     (void) connect(this, &JoystickManager::updateAvailableJoysticksSignal, this, [this]() {
         _joystickCheckTimerCounter = 5;
         _joystickCheckTimer->start();
@@ -91,6 +93,10 @@ void JoystickManager::_setActiveJoystickFromSettings()
     newMap = JoystickSDL::discover();
 #elif defined(Q_OS_ANDROID)
     newMap = JoystickAndroid::discover();
+    // [ACULA] The STM32 handheld controller is read via the USB Host API
+    // (its knob is a vendor HID usage invisible to InputDevice), so it has
+    // its own discovery. Insert after JoystickAndroid so it wins name clashes.
+    newMap.insert(JoystickUsbHid::discover());
 #endif
 
     if (_activeJoystick && !newMap.contains(_activeJoystick->name())) {
@@ -123,6 +129,18 @@ void JoystickManager::_setActiveJoystickFromSettings()
     QString name = settings.value(_settingsKeyActiveJoystick).toString();
     if (name.isEmpty()) {
         name = _name2JoystickMap.first()->name();
+    }
+
+    // [ACULA] The handheld controller always takes priority when present.
+    // Keyboards and wireless receivers masquerade as joysticks (Android
+    // SOURCE_JOYSTICK / udev ID_INPUT_JOYSTICK false positives) and would
+    // otherwise win the alphabetical default or a stale saved selection.
+    for (auto it = _name2JoystickMap.constBegin(); it != _name2JoystickMap.constEnd(); ++it) {
+        if (it.key().contains(QStringLiteral("STM32"), Qt::CaseInsensitive) ||
+            it.key().contains(QStringLiteral("ACULA"), Qt::CaseInsensitive)) {
+            name = it.key();
+            break;
+        }
     }
 
     setActiveJoystick(_name2JoystickMap.value(name, _name2JoystickMap.first()));

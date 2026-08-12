@@ -30,9 +30,11 @@ ListModel {
         pageVisible: function() { return true }
     }
 
-    // [ACULA] Joystick / controller setup — connection, enable, 飛手模式 (US/Japan), calibration
+    // [ACULA] Controller (遙控器) page — RC-override status, enable switch and
+    // live channel monitor. The stock Vehicle Setup → Joystick page is hidden
+    // (it configures the unused MANUAL_CONTROL pipeline).
     ListElement {
-        name: qsTr("Joystick")
+        name: qsTr("Controller")
         url: "qrc:/qml/QGroundControl/AppSettings/JoystickSettings.qml"
         iconUrl: "qrc:/res/AculaIconJoystick.png"
         pageVisible: function() { return true }

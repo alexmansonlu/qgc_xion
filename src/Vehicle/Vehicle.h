@@ -443,6 +443,9 @@ public:
     bool joystickEnabled            () const;
     void setJoystickEnabled         (bool enabled);
     void sendJoystickDataThreadSafe (float roll, float pitch, float yaw, float thrust, quint16 buttons);
+    // [ACULA] RC_CHANNELS_OVERRIDE uplink for the handheld controller.
+    // channels: 18 entries, 1-based ch = index+1, PWM µs; UINT16_MAX = ignore.
+    void sendRcChannelsOverrideThreadSafe(const quint16 channels[18]);
 
     // Property accesors
     int id() const{ return _id; }

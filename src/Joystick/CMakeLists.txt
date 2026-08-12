@@ -13,6 +13,8 @@ if(ANDROID)
         PRIVATE
             JoystickAndroid.cc
             JoystickAndroid.h
+            JoystickUsbHid.cc
+            JoystickUsbHid.h
     )
     return()
 endif()
