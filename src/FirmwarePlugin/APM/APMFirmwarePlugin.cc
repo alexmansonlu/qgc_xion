@@ -642,9 +642,11 @@ const QVariantList &APMFirmwarePlugin::toolIndicators(const Vehicle *vehicle)
             }
         }
 
-        // Find the generic battery indicator and replace with the custom one
+        // Find the generic battery indicator and replace with the custom one.
+        // [ACULA] Match the full file name: a plain contains("BatteryIndicator.qml")
+        // also matches our AculaBatteryIndicator.qml and would silently replace it.
         for (int i = 0; i < _toolIndicatorList.size(); i++) {
-            if (_toolIndicatorList.at(i).toUrl().toString().contains("BatteryIndicator.qml")) {
+            if (_toolIndicatorList.at(i).toUrl().toString().endsWith("Controls/BatteryIndicator.qml")) {
                 _toolIndicatorList[i] = QVariant::fromValue(QUrl::fromUserInput("qrc:/qml/QGroundControl/Toolbar/APMBatteryIndicator.qml"));
                 break;
             }

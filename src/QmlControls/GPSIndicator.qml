@@ -47,16 +47,20 @@ Item {
                 visible:                _rtkConnected
             }
 
+            // [ACULA] ACULA satellite artwork in place of the stock GPS glyph.
+            // Tinted with the theme text colour: the supplied PNGs vary from black to white,
+            // so tinting via the alpha mask is what keeps them visible on any toolbar theme.
             QGCColoredImage {
                 id:                 gpsIcon
                 width:              height
                 anchors.top:        parent.top
                 anchors.bottom:     parent.bottom
-                source:             "/qmlimages/Gps.svg"
+                source:             "/res/acula/satellite.png"
+                color:                  qgcPal.buttonText
                 fillMode:           Image.PreserveAspectFit
                 sourceSize.height:  height
+                mipmap:             true
                 opacity:            (_activeVehicle && _activeVehicle.gps.count.value >= 0) ? 1 : 0.5
-                color:              qgcPal.buttonText
             }
         }
 

@@ -15,6 +15,11 @@ import QGroundControl.Controls
 import QGroundControl.FlightDisplay
 
 RowLayout {
+    // [ACULA] The bottom-right telemetry/instrument stack is hidden: all of this
+    // information now lives in the top toolbar, and the handheld screen needs the
+    // map area. Kept instantiated (not deleted) so upstream merges stay clean.
+    visible: false
+
     TelemetryValuesBar {
         Layout.alignment:       Qt.AlignBottom
         extraWidth:             instrumentPanel.extraValuesWidth

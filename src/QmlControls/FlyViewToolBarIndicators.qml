@@ -20,7 +20,10 @@ Row {
     anchors.top:        parent.top
     anchors.bottom:     parent.bottom
     anchors.margins:    _toolIndicatorMargins
-    spacing:            ScreenTools.defaultFontPixelWidth * 1.75
+    // [ACULA] Wider gap between indicators. The handheld runs 1920x1080 with a
+    // trimmed indicator set, so there is horizontal room to spare and the
+    // grouping reads better with the values spaced apart.
+    spacing:            ScreenTools.defaultFontPixelWidth * 4.5
 
     property var  _activeVehicle:           QGroundControl.multiVehicleManager.activeVehicle
     property real _toolIndicatorMargins:    ScreenTools.defaultFontPixelHeight * 0.66

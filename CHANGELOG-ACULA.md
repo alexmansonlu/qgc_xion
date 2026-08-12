@@ -102,6 +102,84 @@ no-hardware testing (SITL + fake RTSP): see `LOCAL_TEST_PIPELINE.md`.
 
 ---
 
-## v0.1.1 — in progress
+## v0.1.1 — 2026-08-04
+
+Fly-view layout rework for the handheld: all flight information moves from the
+map overlay into the top toolbar, and the map gains on-screen zoom.
+
+### Fly view
+
+- **Bottom-right information stack hidden.** The telemetry values bar and the
+  instrument panel no longer overlay the map; everything they showed now lives
+  in the toolbar. The components stay instantiated (just invisible) so upstream
+  merges remain clean.
+- **Map zoom +/- buttons now shown on touch devices.** The buttons already
+  existed next to the scale bar but upstream hides them whenever
+  `ScreenTools.isMobile` is true, assuming pinch-zoom suffices. The handheld
+  needs both.
+
+### Toolbar
+
+New indicator set, left to right: flight mode (unchanged) → GPS → link signal
+→ temperature → battery → flight telemetry. Upstream's separate telemetry-RSSI
+and RC-RSSI indicators are folded into the new signal indicator, and the stock
+battery indicator is replaced.
+
+- **GPS** — unchanged upstream behaviour (satellite count over HDOP, tap for
+  detail), now drawn with the ACULA satellite icon.
+- **Link signal** (new) — signal icon plus link quality percentage. Uses RC
+  RSSI when available and falls back to telemetry RSSI, mapping −120…−50 dBm
+  onto 0…100 %. Tap for both raw values.
+- **Temperature** (new) — autopilot IMU temperature in °C.
+- **Battery** (new) — two rows, aircraft over controller, each formatted
+  `xx%(yy.yV)`, coloured amber below 40 % and red below 20 %. **The controller
+  row is placeholder data** until the BQ24810/BQ2085 handheld battery board is
+  readable (deliverables 1–2); the wiring point is marked in the source.
+- **Flight telemetry** (new) — three two-row columns:
+  相對高度/上升速度, home點距離/總航程, 飛行速度/飛行時間. Flight time is
+  rendered m:ss to stay narrow. Tap for a labelled breakdown of all six.
+
+### Layout rules applied to the new indicators
+
+- **Fixed geometry.** Every value sits in a constant-width slot, so a changing
+  reading never moves its icon or shifts neighbouring indicators — the whole
+  toolbar stays still while numbers update.
+- Values are left-aligned inside their slot so each number sits directly beside
+  its icon; icon-to-value spacing tightened to 0.35 character widths.
+- Generous separation between groups: 4 character widths between telemetry
+  columns, 4.5 between whole indicators.
+- Icons are drawn through `QGCColoredImage`, tinted with the palette text
+  colour. The supplied PNG artwork ranges from near-black (`clock`) to
+  near-white (`satellite`, `uav`), so untinted icons were invisible against the
+  toolbar on one theme or the other.
+
+### Build
+
+- **Fixed the project version breaking on any prefixed git tag.**
+  `cmake/Git.cmake` derived the CMake project version by deleting every letter
+  `v` from `git describe` output and assuming a bare `MAJOR.MINOR.PATCH`
+  remained. The `acula-v0.1.0` release tag therefore produced `acula-0.1.0`,
+  which `project(VERSION)` rejects — configure failed outright. The version is
+  now extracted by regex, so any tag naming works. Side effect: the application
+  now reports its ACULA product version (0.1.x) rather than an upstream number.
+- `APMFirmwarePlugin` matched the stock battery indicator with a substring test
+  that also matched `AculaBatteryIndicator.qml`, silently replacing ours; it
+  now matches the full resource path.
+
+### Known issues
+
+Carried over from v0.1.0 (mouse map-drag, per-instance USB permissions, camera
+resolution page not wired, autonomous placeholder). Additionally:
+
+- 返航距離 from the original spec is rendered as **總航程 / total flight
+  distance**. Literally "return distance" is the same value as home點距離, so
+  the second slot would have duplicated the first; confirm which reading is
+  wanted.
+- Icon-to-value assignments in the telemetry block were chosen pragmatically
+  from the supplied icon set and are easy to reshuffle.
+
+---
+
+## v0.1.2 — in progress
 
 _Add entries here as work lands._

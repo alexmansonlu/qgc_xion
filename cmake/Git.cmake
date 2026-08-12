@@ -61,13 +61,17 @@ execute_process(
 )
 # cmake_print_variables(QGC_APP_DATE)
 
-string(FIND ${QGC_APP_VERSION} "v" QGC_APP_VERSION_VALID)
-if(QGC_APP_VERSION_VALID GREATER -1)
-    string(REPLACE "v" "" QGC_APP_VERSION ${QGC_APP_VERSION})
+# [ACULA] Pull the semver out of the tag by regex instead of deleting every "v"
+# from it. The old approach turned a prefixed tag such as "acula-v0.1.0" into
+# "acula-0.1.0", which project(VERSION) rejects outright. This accepts any tag
+# that contains a MAJOR.MINOR.PATCH, and falls back to 0.0.0 when none does.
+string(REGEX MATCH "([0-9]+)\\.([0-9]+)\\.([0-9]+)" QGC_APP_VERSION_MATCH ${QGC_APP_VERSION})
+if(QGC_APP_VERSION_MATCH)
+    set(QGC_APP_VERSION ${QGC_APP_VERSION_MATCH})
 else()
     set(QGC_APP_VERSION "0.0.0")
+    string(REGEX MATCH "([0-9]+)\\.([0-9]+)\\.([0-9]+)" QGC_APP_VERSION_MATCH ${QGC_APP_VERSION})
 endif()
-string(REGEX MATCH "([0-9]+)\\.([0-9]+)\\.([0-9]+)" QGC_APP_VERSION_MATCH ${QGC_APP_VERSION})
 set(QGC_APP_VERSION_MAJOR ${CMAKE_MATCH_1})
 set(QGC_APP_VERSION_MINOR ${CMAKE_MATCH_2})
 set(QGC_APP_VERSION_PATCH ${CMAKE_MATCH_3})

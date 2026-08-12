@@ -206,11 +206,19 @@ const QVariantList &FirmwarePlugin::toolIndicators(const Vehicle*)
     //-- Default list of indicators for all vehicles.
     if (_toolIndicatorList.isEmpty()) {
         _toolIndicatorList = QVariantList({
+            // [ACULA] Toolbar layout for the handheld controller, left to right:
+            // flight mode, GPS (sats over HDOP), link signal, temperature,
+            // battery (aircraft over controller), then the 3x2 telemetry block
+            // that replaces the hidden bottom-right values bar.
+            // Upstream's separate telemetry/RC RSSI indicators are folded into
+            // AculaSignalIndicator; the stock battery indicator is replaced by
+            // AculaBatteryIndicator (which also carries the controller battery).
             QVariant::fromValue(QUrl::fromUserInput("qrc:/qml/QGroundControl/Controls/FlightModeIndicator.qml")),
             QVariant::fromValue(QUrl::fromUserInput("qrc:/qml/QGroundControl/Toolbar/VehicleGPSIndicator.qml")),
-            QVariant::fromValue(QUrl::fromUserInput("qrc:/qml/QGroundControl/Toolbar/TelemetryRSSIIndicator.qml")),
-            QVariant::fromValue(QUrl::fromUserInput("qrc:/qml/QGroundControl/Toolbar/RCRSSIIndicator.qml")),
-            QVariant::fromValue(QUrl::fromUserInput("qrc:/qml/QGroundControl/Controls/BatteryIndicator.qml")),
+            QVariant::fromValue(QUrl::fromUserInput("qrc:/qml/QGroundControl/Toolbar/AculaSignalIndicator.qml")),
+            QVariant::fromValue(QUrl::fromUserInput("qrc:/qml/QGroundControl/Toolbar/AculaTemperatureIndicator.qml")),
+            QVariant::fromValue(QUrl::fromUserInput("qrc:/qml/QGroundControl/Toolbar/AculaBatteryIndicator.qml")),
+            QVariant::fromValue(QUrl::fromUserInput("qrc:/qml/QGroundControl/Toolbar/AculaTelemetryIndicator.qml")),
             QVariant::fromValue(QUrl::fromUserInput("qrc:/qml/QGroundControl/Toolbar/RemoteIDIndicator.qml")),
             QVariant::fromValue(QUrl::fromUserInput("qrc:/qml/QGroundControl/Toolbar/GimbalIndicator.qml")),
 // ControlIndicator is only available in debug builds for the moment

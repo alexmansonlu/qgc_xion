@@ -5,6 +5,11 @@ qt_add_qml_module(ToolbarModule
     VERSION 1.0
     RESOURCE_PREFIX /qml
     QML_FILES
+        AculaBatteryIndicator.qml
+        AculaSignalIndicator.qml
+        AculaTelemetryColumn.qml
+        AculaTelemetryIndicator.qml
+        AculaTemperatureIndicator.qml
         APMBatteryIndicator.qml
         APMFlightModeIndicator.qml
         APMMainStatusIndicatorContentItem.qml
