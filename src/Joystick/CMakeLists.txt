@@ -32,7 +32,7 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE QGC_SDL_JOYSTICK)
 CPMAddPackage(
     NAME sdl_gamecontrollerdb
     GITHUB_REPOSITORY mdqinc/SDL_GameControllerDB
-    GIT_TAG master
+    GIT_TAG c0f11d40b91f57853ce9714c703e119d8243f91c # pinned for reproducible builds (was master)
 )
 
 set(SDL_GAMECONTROLLERDB_PATH "${sdl_gamecontrollerdb_SOURCE_DIR}/gamecontrollerdb.txt" CACHE FILEPATH "SDL GameControllerDB Path")
