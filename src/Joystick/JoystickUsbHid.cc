@@ -77,21 +77,65 @@ int JoystickUsbHid::_getAxis(int i) const
 
 /* Runs on the Java reader thread (~87 Hz). Only stores state — the base
  * class polling loop consumes it via _getAxis/_getButton and drives the
- * monitors and the RC-override uplink. */
+ * monitors and the RC-override uplink. batteryChanged is emitted from this
+ * thread only when the displayed value moves (queued into the QML thread). */
 void JoystickUsbHid::_handleReport(const quint8 *report, int len)
 {
     if (len < 6) {
         return;
     }
 
-    QMutexLocker lock(&_stateMutex);
+    bool battChanged = false;
+    {
+        QMutexLocker lock(&_stateMutex);
 
-    // Base-class axis convention: ±32767
-    for (int i = 0; i < 4; i++) {           // X Y Z Rx: 0..255
-        _axisRaw[i] = static_cast<int>((report[i] - 127.5f) / 127.5f * 32767.f);
+        // Base-class axis convention: ±32767
+        for (int i = 0; i < 4; i++) {       // X Y Z Rx: 0..255 (Rx: 0/127/255 switch on v2 fw)
+            _axisRaw[i] = static_cast<int>((report[i] - 127.5f) / 127.5f * 32767.f);
+        }
+
+        if (len >= 8) {
+            // v2 firmware: knob is byte 2 (z, 0..255); bytes 5-7 = battery
+            _axisRaw[4] = static_cast<int>((report[2] - 127.5f) / 127.5f * 32767.f);
+
+            const int percent   = qMin<int>(report[5], 100);
+            const int voltageMv = report[6] | (report[7] << 8);   // uint16 little-endian
+            // Re-emit only when the displayed reading moves (1 % / 0.1 V steps)
+            battChanged = !_batteryValid
+                          || (percent != _batteryPercent)
+                          || ((voltageMv / 100) != (_batteryVoltageMv / 100));
+            _batteryValid = true;
+            _batteryPercent = percent;
+            _batteryVoltageMv = voltageMv;
+        } else {
+            // v1 firmware: knob is byte 5 (0..100), no battery data
+            _axisRaw[4] = static_cast<int>((report[5] - 50.f) / 50.f * 32767.f);
+        }
+
+        _buttonPressed = (report[4] & 0x01);
     }
-    _axisRaw[4] = static_cast<int>((report[5] - 50.f) / 50.f * 32767.f);  // knob 0..100
-    _buttonPressed = (report[4] & 0x01);
+
+    if (battChanged) {
+        emit batteryChanged();
+    }
+}
+
+bool JoystickUsbHid::batteryValid() const
+{
+    QMutexLocker lock(&_stateMutex);
+    return _batteryValid;
+}
+
+int JoystickUsbHid::batteryPercent() const
+{
+    QMutexLocker lock(&_stateMutex);
+    return _batteryPercent;
+}
+
+double JoystickUsbHid::batteryVoltage() const
+{
+    QMutexLocker lock(&_stateMutex);
+    return _batteryVoltageMv / 1000.0;
 }
 
 /*===========================================================================*/

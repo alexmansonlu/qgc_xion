@@ -1013,8 +1013,9 @@ void Joystick::setCalibrationMode(bool calibrating)
  * axis indices: 0=X 1=Y 2=Z 3=Rx 4=Knob (knob exists only on the direct
  * USB-HID reader; on backends with fewer axes the row is skipped and the
  * channel stays undriven). ch7 (flight mode — FLTMODE_CH=7 on the FC)
- * carries the button: 1000/2000 µs. Z is deliberately unmapped: the
- * firmware does not report the switch yet and the pin floats. */
+ * carries the button: 1000/2000 µs. On v2 firmware the knob axis is fed
+ * from the z byte and Rx carries the physical switch (0/127/255 → ch8);
+ * Z itself stays unmapped (duplicate of the knob). */
 const Joystick::RcMapEntry Joystick::_rcMap[] = {
     { 0, -1, 1 },    // X  -> ch1 (roll)
     { 1, -1, 2 },    // Y  -> ch2 (pitch)

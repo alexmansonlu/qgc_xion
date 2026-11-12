@@ -6,14 +6,20 @@ package org.mavlink.qgroundcontrol;
  * knob is reported through a vendor-defined HID usage that Android's input
  * stack silently drops — so InputDevice/evdev can never see all controls.
  * This class claims the HID interface directly through the USB Host API
- * (detaching the kernel driver) and streams the raw 6-byte reports to C++:
+ * (detaching the kernel driver) and streams the raw reports to C++.
  *
- *   byte 0  X   0..255   joystick horizontal
- *   byte 1  Y   0..255   joystick vertical
- *   byte 2  Z   0..255   aux axis (switch)
- *   byte 3  Rx  0..255   aux axis
- *   byte 4  bit0 = button
- *   byte 5  knob 0..100  (vendor usage)
+ * Report format v2 (8 bytes, firmware with BQ2085 battery readout):
+ *
+ *   byte 0    x        0..255, center ~128   PA0 ADC
+ *   byte 1    y        0..255, center ~128   PA1 ADC
+ *   byte 2    z        0..255                PA4 ADC (knob)
+ *   byte 3    rx       0 / 127 / 255         PB4 / PB10 switch
+ *   byte 4    buttons  bit 0 only            PA8
+ *   byte 5    battery  0..100 %              BQ2085 RelativeStateOfCharge (0x0D)
+ *   bytes 6-7 voltage  uint16 LE, mV         BQ2085 Voltage (0x09)
+ *
+ * Legacy v1 firmware sends 6 bytes (byte 5 = knob 0..100, no battery); both
+ * lengths are forwarded and the C++ side dispatches on report length.
  *
  * C++ side: src/Joystick/JoystickUsbHid.{h,cc} registers the natives below
  * onto this class and drives discovery via scan()/isConnected().
@@ -38,7 +44,8 @@ public class QGCUsbHidJoystick
 
     public static final int VENDOR_ID = 0x0483;   // STMicroelectronics
     public static final int PRODUCT_ID = 0x572B;
-    private static final int REPORT_LEN = 6;
+    private static final int REPORT_LEN_V1 = 6;   // legacy: byte 5 = knob, no battery
+    private static final int REPORT_LEN_V2 = 8;   // adds battery % + voltage_mv (LE)
     private static final int READ_TIMEOUT_MS = 200;
 
     private static final String ACTION_USB_HID_PERMISSION =
@@ -190,13 +197,13 @@ public class QGCUsbHidJoystick
 
     private static void readerLoop()
     {
-        final byte[] buf = new byte[REPORT_LEN];
+        final byte[] buf = new byte[REPORT_LEN_V2];
         int consecutiveErrors = 0;
         while (running) {
-            final int len = connection.bulkTransfer(inEndpoint, buf, REPORT_LEN, READ_TIMEOUT_MS);
-            if (len == REPORT_LEN) {
+            final int len = connection.bulkTransfer(inEndpoint, buf, REPORT_LEN_V2, READ_TIMEOUT_MS);
+            if ((len == REPORT_LEN_V1) || (len == REPORT_LEN_V2)) {
                 consecutiveErrors = 0;
-                nativeHidReport(buf.clone());
+                nativeHidReport(java.util.Arrays.copyOf(buf, len));
             } else if (len < 0) {
                 // timeout or unplug — tolerate timeouts, bail on persistent failure
                 if (++consecutiveErrors > 25) {

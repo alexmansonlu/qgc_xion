@@ -4,12 +4,15 @@
  *
  * Android's input stack cannot see the controller's knob (vendor-defined
  * HID usage), so the Java side (QGCUsbHidJoystick.java) claims the HID
- * interface via the USB Host API and pushes raw 6-byte reports here.
+ * interface via the USB Host API and pushes raw reports here (8-byte v2
+ * format with BQ2085 battery %, voltage_mv; legacy 6-byte v1 accepted —
+ * byte layout documented in QGCUsbHidJoystick.java).
  *
- * This class only feeds the raw controls (5 axes + 1 button: X, Y, Z, Rx,
- * Knob) into the generic Joystick machinery. The RC-override channel map
- * and RC_CHANNELS_OVERRIDE uplink live in the base class and work with
- * every backend (desktop SDL included).
+ * This class feeds the raw controls (5 axes + 1 button: X, Y, Z, Rx,
+ * Knob) into the generic Joystick machinery, and exposes the handheld's
+ * battery state to QML (AculaBatteryIndicator). The RC-override channel
+ * map and RC_CHANNELS_OVERRIDE uplink live in the base class and work
+ * with every backend (desktop SDL included).
  *
  ****************************************************************************/
 
@@ -26,10 +29,24 @@ class JoystickUsbHid : public Joystick
 {
     Q_OBJECT
 
+    // Handheld battery, reported by the STM32 from the BQ2085 gas gauge.
+    // Invalid (batteryValid false) until the first v2-format report arrives.
+    Q_PROPERTY(bool     batteryValid    READ batteryValid   NOTIFY batteryChanged)
+    Q_PROPERTY(int      batteryPercent  READ batteryPercent NOTIFY batteryChanged)
+    Q_PROPERTY(double   batteryVoltage  READ batteryVoltage NOTIFY batteryChanged)
+
 public:
     JoystickUsbHid(const QString &name, QObject *parent = nullptr);
     ~JoystickUsbHid();
 
+    bool batteryValid() const;
+    int batteryPercent() const;
+    double batteryVoltage() const;   // volts
+
+signals:
+    void batteryChanged();
+
+public:
     static bool init();
     static void setNativeMethods();
     static QMap<QString, Joystick*> discover();
@@ -58,6 +75,9 @@ private:
     mutable QMutex _stateMutex;
     int _axisRaw[5] = {0, 0, 0, 0, 0};   // scaled to ±32767 for the base class
     bool _buttonPressed = false;
+    bool _batteryValid = false;
+    int _batteryPercent = -1;            // 0..100
+    int _batteryVoltageMv = 0;           // millivolts, from uint16 LE bytes 6-7
 
     static JoystickUsbHid *_instance;
 

@@ -28,7 +28,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_
 CPMAddPackage(
     NAME px4-gpsdrivers
     GITHUB_REPOSITORY PX4/PX4-GPSDrivers
-    GIT_TAG main
+    GIT_TAG 2b05a673610e63f7db73dec7ef477f1275c96c8d # pinned: last commit before sensor_gps_s corrections_* fields (upstream #231) broke build against our definitions.h
     SOURCE_SUBDIR src
 )
 

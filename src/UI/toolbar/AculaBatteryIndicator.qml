@@ -19,9 +19,10 @@ import QGroundControl.Palette
 // [ACULA] Two-row battery readout: aircraft on top, handheld controller below,
 // each as "xx%(yy.yV)".
 //
-// The controller row is a PLACEHOLDER until the BQ24810/BQ2085 battery board is
-// read over USB (deliverable 1/2). Wire it up by pointing `_ctrlPercent` and
-// `_ctrlVoltage` at the real source; the layout does not need to change.
+// The controller row is live data: the STM32 reads the BQ2085 gas gauge and
+// reports battery % + voltage in its HID report (v2, 8-byte format); the
+// values surface here via JoystickUsbHid's batteryValid/Percent/Voltage
+// properties. Shows "--" until a battery-capable controller is connected.
 Item {
     id:             control
     width:          batteryRow.width
@@ -34,10 +35,13 @@ Item {
     property var  _battery:         (_activeVehicle && _activeVehicle.batteries.count > 0) ? _activeVehicle.batteries.get(0) : null
     property bool _droneValid:      _battery && !isNaN(_battery.percentRemaining.rawValue) && !isNaN(_battery.voltage.rawValue)
 
-    // --- placeholder controller battery ------------------------------------
-    property bool _ctrlValid:       true
-    property real _ctrlPercent:     87
-    property real _ctrlVoltage:     8.1
+    // --- controller battery (from the STM32 HID report via JoystickUsbHid) --
+    // batteryValid only exists on the USB-HID backend — guard with typeof so
+    // desktop/SDL joysticks (no battery properties) read as "no data".
+    property var  _ctrlJoystick:    joystickManager.activeJoystick
+    property bool _ctrlValid:       _ctrlJoystick && (typeof _ctrlJoystick.batteryValid === "boolean") && _ctrlJoystick.batteryValid
+    property real _ctrlPercent:     _ctrlValid ? _ctrlJoystick.batteryPercent : 0
+    property real _ctrlVoltage:     _ctrlValid ? _ctrlJoystick.batteryVoltage : 0
     // -----------------------------------------------------------------------
 
     function fmt(percent, voltage) {
@@ -136,8 +140,8 @@ Item {
                 }
 
                 LabelledLabel {
-                    label:      qsTr("Controller (placeholder)")
-                    labelText:  fmt(_ctrlPercent, _ctrlVoltage)
+                    label:      qsTr("Controller")
+                    labelText:  _ctrlValid ? fmt(_ctrlPercent, _ctrlVoltage) : qsTr("N/A")
                 }
             }
         }
