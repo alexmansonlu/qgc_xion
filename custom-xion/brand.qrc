@@ -1,0 +1,23 @@
+<!DOCTYPE RCC>
+<!--
+    Brand assets. Every brand layer (custom-xion, custom-acula) provides the same
+    aliases under qrc:/brand/, so shared QML/C++ can reference them without knowing
+    which product is being built.
+      AppIcon.png           window / taskbar icon
+      ToolbarLogoDark.png   toolbar logo on the dark (indoor) palette
+      ToolbarLogoLight.png  toolbar logo on the light (outdoor) palette
+      MapMarker.png         ground-station marker drawn on a black badge on the map
+      Logo*.png / Mark*.png full logo and bare mark for splash/about pages
+-->
+<RCC>
+    <qresource prefix="/brand">
+        <file alias="AppIcon.png">res/XionAppIcon256.png</file>
+        <file alias="ToolbarLogoDark.png">res/XionToolbarLogoDark.png</file>
+        <file alias="ToolbarLogoLight.png">res/XionToolbarLogoLight.png</file>
+        <file alias="MapMarker.png">res/XionMarkDark.png</file>
+        <file alias="LogoDark.png">res/XionLogoDark.png</file>
+        <file alias="LogoLight.png">res/XionLogoLight.png</file>
+        <file alias="MarkDark.png">res/XionMarkDark.png</file>
+        <file alias="MarkLight.png">res/XionMarkLight.png</file>
+    </qresource>
+</RCC>
