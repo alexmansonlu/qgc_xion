@@ -502,7 +502,7 @@ ApplicationWindow {
             height:         ScreenTools.toolbarHeight
             color:          qgcPal.toolbarBackground
 
-            // [ACULA GCS] Exit shown as a rounded red button with white text
+            // [ACULA GCS] [Brand colours via palette] Exit shown as a rounded red button with white text
             Rectangle {
                 id:                     exitButton
                 anchors.left:           parent.left
@@ -511,13 +511,13 @@ ApplicationWindow {
                 height:                 ScreenTools.defaultFontPixelHeight * 1.8
                 width:                  exitLabel.implicitWidth + ScreenTools.defaultFontPixelWidth * 3
                 radius:                 height / 2
-                color:                  exitMouse.pressed ? Qt.darker("#CC2200", 1.2) : "#CC2200"
+                color:                  exitMouse.pressed ? Qt.darker(qgcPal.primaryButton, 1.2) : qgcPal.primaryButton
 
                 QGCLabel {
                     id:                 exitLabel
                     anchors.centerIn:   parent
                     text:               qsTr("Exit")
-                    color:              "#FFFFFF"
+                    color:              qgcPal.primaryButtonText
                     font.bold:          true
                     font.pointSize:     ScreenTools.defaultFontPointSize
                 }

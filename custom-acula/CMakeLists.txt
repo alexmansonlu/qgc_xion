@@ -11,6 +11,7 @@ set_property(DIRECTORY ${CMAKE_SOURCE_DIR}
 set(CUSTOM_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/AculaCorePlugin.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/AculaCorePlugin.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/brand.qrc
     CACHE INTERNAL "" FORCE
 )
 

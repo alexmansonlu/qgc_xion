@@ -73,7 +73,7 @@ Rectangle {
             Text {
                 anchors.centerIn:   parent
                 text:               "▼"
-                color:              "#FFFFFF"
+                color:              qgcPal.text
                 font.pixelSize:     ScreenTools.defaultFontPixelSize * 0.85
                 opacity:            0.9
             }
@@ -117,11 +117,35 @@ Rectangle {
 
     //-------------------------------------------------------------------------
     //-- Branding Logo
+    // [Brand] Two sizes so the logo is always at the top right:
+    //   brandLogoFull    the plugin's toolbar logo (e.g. mark + wordmark) when it fits
+    //   brandLogoCompact the brand layer's square mark (qrc:/brand/Mark*.png) otherwise
     Image {
+        id:                     brandLogoCompact
+        anchors.right:          parent.right
+        anchors.top:            parent.top
+        anchors.bottom:         parent.bottom
+        anchors.margins:        ScreenTools.defaultFontPixelHeight * 0.5
+        width:                  height
+        sourceSize.height:      height * 2
+        fillMode:               Image.PreserveAspectFit
+        mipmap:                 true
+        source:                 qgcPal.globalTheme === QGCPalette.Light ? "/brand/MarkLight.png" : "/brand/MarkDark.png"
+        visible:                !brandLogoFull.visible && brandLogoFull._corePluginBranding
+                                && x > (toolsFlickable.x + toolsFlickable.contentWidth + ScreenTools.defaultFontPixelWidth)
+    }
+
+    Image {
+        id:                     brandLogoFull
         anchors.right:          parent.right
         anchors.top:            parent.top
         anchors.bottom:         parent.bottom
         anchors.margins:        ScreenTools.defaultFontPixelHeight * 0.66
+        // [Brand] Width follows the artwork's aspect at toolbar height. Without this the
+        // Image took the source's full pixel width (~600 px), which pushed it left until
+        // the overlap check below hid it on anything narrower than a very wide screen.
+        width:                  implicitHeight > 0 ? height * implicitWidth / implicitHeight : 0
+        sourceSize.height:      height * 2
         // [ACULA GCS] Always show branding logo; hide only if telemetry indicators would overlap it
         visible:                x > (toolsFlickable.x + toolsFlickable.contentWidth + ScreenTools.defaultFontPixelWidth)
         fillMode:               Image.PreserveAspectFit

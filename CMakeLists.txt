@@ -20,10 +20,19 @@ set(CMAKE_POLICY_VERSION_MINIMUM 3.15)
 
 include(CustomOptions)
 
-if(IS_DIRECTORY ${CMAKE_SOURCE_DIR}/custom)
-    message(STATUS "Enabling custom build")
+# Brand layer: which product to build from this tree.
+#   custom-xion   Xion Control GCS (default)
+#   custom-acula  ACULA handheld GCS
+#   ""            stock QGroundControl
+# Use a separate build directory per brand (the app/target name differs).
+set(QGC_CUSTOM_DIR "custom-xion" CACHE STRING "Brand layer directory (custom-xion, custom-acula, or empty for stock QGC)")
+if(QGC_CUSTOM_DIR)
+    if(NOT IS_DIRECTORY ${CMAKE_SOURCE_DIR}/${QGC_CUSTOM_DIR})
+        message(FATAL_ERROR "QGC_CUSTOM_DIR=${QGC_CUSTOM_DIR} does not exist in ${CMAKE_SOURCE_DIR}")
+    endif()
+    message(STATUS "Enabling custom build: ${QGC_CUSTOM_DIR}")
     set(QGC_CUSTOM_BUILD ON)
-    list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/custom/cmake)
+    list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/${QGC_CUSTOM_DIR}/cmake)
     include(CustomOverrides)
 endif()
 
@@ -258,7 +267,7 @@ endif()
 #######################################################
 
 if(QGC_CUSTOM_BUILD)
-    add_subdirectory(custom)
+    add_subdirectory(${QGC_CUSTOM_DIR})
 endif()
 
 #######################################################

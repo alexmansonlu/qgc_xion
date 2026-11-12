@@ -53,8 +53,11 @@ public:
     static QGCCorePlugin *instance();
 
     QGCOptions *options() final;
-    QString brandImageIndoor()  const final { return QStringLiteral("/res/AculaLogo.png"); }
-    QString brandImageOutdoor() const final { return QStringLiteral("/res/AculaLogo.png"); }
+    QString brandImageIndoor()  const final { return QStringLiteral("/brand/ToolbarLogoDark.png"); }
+    QString brandImageOutdoor() const final { return QStringLiteral("/brand/ToolbarLogoLight.png"); }
+
+    /// ACULA palette (dark theme greys + ACULA red). Formerly hard-edited into QGCPalette.cc.
+    void paletteOverride(const QString &colorName, QGCPalette::PaletteColorInfo_t &colorInfo) final;
 
 private:
     AculaOptions *_options = nullptr;

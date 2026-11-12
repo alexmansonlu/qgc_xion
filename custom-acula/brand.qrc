@@ -1,0 +1,14 @@
+<!DOCTYPE RCC>
+<!-- ACULA brand assets under the shared qrc:/brand/ prefix (see custom-xion/brand.qrc). -->
+<RCC>
+    <qresource prefix="/brand">
+        <file alias="AppIcon.png">../android/res/drawable-xxxhdpi/icon.png</file>
+        <file alias="ToolbarLogoDark.png">res/AculaLogo.png</file>
+        <file alias="ToolbarLogoLight.png">res/AculaLogo.png</file>
+        <file alias="MapMarker.png">res/AculaLogo.png</file>
+        <file alias="LogoDark.png">res/AculaLogo.png</file>
+        <file alias="LogoLight.png">res/AculaLogo.png</file>
+        <file alias="MarkDark.png">res/AculaLogo.png</file>
+        <file alias="MarkLight.png">res/AculaLogo.png</file>
+    </qresource>
+</RCC>

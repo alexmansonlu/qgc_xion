@@ -149,7 +149,10 @@ QGCApplication::QGCApplication(int &argc, char *argv[], bool unitTesting, bool s
     setOrganizationDomain(QGC_ORG_DOMAIN);
     setApplicationVersion(QString(QGC_APP_VERSION_STR));
 #ifdef Q_OS_LINUX
-    setWindowIcon(QIcon(":/res/qgroundcontrol.ico"));
+    // [Brand] Prefer the brand layer's icon (qrc:/brand/AppIcon.png) over stock QGC's
+    setWindowIcon(QIcon(QFile::exists(QStringLiteral(":/brand/AppIcon.png"))
+                        ? QStringLiteral(":/brand/AppIcon.png")
+                        : QStringLiteral(":/res/qgroundcontrol.ico")));
 #endif
 
     // Set settings format

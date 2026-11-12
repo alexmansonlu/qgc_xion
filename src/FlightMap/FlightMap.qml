@@ -204,24 +204,26 @@ Map {
         visible:        gcsPosition.isValid
         coordinate:     gcsPosition
 
-        // [ACULA GCS] Ground-station marker: ACULA logo on a black rounded badge.
-        // Kept upright (no heading rotation) so the logo text stays readable.
+        // [Brand] Ground-station marker: brand marker image (qrc:/brand/MapMarker.png,
+        // supplied by the active custom-* brand layer) on a black rounded badge.
+        // Kept upright (no heading rotation) so any logo text stays readable.
         sourceItem: Rectangle {
             id:             gcsMarkerBadge
             color:          "#000000"
             radius:         ScreenTools.defaultFontPixelHeight * 0.35
-            width:          aculaMarkerLogo.width  + ScreenTools.defaultFontPixelWidth * 1.2
-            height:         aculaMarkerLogo.height + ScreenTools.defaultFontPixelHeight * 0.5
+            width:          brandMarkerLogo.width  + ScreenTools.defaultFontPixelWidth * 1.2
+            height:         brandMarkerLogo.height + ScreenTools.defaultFontPixelHeight * 0.5
 
             Image {
-                id:                 aculaMarkerLogo
+                id:                 brandMarkerLogo
                 anchors.centerIn:   parent
-                source:             "/res/AculaLogo.png"
+                source:             "/brand/MapMarker.png"
                 mipmap:             true
                 antialiasing:       true
                 fillMode:           Image.PreserveAspectFit
                 height:             ScreenTools.defaultFontPixelHeight * 1.1
-                width:              height * (646 / 144)
+                // Follow the artwork's own aspect ratio (wide wordmark or square mark)
+                width:              implicitHeight > 0 ? height * implicitWidth / implicitHeight : height
                 sourceSize.height:  height * 2
             }
         }

@@ -42,7 +42,6 @@
         <file alias="QGCLogoWhite.svg">resources/QGCLogoWhite.svg</file>
         <file alias="QGCLogoArrow.svg">resources/QGCLogoArrow.svg</file>
         <!-- ACULA GCS branding assets -->
-        <file alias="AculaLogo.png">resources/AculaLogo.png</file>
         <file alias="AculaIconAI.png">resources/AculaIconAI.png</file>
         <file alias="AculaIconDrone.png">resources/AculaIconDrone.png</file>
         <file alias="AculaIconSetting.png">resources/AculaIconSetting.png</file>
